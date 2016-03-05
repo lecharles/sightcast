@@ -13,3 +13,21 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+#landing {
+  background-image: asset-url('mountain.jpg');
+  background-size: cover;
+  height: 550px;
+
+}
+
+.navbar {
+  padding:0px;
+  margin-bottom:0px;
+
+}
+
+#btn-landing:hover {
+  text-decoration: none;
+}
