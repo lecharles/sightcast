@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'tokens/get_token'
+
   root :to => 'users#index'
   resources :user_sessions
   resources :users

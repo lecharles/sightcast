@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Pusher for API secrets and other crazyness
+gem 'pusher'
 # User sessions sorcery
 gem 'sorcery'
 # Enhanced server logs
@@ -8,6 +9,8 @@ gem 'quiet_assets'
 gem 'better_errors'
 # Secrets, API keys and other fireworks
 gem 'figaro'
+# Rename your Application
+gem 'rename'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record

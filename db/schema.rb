@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305163653) do
+ActiveRecord::Schema.define(version: 20160305182819) do
+
+  create_table "sightcasts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "active"
+    t.datetime "scheduled_at"
+    t.integer  "viewers"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "sightcasts_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sightcast_id"
+  end
+
+  add_index "sightcasts_users", ["sightcast_id"], name: "index_sightcasts_users_on_sightcast_id"
+  add_index "sightcasts_users", ["user_id"], name: "index_sightcasts_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                           null: false
