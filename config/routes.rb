@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   root 'tests#index'
   get 'tests/index'
 
-=======
-
   get 'tokens/get_token'
 
-  root :to => 'users#index'
   resources :user_sessions
   resources :users
 
@@ -15,7 +12,7 @@ Rails.application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :password_resets
->>>>>>> a23a1ed33a979d2aa29566f8a35c5f8cd3fe2569
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
