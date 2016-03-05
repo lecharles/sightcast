@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, class: "form-control", placeholder: "Enter your username", autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
   </div>
   <div class="field">
      <%= f.label :password %><br />
-     <%= f.password_field :password %>
+     <%= f.password_field :password, class: "form-control", placeholder: "Enter your password", autofocus: true %>
   </div>
   <div class="field">
      <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
+     <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Re-enter your password", autofocus: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
