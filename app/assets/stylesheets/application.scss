@@ -25,7 +25,16 @@
 .navbar {
   padding:0px;
   margin-bottom:0px;
+  background-color: #81D7CD;
 
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-brand {
+  padding: 4px;
 }
 
 #btn-landing:hover {
