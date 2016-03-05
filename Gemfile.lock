@@ -69,6 +69,7 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    httpclient (2.7.1)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -98,6 +99,11 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
+    pusher (0.17.0)
+      httpclient (~> 2.7)
+      multi_json (~> 1.0)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -130,6 +136,8 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    rename (1.0.2)
+      rails (>= 3.0.0)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -179,8 +187,10 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  pusher
   quiet_assets
   rails (= 4.2.5.1)
+  rename
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sorcery

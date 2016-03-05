@@ -1,0 +1,2 @@
+module SightcastsHelper
+end
