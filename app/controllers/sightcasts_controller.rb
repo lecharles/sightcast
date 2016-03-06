@@ -9,8 +9,13 @@ class SightcastsController < ApplicationController
   end
 
   def show
+    @sightcaster = false;
     @sightcast = Sightcast.find(params[:id])
-    @current_user = current_user
+    if current_user
+      if current_user == @sightcast.host
+        @sightcaster = true
+      end
+    end
   end
 
   def create

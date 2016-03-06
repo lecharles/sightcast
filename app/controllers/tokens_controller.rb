@@ -10,7 +10,7 @@ class TokensController < ApplicationController
     client_id = ENV["client_identifier"]
     client_secret = ENV["client_secret"]
 
-    uid = current_user.username
+    uid = params[:uid]
     domain = ""
     profile = "premium"
 
