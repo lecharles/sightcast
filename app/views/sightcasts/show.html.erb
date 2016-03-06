@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  var username = "<%= current_user.username %>"; // for string
+
+  sendUserInfo(username)// this is your function in .js file
+
+</script>
+
+<h1><%= @sightcast.title %></h1>
+<h3><%= @sightcast.description %></h3>
+
+<div class="container">
+  <div class="row well" id="host_meeting_point" style="display:none;">
+    <div class="center-block" style="float:none;width:500px">
+
+      <h4>  Now that you have created a meeting point, click host</h4>
+      <button  class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
+
+
+      <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
+      <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
+
+    </div>
+  </div>
+
+</div>

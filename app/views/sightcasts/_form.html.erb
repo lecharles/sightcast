@@ -1,0 +1,30 @@
+<%= form_for @sightcast do |f| %>
+  <% if @sightcast.errors.any? %>
+    <div id = "error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% @sightcast.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class = "field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :scheduled_at %>
+    <%= f.datetime_field :scheduled_at %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

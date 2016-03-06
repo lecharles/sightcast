@@ -9,9 +9,19 @@ class SightcastsController < ApplicationController
   end
 
   def show
+    @sightcast = Sightcast.find(params[:id])
+    @current_user = current_user
   end
 
   def create
+    @sightcast = Sightcast.new(sightcast_params)
+    @sightcast.active = false
+    @sightcast.host = current_user
+    if @sightcast.save
+      redirect_to sightcasts_path, notice: "Sightcast created"
+    else
+      redirect_to new_sightcast_path(@sightcast), notice: "Error saving new sightcast"
+    end
   end
 
   def edit
@@ -21,6 +31,11 @@ class SightcastsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def sightcast_params
+    params.require(:sightcast).permit(:title, :description, :scheduled_at)
   end
 
 end
