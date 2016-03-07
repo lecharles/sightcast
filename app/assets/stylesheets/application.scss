@@ -21,6 +21,19 @@
   height: 550px;
 }
 
+body {
+  height: 100%;
+  padding-bottom: 250px;
+}
+
+// .linear-gradient(
+//   rgba(0,0,0,0.5),
+//   rgba(0,0,0,0.5)
+//   ), asset-url('fontainebleau.jpg');
+//   background-size: cover;
+//   height: 550px;
+// }
+
 .navbar {
   padding:0px;
   margin-bottom:0px;
@@ -39,10 +52,18 @@
   text-decoration: none;
 }
 
+
+.container {
+  width: 100%;  
+}
+
 .footer1 {
   background-color: #000;
   color: white;
   margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 
@@ -85,5 +106,19 @@
   .bottom-bar {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
+  }
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: #FF0048  ;
+  color: #EFECE2;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  }
+
+  .btn-xlarge:hover {
+  color: #EFECE2;
+  background-color: #B13756  ;
   }
 }
