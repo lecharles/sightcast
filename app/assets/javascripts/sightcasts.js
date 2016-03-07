@@ -17,6 +17,7 @@ $(document).on('ready page:load', function() {
           debugLevel : 1,
           displayName : UID_USER,
           defaultStyle: true,
+          container : 'video-container',
           legacy: false
       },
       initializeRtcc = function(token) {
@@ -131,6 +132,7 @@ $(document).on('ready page:load', function() {
         debugLevel : 1,
         displayName : "External Viewer",
         defaultStyle: true,
+        container : 'video-container',
         legacy: false,
       }
       initializeRtccViewer = function() {
