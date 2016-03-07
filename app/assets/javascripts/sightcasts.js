@@ -135,7 +135,7 @@ $(document).on('ready page:load', function() {
         displayName : "External Viewer",
         defaultStyle: true,
         container : 'video-container',
-        legacy: false,
+        legacy: false
       }
       initializeRtccViewer = function() {
         rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
