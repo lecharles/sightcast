@@ -19,14 +19,12 @@
   background-image: asset-url('mountain.jpg');
   background-size: cover;
   height: 550px;
-
 }
 
 .navbar {
   padding:0px;
   margin-bottom:0px;
   background-color: #81D7CD;
-
 }
 
 .navbar-brand img {
@@ -45,4 +43,32 @@
   background-color: #000;
   color: white;
   margin-top: 40px;
+}
+
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .iconbar {
+    width: 22px;
+    transition: all 0.2s;
+
+  }.top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .middle-bar {
+    opacity: 0;
+  }
+
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
 }
