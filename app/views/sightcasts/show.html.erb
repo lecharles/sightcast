@@ -8,11 +8,22 @@
   getAppId("<%= ENV["application_identifier"] %>");
   getSightCastId(<%= @sightcast.id %>)
 </script>
+<style type="text/css">
+  #video-container {
+      width: 640px;
+      height: 360px;
+      border: 1px solid black;
+      background: #0074bc;
+      margin-top: 20px;
+      margin: 0 auto;
+  }
+</style>
 
 <div class = "show_sightcast">
 
   <h1><%= @sightcast.title %></h1>
   <h3><%= @sightcast.description %></h3>
+
 
   <%= form_for @sightcast do |f| %>
     <div class = "field">
@@ -20,13 +31,17 @@
     </div>
   <% end %>
 
+  <div id="video-container"></div>
+
+
   <div class="container">
+
     <div class="row well">
       <div id="error" style="display:none;" class="bg-danger" >
         <h4>An error occurred:</h4>
         <div id="error-content">This is the error</div>
-      </div>
 
+      </div>
       <div class="center-block" style="float:none;width:500px">
           <h4 id="connection_status"></h4>
       </div>
@@ -52,7 +67,6 @@
 
       </div>
     </div>
-
     <div class="row well" id="join_meeting_point" style="display:none;">
       <div class="center-block" style="float:none;width:500px">
 
