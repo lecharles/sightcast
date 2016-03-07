@@ -11,11 +11,7 @@ class SightcastsController < ApplicationController
   def show
     @sightcaster = false;
     @sightcast = Sightcast.find(params[:id])
-    if params[:mp_id]
-      @sightcast.saveMeetingPoint(params[:mp_id])
-    end
     @caster = @sightcast.host.username
-    puts "CASTER: #{@caster}"
     if current_user
       if current_user == @sightcast.host
         @sightcaster = true
@@ -38,6 +34,13 @@ class SightcastsController < ApplicationController
   end
 
   def update
+    @sightcast = Sightcast.find(params[:id])
+
+    if @sightcast.update_attributes(sightcast_params)
+      redirect_to sightcast_path(@sightcast)
+    else
+      redirect_to sightcast_path(@sightcast)
+    end
   end
 
   def destroy
@@ -45,7 +48,7 @@ class SightcastsController < ApplicationController
 
   private
   def sightcast_params
-    params.require(:sightcast).permit(:title, :description, :scheduled_at)
+    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id)
   end
 
 end

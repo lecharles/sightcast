@@ -2,6 +2,7 @@ var UID_USER = "external";
 var UID_CASTER;
 var CASTER = false;
 var APP_ID;
+var SC_ID;
 
 $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
@@ -36,8 +37,9 @@ $(document).on('ready page:load', function() {
 
         rtcc.on('meetingpoint.create.success', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
-          $('#mp_id').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
+          $('#sightcast_meeting_point_id').val(meetingPoint.id);
+          $('#edit_sightcast_' + SC_ID).submit();
         });
 
         rtcc.on('meetingpoint.host.success', function() {
@@ -165,12 +167,16 @@ $(document).on('ready page:load', function() {
       initViewer();
     }
   }
+  $('#edit_sightcast_' + SC_ID).on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'html',
+      data: $(this).serialize()
 
-  // $('#mp_id_form').submit(function(e) {
-  //   e.preventDefault();
-  //   var mp_id = $('#mp_id').val();
-  //   $.getScript('/sightcasts/1?mp_id=' + mp_id);
-  // });
+    });
+  });
 
 });
 
@@ -186,4 +192,7 @@ function getCasterName(castername) {
 }
 function getAppId(appId) {
   APP_ID = appId;
+}
+function getSightCastId(sightCastId) {
+  SC_ID = sightCastId;
 }

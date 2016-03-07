@@ -6,12 +6,19 @@
   <% end %>
   getCasterName("<%= @caster %>");
   getAppId("<%= ENV["application_identifier"] %>");
+  getSightCastId(<%= @sightcast.id %>)
 </script>
 
 <div class = "show_sightcast">
 
   <h1><%= @sightcast.title %></h1>
   <h3><%= @sightcast.description %></h3>
+
+  <%= form_for @sightcast do |f| %>
+    <div class = "field">
+      <%= f.hidden_field :meeting_point_id %>
+    </div>
+  <% end %>
 
   <div class="container">
     <div class="row well">
@@ -53,9 +60,6 @@
           <input class="center-block" style="width:230px" id="meeting_point_id" type="text"/>
 
           <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
-
-
-
 
       </div>
     </div>
