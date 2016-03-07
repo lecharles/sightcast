@@ -46,6 +46,21 @@
 }
 
 
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+    background-color: #FF0048;
+  }
+  .middle-bar {
+    opacity: 1;
+    background-color: #FF0048;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+    background-color: #FF0048;
+  }
+}
+
 .navbar-toggle {
   border: none;
   background: transparent !important;
