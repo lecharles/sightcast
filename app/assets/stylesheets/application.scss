@@ -13,3 +13,84 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ textarea {
+    resize: none;
+}
+
+ #landing {
+
+   background:linear-gradient(
+         rgba(0,0,0,0.5),
+         rgba(0,0,0,0.5)
+         ), asset-url('fontainebleau.jpg');
+   background-size: cover;
+   height: 550px;
+
+ }
+
+  #sightcastnewform {
+    padding:20px;
+  }
+
+  #sightcastnav {
+    background-color:#FF0048;
+    opacity:0.8;
+    border-radius:5px;
+
+  }
+  #sightcastnav:hover {
+    opacity:0.8;
+  }
+  #sightcastnav a {
+    color:white;
+
+
+
+  }
+
+ .navbar {
+   padding:0px;
+   margin-bottom:0px;
+   background-color: #EFECE2;
+
+ }
+
+ .navbar-brand img {
+   height: 40px;
+ }
+
+ .navbar-brand {
+   padding: 4px;
+ }
+ .btn-xlarge {
+ font-size: 1.7em;
+ background-color:#FF0048;
+ color:#EFECE2;
+ font-family:sans-serif;
+ letter-spacing: 1px;
+ font-weight:lighter;
+ }
+
+ #sightcastbutton {
+   background-color:#FF0048;
+   color:white;
+   letter-spacing: 1px;
+   font-weight:lighter;
+   padding:10px 15px;
+
+ }
+
+ .btn-xlarge:hover {
+   color:#EFECE2;
+   background-color:#B13756;
+
+ }
+
+
+
+ .footer1 {
+   background-color: #81D7CD;
+   color: white;
+   margin-top: 40px;
+ }
