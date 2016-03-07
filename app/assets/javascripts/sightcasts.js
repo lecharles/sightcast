@@ -1,5 +1,7 @@
 var UID_USER = "external";
+var UID_CASTER;
 var CASTER = false;
+var APP_ID;
 
 $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
@@ -7,7 +9,10 @@ $(document).on('ready page:load', function() {
 
     AUTH_URL = 'http://localhost:3000/tokens/get_token?uid=';
     if (CASTER) {
+      $('#connection_status').html("Connecting as host!!");
       // Define the optional parameters
+      rtcc = {},
+      meetingPoint = "",
       options = {
           debugLevel : 1,
           displayName : UID_USER,
@@ -15,11 +20,8 @@ $(document).on('ready page:load', function() {
           legacy: false
       },
       initializeRtcc = function(token) {
-        rtcc = new Rtcc('5vx1l3kvxfd3', token, 'internal', options);
-        // rtcc.onDriverNotStarted = function (downloadUrl) {
-        //   var answer = confirm('Click OK to download and install the Rtcc client.');
-        //   if (answer === true) { window.location = downloadUrl; }
-        // };
+        rtcc = new Rtcc(APP_ID, token, 'internal', options);
+
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as host!!');
           $('#create_meeting_point').css('display', 'block');
@@ -34,44 +36,13 @@ $(document).on('ready page:load', function() {
 
         rtcc.on('meetingpoint.create.success', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
+          $('#mp_id').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
         });
 
         rtcc.on('meetingpoint.host.success', function() {
           meetingPoint.autoaccept_mode();
         });
-
-        // rtcc.onConnectionHandler = function(message, code) {
-        //   if (window.console) { console.log('Connection Handler : ' + message + ' ' + code); }
-        //   switch(message) {
-        //     case 'connectedRtccDriver':
-        //       realTimeClient = 'RtccDriver';
-        //       break;
-        //     case 'connectedWebRTC':
-        //       realTimeClient = 'WebRTC';
-        //       break;
-        //     case 'sipOK':
-        //       // JQUERY TIME
-        //       break;
-        //
-        //     case 'loggedasotheruser':
-        //       // force connection, kick other logged users
-        //       getToken(UID_USER, function (token){
-        //           rtcc.setToken(token);
-        //           rtcc.authenticate(1);
-        //       });
-        //       break;
-        //     case 'disconnectedRtccDriver':
-        //       getToken(UID_USER, function (token){
-        //           rtcc.setToken(token);
-        //       });
-        //       break;
-        //   }
-        //
-        // };
-        // rtcc.onConfCallHandler = function(action, obj) {
-        //
-        // };
         rtcc.initialize();
       },
       getToken = function(uid, callback) {
@@ -153,10 +124,53 @@ $(document).on('ready page:load', function() {
     }
 
     else {
-      alert(UID_USER);
+      $('#connection_status').html("Connecting as viewer!!");
+      rtcc = {},
+      meetingPointAttendee = "",
+      options = {
+        debugLevel : 1,
+        displayName : "External Viewer",
+        defaultStyle: true,
+        legacy: false,
+      }
+      initializeRtccViewer = function() {
+        rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+        rtcc.on('cloud.sip.ok', function() {
+          $('#connection_status').html('Connection Status: Connected as viewer!!');
+          $('#join_meeting_point').css('display', 'block');
+        });
+        rtcc.on('cloud.loggedastheotheruser', function() {
+          getToken(UID_USER, function (token){
+            rtcc.authenticate(1);
+          });
+        });
+
+        rtcc.on('call.create', defineCallListenersViewer);
+
+        rtcc.initialize();
+      },
+      defineCallListenersViewer = function(viewer_call) {
+        viewer_call.on('active', function() {
+          viewer_call.videoStop();
+          viewer_call.audioMute();
+        });
+      },
+      initViewer = function() {
+        initializeRtccViewer();
+      },
+      joinViewer = function() {
+        var id = $('#meeting_point_id').val();
+        rtcc.joinConfCall(id);
+      };
+      initViewer();
     }
   }
 
+  // $('#mp_id_form').submit(function(e) {
+  //   e.preventDefault();
+  //   var mp_id = $('#mp_id').val();
+  //   $.getScript('/sightcasts/1?mp_id=' + mp_id);
+  // });
 
 });
 
@@ -166,4 +180,10 @@ function isCaster(sightcaster) {
 }
 function getUsername(username) {
   UID_USER = username;
+}
+function getCasterName(castername) {
+  UID_CASTER = castername;
+}
+function getAppId(appId) {
+  APP_ID = appId;
 }

@@ -11,6 +11,11 @@ class SightcastsController < ApplicationController
   def show
     @sightcaster = false;
     @sightcast = Sightcast.find(params[:id])
+    if params[:mp_id]
+      @sightcast.saveMeetingPoint(params[:mp_id])
+    end
+    @caster = @sightcast.host.username
+    puts "CASTER: #{@caster}"
     if current_user
       if current_user == @sightcast.host
         @sightcaster = true

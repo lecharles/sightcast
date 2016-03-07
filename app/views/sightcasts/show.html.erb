@@ -4,6 +4,8 @@
     getUsername(username);// this is your function in .js file
     isCaster(<%= @sightcaster %>);
   <% end %>
+  getCasterName("<%= @caster %>");
+  getAppId("<%= ENV["application_identifier"] %>");
 </script>
 
 <div class = "show_sightcast">
@@ -19,7 +21,7 @@
       </div>
 
       <div class="center-block" style="float:none;width:500px">
-          <h4 id="connection_status">Connection Status: Connecting as Host...</h4>
+          <h4 id="connection_status"></h4>
       </div>
     </div>
 
@@ -40,6 +42,20 @@
 
         <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
         <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
+
+      </div>
+    </div>
+
+    <div class="row well" id="join_meeting_point" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+
+          <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
+          <input class="center-block" style="width:230px" id="meeting_point_id" type="text"/>
+
+          <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+
+
+
 
       </div>
     </div>
