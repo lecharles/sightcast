@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-
-  root 'tests#index'
-  get 'tests/index'
-
+  root :to => 'pages#home'
   get 'tokens/get_token'
 
   resources :user_sessions

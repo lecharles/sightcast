@@ -8,21 +8,17 @@
   <script type="text/javascript" src="https://download.rtccloud.net/js/webappid/<%= ENV["application_identifier"] %>"></script>
 </head>
 <body>
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
+
+  <!-- This render _nav.html.erb (styles) partial -->
+  <%= render '/layouts/nav' %>
+
   <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
+    <span id="notice"><%= flash[:notice] %></span>
+    <span id="alert"><%= flash[:alert] %></span>
   </div>
 
 <%= yield %>
 
+<%= render '/layouts/footer' %>
 </body>
 </html>

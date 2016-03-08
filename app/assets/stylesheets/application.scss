@@ -13,3 +13,106 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+#landing {
+  background-image: asset-url('mountain.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+// .linear-gradient(
+//   rgba(0,0,0,0.5),
+//   rgba(0,0,0,0.5)
+//   ), asset-url('fontainebleau.jpg');
+//   background-size: cover;
+//   height: 550px;
+// }
+
+.navbar {
+  padding:0px;
+  margin-bottom:0px;
+  background-color: #81D7CD;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-brand {
+  padding: 4px;
+}
+
+#btn-landing:hover {
+  text-decoration: none;
+}
+
+.footer1 {
+  background-color: #000;
+  color: white;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+    background-color: #FF0048;
+  }
+  .middle-bar {
+    opacity: 1;
+    background-color: #FF0048;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+    background-color: #FF0048;
+  }
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .iconbar {
+    width: 22px;
+    transition: all 0.2s;
+
+  }.top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .middle-bar {
+    opacity: 0;
+  }
+
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: #FF0048  ;
+  color: #EFECE2;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  }
+
+  .btn-xlarge:hover {
+  color: #EFECE2;
+  background-color: #B13756  ;
+  }
+}
