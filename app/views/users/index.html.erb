@@ -1,31 +1,7 @@
 
-
-<<<<<<< HEAD
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-    </tr>
-  </thead>
-=======
 <div class="container">
   <h1>SightCast Users</h1>
->>>>>>> new_styles_2
-
     <% @users.each do |user| %>
-<<<<<<< HEAD
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-=======
     <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
@@ -35,8 +11,4 @@
       <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
-</div>
->>>>>>> new_styles_2
-
-    <% end %>
 </div>
