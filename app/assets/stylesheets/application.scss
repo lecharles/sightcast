@@ -13,3 +13,152 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+body {
+ background-color: white;
+}
+
+textarea {
+   resize: none;
+}
+
+ #landing {
+
+   background:linear-gradient(
+         rgba(0,0,0,0.5),
+         rgba(0,0,0,0.5)
+         ), asset-url('fontainebleau.jpg');
+   background-size: cover;
+   height: 550px;
+
+ }
+
+
+  #sightcastnewform {
+    padding:20px;
+  }
+
+  #sightcastnav {
+    background-color:#FF0048;
+    opacity:0.8;
+    border-radius:5px;
+
+  }
+  #sightcastnav:hover {
+    opacity:0.8;
+    background-color:#ed0744;
+  }
+  #sightcastnav a {
+    color:white;
+
+  }
+
+
+#panelsupport {
+ padding: 0px;
+}
+
+#landing {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('fontainebleau.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+
+ #sightcastnewform {
+   padding:20px;
+ }
+
+ #sightcastnav {
+   background-color:#FF0048 ;
+   opacity:0.8;
+   border-radius:5px;
+
+ }
+ #sightcastnav:hover {
+   opacity:0.8;
+   background-color:#ed0744 ;
+ }
+ #sightcastnav a {
+   color:white;
+ }
+
+ .panel-default {
+   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ }
+
+.navbar {
+  padding:0px;
+  margin-bottom:0px;
+  background-color: white;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-brand {
+  padding: 4px;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color:#FF0048 ;
+  color:#EFECE2 ;
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  font-weight:lighter;
+}
+
+ // this is for video
+
+  #video-container {
+       width: 640px;
+       height: 360px;
+       border: 2px solid white;
+       background: #0074bc;
+       margin-top: 20px;
+       margin: 0 auto;
+       border-radius:5px;
+       margin-bottom: 35px;
+       margin-top:35px;
+       display:none;
+       -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+       -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+       box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+
+
+   }
+
+#sightcastbutton {
+  background-color:#FF0048 ;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #5B1023 ;
+  padding:10px 15px;
+
+}
+
+#sightcastbutton:hover {
+ background-color:#ed0744 ;
+}
+
+.btn-xlarge:hover {
+  color:#EFECE2 ;
+  background-color:#B13756 ;
+}
+
+.footer {
+ background-color: #000;
+ color: white;
+ margin-top: 40px;
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+}

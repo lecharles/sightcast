@@ -1,0 +1,52 @@
+<body >
+<div class="container" style="padding-top:30px;">
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+  <div class="panel-body">
+          <h1>ALL SIGHTCASTS</h1>
+            <div class = 'sightcast'>
+            <% @sightcasts.each do | sightcast | %>
+            <div class="col-md-4">
+            <div  class="panel panel-default ">
+              <div class="panel-body">
+              <p><strong>Title: </strong> <%= sightcast.title %></p>
+              <p><strong>Description: </strong> <%= sightcast.description %></p>
+              <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
+              <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
+              <% if current_user == sightcast.host %>
+                <p><a href = 'sightcasts/<%= sightcast.id %>/'>Start Sightcast</a></p>
+                <!-- #need to change to sightcast_path or something  -->
+              <% end %>
+            </div>
+          </div>
+        </div>
+            <% end %>
+            </div>
+  </div>
+</div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="panel panel-default">
+  <div class="panel-body">
+          <h1>All Users</h1>
+
+            <% @users.each do |user| %>
+            <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              <%= user.email %>
+              <%= link_to 'Show', user %>
+              <%= link_to 'Edit', edit_user_path(user) %>
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+
+            <% end %>
+  </div>
+</div>
+  </div>
+</div>
+</body>

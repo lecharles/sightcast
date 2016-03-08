@@ -1,14 +1,14 @@
-# app/views/user_sessions/_form.html.erb
 <%= form_tag user_sessions_path, :method => :post do %>
   <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %>
+    <%= label_tag :email %><br/>
+    <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter your email", autofocus: true %>
   </div>
+
   <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
+    <%= label_tag :password %><br/>
+    <%= password_field_tag :password,nil, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= submit_tag "Login" %>
+    <%= submit_tag "Login", class: "btn btn-primary",  id:"sightcastbutton" %>
   </div>
 <% end %>

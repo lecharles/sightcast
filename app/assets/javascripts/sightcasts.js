@@ -1,9 +1,10 @@
 $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
+
 //IF YOU ARE A HOST:
     if (CASTER) {
-      $('#connection_status').html("Connecting as host!!");
+      $('#connection_status').html("Step 1.Connecting....");
       // Define the optional parameters
       rtcc = {},
       meetingPoint = "",
@@ -20,8 +21,13 @@ $(document).on('ready page:load', function() {
             window.open(downloadUrl);
         });
 
+
+  rtcc.on('plugin.missing', function(downloadUrl) {
+             window.open(downloadUrl);
+         });
+
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html('Connection Status: Connected as host!!');
+          $('#connection_status').html(' Step 1.Connected as host.');
           $('#create_meeting_point').css('display', 'block');
         });
 
@@ -44,7 +50,14 @@ $(document).on('ready page:load', function() {
         rtcc.on('meetingpoint.host.success', function() {
           meetingPoint.autoaccept_mode();
         });
+        rtcc.on('call.create', defineCallListenersHost )
         rtcc.initialize();
+      },
+
+      defineCallListenersHost = function(hostCall) {
+        hostCall.on('active', function() {
+          $('#video-container').fadeIn(3000);
+        });
       },
 
       init = function() {
@@ -73,7 +86,6 @@ $(document).on('ready page:load', function() {
       init();
 
     }
-
 
 //IF YOU ARE A CAMERA
     else if (CAMERA) {
@@ -116,6 +128,7 @@ $(document).on('ready page:load', function() {
     }
 
 //IF YOU ARE A VIEWER:
+
     else {
       $('#connection_status').html("Connecting as viewer!!");
       rtcc = {},
@@ -129,9 +142,20 @@ $(document).on('ready page:load', function() {
       }
       initializeRtcc= function() {
         rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+           window.open(downloadUrl);
+       });
+
         rtcc.on('plugin.missing', function(downloadUrl) {
             window.open(downloadUrl);
         });
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
@@ -144,12 +168,17 @@ $(document).on('ready page:load', function() {
 
         rtcc.on('call.create', defineCallListenersViewer);
 
+
+
+
+
         rtcc.initialize();
       },
       defineCallListenersViewer = function(viewer_call) {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
+          $('#video-container').fadeIn(3000);
         });
       },
       initViewer = function() {

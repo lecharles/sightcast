@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
+  root :to => 'pages#home'
 
-  root 'tests#index'
-  get 'tests/index'
+  get 'pages/index'
 
   get 'tokens/get_token'
 
   resources :user_sessions
   resources :users
+  resources :password_resets
+  resources :sightcasts
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
-
-  resources :password_resets
-
-  resources :sightcasts
 
 
   # The priority is based upon order of creation: first created -> highest priority.
