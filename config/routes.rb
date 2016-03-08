@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+
   get 'tests/index'
 
   get 'tokens/get_token'
@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :sightcasts
 
+
+
   root "pages#home"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

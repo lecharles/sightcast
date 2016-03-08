@@ -24,6 +24,11 @@ $(document).on('ready page:load', function() {
       initializeRtcc = function(token) {
         rtcc = new Rtcc(APP_ID, token, 'internal', options);
 
+
+  rtcc.on('plugin.missing', function(downloadUrl) {
+             window.open(downloadUrl);
+         });
+
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as host!!');
           $('#create_meeting_point').css('display', 'block');
@@ -139,6 +144,10 @@ $(document).on('ready page:load', function() {
       }
       initializeRtccViewer = function() {
         rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+           window.open(downloadUrl);
+       });
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');

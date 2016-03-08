@@ -1,3 +1,5 @@
+<div class="container">
+
 <script type="text/javascript">
   <% if current_user %>
     var username = "<%= current_user.username %>"; // for string
@@ -12,17 +14,20 @@
   #video-container {
       width: 640px;
       height: 360px;
-      border: 1px solid black;
+      border: 10px solid pink;
       background: #0074bc;
       margin-top: 20px;
       margin: 0 auto;
+      border-radius:5px;
+      margin-bottom: 35px;
+      margin-top:35px;
   }
 </style>
 
 <div class = "show_sightcast">
 
-  <h1><%= @sightcast.title %></h1>
-  <h3><%= @sightcast.description %></h3>
+  <h1>Room Name:<%= @sightcast.title %></h1>
+  <h3>Room Description:<%= @sightcast.description %></h3>
 
 
   <%= form_for @sightcast do |f| %>
@@ -31,53 +36,55 @@
     </div>
   <% end %>
 
+
+
   <div id="video-container"></div>
 
 
-  <div class="container">
 
-    <div class="row well">
-      <div id="error" style="display:none;" class="bg-danger" >
-        <h4>An error occurred:</h4>
-        <div id="error-content">This is the error</div>
+  <div class="col-md-6 col-sm-offset-3">
+        <div class="row well">
+            <div id="error" style="display:none;" class="bg-danger" >
+              <h4>An error occurred:</h4>
+              <div id="error-content">This is the error</div>
+            </div>
 
+            <div class="center-block" style="float:none;width:500px">
+                <h4 id="connection_status"></h4>
+            </div>
+        </div>
+
+
+
+      <div class="row well" id="create_meeting_point"  style="display:none;">
+        <div class="center-block" style="float:none;">
+            <h4> To create a multi-party call,  create a meetingPoint.</h4><br/>
+            <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
+        </div>
       </div>
-      <div class="center-block" style="float:none;width:500px">
-          <h4 id="connection_status"></h4>
-      </div>
-    </div>
-
-    <div class="row well" id="create_meeting_point"  style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-          <h4> To create a multi-party call,  create a meetingPoint.</h4><br/>
-          <button  class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
 
 
-      </div>
-    </div>
     <div class="row well" id="host_meeting_point" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-
+      <div class="center-block" style="float:none;">
         <h4>  Now that you have created a meeting point, click host</h4>
-        <button  class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
-
-
+        <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
         <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
         <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
-
       </div>
     </div>
-    <div class="row well" id="join_meeting_point" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
 
+
+
+
+    <div class="row well" id="join_meeting_point" style="display:none;">
+      <div class="center-block" style="float:none;">
           <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
           <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
-
           <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
-
       </div>
     </div>
 
   </div>
+</div>
 
 </div>

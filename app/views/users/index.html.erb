@@ -1,28 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
+<div class="container">
+  <h1>SightCast Users</h1>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <%= user.email %>
+      <%= link_to 'Show', user %>
+      <%= link_to 'Edit', edit_user_path(user) %>
+      <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>
+
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</div>

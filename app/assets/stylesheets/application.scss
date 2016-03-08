@@ -14,8 +14,16 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ body {
+  background-color:white;
+ }
+
  textarea {
     resize: none;
+}
+#panelsupport{
+  padding:0px;
+
 }
 
  #landing {
@@ -29,6 +37,7 @@
 
  }
 
+
   #sightcastnewform {
     padding:20px;
   }
@@ -41,6 +50,7 @@
   }
   #sightcastnav:hover {
     opacity:0.8;
+    background-color:#ed0744;
   }
   #sightcastnav a {
     color:white;
@@ -49,10 +59,16 @@
 
   }
 
+  .panel-default {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+    box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+  }
+
  .navbar {
    padding:0px;
    margin-bottom:0px;
-   background-color: #EFECE2;
+   background-color: white;
 
  }
 
@@ -72,14 +88,21 @@
  font-weight:lighter;
  }
 
+
+
  #sightcastbutton {
    background-color:#FF0048;
    color:white;
    letter-spacing: 1px;
-   font-weight:lighter;
+   border: 1px solid #5B1023;
    padding:10px 15px;
 
  }
+
+ #sightcastbutton:hover {
+  background-color:#ed0744;
+ }
+
 
  .btn-xlarge:hover {
    color:#EFECE2;
@@ -89,7 +112,7 @@
 
 
 
- .footer1 {
+ .footer {
    background-color: #81D7CD;
    color: white;
    margin-top: 40px;

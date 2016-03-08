@@ -27,7 +27,7 @@
      <%= f.label :password_confirmation %><br />
      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Re-enter your password", autofocus: true %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" style="padding: 10px 10px;">
+    <%= f.submit id: "sightcastbutton", class: "btn btn-primary" %>
   </div>
 <% end %>
