@@ -82,7 +82,8 @@ textarea {
   font-weight: lighter;
   letter-spacing: 3px;
   font-size: 55px;
-}
+  }
+
 
 #loginnew {
   background:linear-gradient(
@@ -150,6 +151,7 @@ textarea {
   padding: 4px;
 }
 
+
 .btn-xlarge {
   font-size: 1.7em;
   background-color:#FF0048 ;
@@ -157,6 +159,11 @@ textarea {
   font-family:sans-serif;
   letter-spacing: 1px;
   font-weight:lighter;
+}
+
+.btn-xlarge:hover {
+  color:#EFECE2 ;
+  background-color:#B13756 ;
 }
 
 #sightcastbutton {
@@ -172,10 +179,6 @@ textarea {
  background-color:#ed0744 ;
 }
 
-.btn-xlarge:hover {
-  color:#EFECE2 ;
-  background-color:#B13756 ;
-}
 
 .footer {
  background-color: #000;
@@ -184,4 +187,22 @@ textarea {
  position: fixed;
  bottom: 0;
  width: 100%;
+}
+
+ // this is for video
+
+  #video-container {
+       width: 640px;
+       height: 360px;
+       border: 2px solid white;
+       background: #0074bc;
+       margin-top: 20px;
+       margin: 0 auto;
+       border-radius:5px;
+       margin-bottom: 35px;
+       margin-top:35px;
+       display:none;
+       -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+       -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+       box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
 }

@@ -9,8 +9,10 @@ $(document).on('ready page:load', function() {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 
     AUTH_URL = 'http://localhost:3000/tokens/get_token?uid=';
+
+// HOST CODE HOST CODE HOST CODE HOST CODE HOST CODE
     if (CASTER) {
-      $('#connection_status').html("Connecting as host!!");
+      $('#connection_status').html("Step 1.Connecting....");
       // Define the optional parameters
       rtcc = {},
       meetingPoint = "",
@@ -23,6 +25,9 @@ $(document).on('ready page:load', function() {
       },
       initializeRtcc = function(token) {
         rtcc = new Rtcc(APP_ID, token, 'internal', options);
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
 
 
   rtcc.on('plugin.missing', function(downloadUrl) {
@@ -30,7 +35,7 @@ $(document).on('ready page:load', function() {
          });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html('Connection Status: Connected as host!!');
+          $('#connection_status').html(' Step 1.Connected as host.');
           $('#create_meeting_point').css('display', 'block');
         });
 
@@ -44,6 +49,8 @@ $(document).on('ready page:load', function() {
         rtcc.on('meetingpoint.create.success', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
+          $('#invite_cameras').css('display', 'block');
+          $('#camera_people').css('display', 'block');
           $('#sightcast_meeting_point_id').val(meetingPoint.id);
           $('#edit_sightcast_' + SC_ID).submit();
         });
@@ -51,8 +58,16 @@ $(document).on('ready page:load', function() {
         rtcc.on('meetingpoint.host.success', function() {
           meetingPoint.autoaccept_mode();
         });
+        rtcc.on('call.create', defineCallListenersHost )
         rtcc.initialize();
       },
+
+      defineCallListenersHost = function(hostCall) {
+        hostCall.on('active', function() {
+          $('#video-container').fadeIn(3000);
+        });
+      },
+
       getToken = function(uid, callback) {
         var xhr;
         if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -104,6 +119,8 @@ $(document).on('ready page:load', function() {
 
       },
 
+
+
       init = function() {
         getToken(UID_USER);
       },
@@ -131,6 +148,8 @@ $(document).on('ready page:load', function() {
 
     }
 
+// VIEWER CODE VIEWER CODE VIEWER CODE VIEWER CODE VIEWER CODE
+
     else {
       $('#connection_status').html("Connecting as viewer!!");
       rtcc = {},
@@ -148,6 +167,16 @@ $(document).on('ready page:load', function() {
         rtcc.on('plugin.missing', function(downloadUrl) {
            window.open(downloadUrl);
        });
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
@@ -160,12 +189,17 @@ $(document).on('ready page:load', function() {
 
         rtcc.on('call.create', defineCallListenersViewer);
 
+
+
+
+
         rtcc.initialize();
       },
       defineCallListenersViewer = function(viewer_call) {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
+          $('#video-container').fadeIn(3000);
         });
       },
       initViewer = function() {
@@ -188,9 +222,27 @@ $(document).on('ready page:load', function() {
 
     });
   });
+  $('#add_camera').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'json',
+      data: $(this).serialize()
+
+    }).done(function(data) {
+      $('#add_camera_message').html(data.message);
+      $('#camera_people_list').html('');
+      for (var i = 0; i< data.cameras.length; i++) {
+        $('#camera_people_list').append($('<li />').append(data.cameras[i].username));
+      }
+    });
+  });
 
 });
 
+
+// NEED TO EXPLAIN THIS BETTER
 
 function isCaster(sightcaster) {
   CASTER = sightcaster;
