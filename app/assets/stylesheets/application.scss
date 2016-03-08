@@ -36,6 +36,18 @@ textarea {
   height: 550px;
 }
 
+#sightcastnew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('concert.jpg');
+  background-size: cover;
+  height: 295px;
+
+
+
+}
+
 
  #sightcastnewform {
    padding:20px;
