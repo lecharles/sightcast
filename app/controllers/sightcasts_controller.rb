@@ -17,6 +17,30 @@ class SightcastsController < ApplicationController
         @sightcaster = true
       end
     end
+    if params[:username]
+      @new_camera = User.where(username: params[:username]).first
+      if @new_camera
+        if @sightcast.users.exists?(@new_camera.id)
+          message = "User is already a cameraperson for this sightcast."
+        else
+          if @sightcast.users << @new_camera
+            message =  "Camera added."
+          else
+            message = "Error adding camera to database."
+          end
+
+        end
+
+      else
+        message = "Username not found in database"
+      end
+    end
+
+    respond_to do |format|
+      format.html
+      msg = { :cameras => @sightcast.users, :message => message }
+      format.json { render :json => msg }
+    end
   end
 
   def create
