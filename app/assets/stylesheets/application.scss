@@ -68,6 +68,26 @@ textarea {
   font-size: 40px;
 }
 
+#join-usernew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('concert.jpg');
+  background-size: cover;
+  height: 295px;
+}
+
+#join-usernew h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 55px;
+}
+
+#join-form {
+  padding:20px;
+}
+
 #editform {
   padding:20px;
 }
