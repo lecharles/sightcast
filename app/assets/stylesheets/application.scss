@@ -36,6 +36,16 @@ textarea {
   height: 550px;
 }
 
+#pages-bgnd {
+    background:linear-gradient(
+          rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+          ), asset-url('mobile.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
+
 #sightcastnew {
   background:linear-gradient(
         rgba(0,0,0,0.5),
