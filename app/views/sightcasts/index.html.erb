@@ -1,6 +1,3 @@
-
-
-
 <div class="container">
   <h1>ALL THE SIGHTCASTS</h1>
     <div class = 'sightcast'>
@@ -14,7 +11,6 @@
       <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
       <% if current_user == sightcast.host %>
         <p><a href = 'sightcasts/<%= sightcast.id %>/'>Start Sightcast</a></p>
-
       <% end %>
     </div>
   </div>

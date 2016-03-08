@@ -14,99 +14,181 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- body {
-  background-color:white;
- }
 
- textarea {
-    resize: none;
-}
-#panelsupport{
-  padding:0px;
-
+body {
+ background-color: white;
 }
 
- #landing {
+textarea {
+   resize: none;
+}
 
-   background:linear-gradient(
-         rgba(0,0,0,0.5),
-         rgba(0,0,0,0.5)
-         ), asset-url('fontainebleau.jpg');
-   background-size: cover;
-   height: 550px;
+#panelsupport {
+ padding: 0px;
+}
 
+#landing {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('fontainebleau.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+#sightcastnew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('concert.jpg');
+  background-size: cover;
+  height: 295px;
+}
+
+#sightcastnew h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 55px;
+}
+
+#editaccount {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('editacct.jpg');
+  background-size: cover;
+  height: 400px;
+}
+
+#editaccount h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+#join-usernew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('concert.jpg');
+  background-size: cover;
+  height: 295px;
+}
+
+#join-usernew h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 55px;
+}
+
+#loginnew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('perspective.jpg');
+  background-size: cover;
+  height: 405px;
+}
+
+#loginnew h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 45px;
+}
+
+#loginform {
+  padding:20px;
+}
+
+#join-form {
+  padding:20px;
+}
+
+#editform {
+  padding:20px;
+}
+
+ #sightcastnewform {
+   padding:20px;
  }
 
-
-  #sightcastnewform {
-    padding:20px;
-  }
-
-  #sightcastnav {
-    background-color:#FF0048;
-    opacity:0.8;
-    border-radius:5px;
-
-  }
-  #sightcastnav:hover {
-    opacity:0.8;
-    background-color:#ed0744;
-  }
-  #sightcastnav a {
-    color:white;
-
-  }
-
-  .panel-default {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-    box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-  }
-
- .navbar {
-   padding:0px;
-   margin-bottom:0px;
-   background-color: white;
+ #sightcastnav {
+   background-color:#FF0048 ;
+   opacity:0.8;
+   border-radius:5px;
 
  }
-
- .navbar-brand img {
-   height: 40px;
+ #sightcastnav:hover {
+   opacity:0.8;
+   background-color:#ed0744 ;
  }
-
- .navbar-brand {
-   padding: 4px;
- }
- .btn-xlarge {
- font-size: 1.7em;
- background-color:#FF0048;
- color:#EFECE2;
- font-family:sans-serif;
- letter-spacing: 1px;
- font-weight:lighter;
- }
-
-
-
- #sightcastbutton {
-   background-color:#FF0048;
+ #sightcastnav a {
    color:white;
-   letter-spacing: 1px;
-   border: 1px solid #5B1023;
-   padding:10px 15px;
-
  }
 
- #sightcastbutton:hover {
-  background-color:#ed0744;
+ .panel-default {
+   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
  }
 
+.navbar {
+  padding:0px;
+  margin-bottom:0px;
+  background-color: white;
+}
 
- .btn-xlarge:hover {
-   color:#EFECE2;
-   background-color:#B13756;
+.navbar-brand img {
+  height: 40px;
+}
 
- }
+.navbar-brand {
+  padding: 4px;
+}
+
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color:#FF0048 ;
+  color:#EFECE2 ;
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  font-weight:lighter;
+}
+
+.btn-xlarge:hover {
+  color:#EFECE2 ;
+  background-color:#B13756 ;
+}
+
+
+#sightcastbutton {
+  background-color:#FF0048 ;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #5B1023 ;
+  padding:10px 15px;
+
+}
+
+#sightcastbutton:hover {
+ background-color:#ed0744 ;
+}
+
+
+.footer {
+ background-color: #000;
+ color: white;
+ margin-top: 40px;
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+}
+
 
  // this is for video
 
@@ -127,11 +209,3 @@
 
 
    }
-
-
-
- .footer {
-   background-color: #81D7CD;
-   color: white;
-   margin-top: 40px;
- }
