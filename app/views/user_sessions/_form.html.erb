@@ -1,14 +1,14 @@
 <%= form_tag user_sessions_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %><br/>
-    <%= email_field_tag :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
-  </div>
+ <div class="field">
+   <%= label_tag :email %><br/>
+   <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter your email", autofocus: true %>
+ </div>
 
-  <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Login",  id:"sightcastbutton" %>
-  </div>
+ <div class="field">
+   <%= label_tag :password %><br/>
+   <%= password_field_tag :password, nil, class: "form-control" placeholder: "Enter your password", autofocus: true %>
+ </div>
+ <div class="actions">
+   <%= submit_tag "Login", class: "btn btn-primary",  id:"sightcastbutton" %>
+ </div>
 <% end %>
