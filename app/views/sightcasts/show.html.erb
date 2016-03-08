@@ -69,6 +69,37 @@
 =======
       </div>
     </div>
+<<<<<<< .merge_file_Fiennd
+=======
+
+    <div class="row well" id="invite_cameras" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+        <h4>Enter username of cameraperson you wish to invite: </h4>
+        <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
+          <%= text_field_tag :username, params[:username] %>
+          <%= submit_tag "Add Camera Person" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row well" id="camera_people" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+        <div id="add_camera_message">
+
+        </div>
+        <h4>Camera People</h4>
+        <ul id = "camera_people_list">
+          <% @sightcast.users.each do | camera | %>
+            <li><%= camera.username %></li>
+          <% end %>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="row well" id="join_meeting_point" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+>>>>>>> .merge_file_vvItNK
 
     <div class="row well" id="invite_cameras" style="display:none;">
       <div class="center-block" style="float:none;width:500px">

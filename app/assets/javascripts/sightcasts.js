@@ -171,7 +171,12 @@ $(document).on('ready page:load', function() {
         rtcc.on('plugin.missing', function(downloadUrl) {
             window.open(downloadUrl);
         });
-        
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
