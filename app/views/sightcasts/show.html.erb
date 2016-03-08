@@ -4,10 +4,18 @@
     getUsername(username);// this is your function in .js file
     isCaster(<%= @sightcaster %>);
   <% end %>
+
+  <% if @sightcast.meeting_point_id %>
+    var meeting_point_id = "<%= @sightcast.meeting_point_id %>"
+    getMeetingPointId(meeting_point_id)
+  <% end %>
+    isCamera(<%= @camera %>);
+
   getCasterName("<%= @caster %>");
   getAppId("<%= ENV["application_identifier"] %>");
   getSightCastId(<%= @sightcast.id %>)
 </script>
+
 <style type="text/css">
   #video-container {
       width: 640px;
@@ -55,12 +63,12 @@
 
       </div>
     </div>
+
     <div class="row well" id="host_meeting_point" style="display:none;">
       <div class="center-block" style="float:none;width:500px">
 
         <h4>  Now that you have created a meeting point, click host</h4>
         <button  class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
-
 
         <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
         <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
@@ -80,9 +88,10 @@
 
     <div class="row well" id="camera_people" style="display:none;">
       <div class="center-block" style="float:none;width:500px">
-        <div id="add_camera_message">
 
+        <div id="add_camera_message">
         </div>
+
         <h4>Camera People</h4>
         <ul id = "camera_people_list">
           <% @sightcast.users.each do | camera | %>
@@ -102,6 +111,10 @@
           <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
 
       </div>
+    </div>
+
+    <div id="mobile-camera" style="display:none;">
+      <a id="mobile-camera-id" href="sightcall://?mode=joininternal&appid=5vx1l3kvxfd3&token=XXXXXXXXXXXXXXXX&mpid=YYYYYYYYYYYYYYYYY&displayname=ZZZCamera1ZZZZ&buttons=019&videoout=rear&videofull=out&videosmall=in">Click here to Film With Your Mobile!</a>
     </div>
 
   </div>

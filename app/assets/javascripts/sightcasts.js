@@ -1,14 +1,7 @@
-var UID_USER = "external";
-var UID_CASTER;
-var CASTER = false;
-var APP_ID;
-var SC_ID;
-
 $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
-
-    AUTH_URL = 'http://localhost:3000/tokens/get_token?uid=';
+//IF YOU ARE A HOST:
     if (CASTER) {
       $('#connection_status').html("Connecting as host!!");
       // Define the optional parameters
@@ -53,56 +46,6 @@ $(document).on('ready page:load', function() {
         });
         rtcc.initialize();
       },
-      getToken = function(uid, callback) {
-        var xhr;
-        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-          xhr = new XMLHttpRequest();
-        }
-
-        else {  // code for IE6, IE5
-          xhr = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            response = xhr.responseText;
-            try {
-              responseJson = JSON.parse(response);
-            }
-            catch(e) {
-              // ERRORS
-              $('#error-content').html(e.message + '<br />' + e.stack + '<br />Response: ' + response);
-              $('#error').css('display', 'block');
-            }
-
-            if (responseJson.error) {
-              // ERRORS
-              $('#error-content').html('error code:' + responseJson.error + '<br />Description:' + responseJson.error_description);
-              $('#error').css('display', 'block');
-            }
-
-            else {
-              token = responseJson.data;
-              if (typeof callback === "function") {
-                callback(token);
-              }
-              else {
-                initializeRtcc(token);
-              }
-            }
-          }
-
-          else if (xhr.readyState === 4 & xhr.status !== 200) {
-            response = xhr.responseText;
-            console.log(response);
-            // JSON
-            $('#error-content').html(response);
-            $('#error').css('display', 'block');
-          }
-        };
-        xhr.open('GET', AUTH_URL + uid, true);
-        xhr.send();
-
-      },
 
       init = function() {
         getToken(UID_USER);
@@ -131,6 +74,48 @@ $(document).on('ready page:load', function() {
 
     }
 
+
+//IF YOU ARE A CAMERA
+    else if (CAMERA) {
+      $('#connection_status').html("Connecting as CAMERA!!");
+      rtcc = {},
+      meetingPoint = "",
+      options = {
+          debugLevel : 1,
+          displayName : UID_USER,
+          defaultStyle: true,
+          legacy: false
+      },
+      initializeRtcc = function(token) {
+        rtcc = new Rtcc(APP_ID, token, 'internal', options);
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        rtcc.on('cloud.sip.ok', function() {
+          $('#connection_status').html('Connection Status: Connected as Camera!!');
+          $('#mobile-camera-id').attr('href', 'sightcall://?mode=joininternal&appid=' + APP_ID + '&token=' + token + '&mpid=' + MPID + '&displayname=' + UID_USER + '&buttons=019&videoout=rear&videofull=out&videosmall=in');
+          $('#mobile-camera').css('display', 'block');
+        });
+
+        rtcc.on('cloud.loggedastheotheruser', function() {
+          getToken(UID_USER, function (token){
+              rtcc.setToken(token);
+              rtcc.authenticate(1);
+          });
+        });
+
+        rtcc.initialize();
+      },
+
+      initCamera = function() {
+        getToken(UID_USER);
+      };
+
+      initCamera();
+    }
+
+//IF YOU ARE A VIEWER:
     else {
       $('#connection_status').html("Connecting as viewer!!");
       rtcc = {},
@@ -142,7 +127,7 @@ $(document).on('ready page:load', function() {
         container : 'video-container',
         legacy: false
       }
-      initializeRtccViewer = function() {
+      initializeRtcc= function() {
         rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
         rtcc.on('plugin.missing', function(downloadUrl) {
             window.open(downloadUrl);
@@ -205,20 +190,3 @@ $(document).on('ready page:load', function() {
   });
 
 });
-
-
-function isCaster(sightcaster) {
-  CASTER = sightcaster;
-}
-function getUsername(username) {
-  UID_USER = username;
-}
-function getCasterName(castername) {
-  UID_CASTER = castername;
-}
-function getAppId(appId) {
-  APP_ID = appId;
-}
-function getSightCastId(sightCastId) {
-  SC_ID = sightCastId;
-}
