@@ -84,6 +84,26 @@ textarea {
   font-size: 55px;
 }
 
+#loginnew {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('perspective.jpg');
+  background-size: cover;
+  height: 405px;
+}
+
+#loginnew h1 {
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 45px;
+}
+
+#loginform {
+  padding:20px;
+}
+
 #join-form {
   padding:20px;
 }
