@@ -25,6 +25,9 @@ $(document).on('ready page:load', function() {
       },
       initializeRtcc = function(token) {
         rtcc = new Rtcc(APP_ID, token, 'internal', options);
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
 
 
   rtcc.on('plugin.missing', function(downloadUrl) {
@@ -46,6 +49,8 @@ $(document).on('ready page:load', function() {
         rtcc.on('meetingpoint.create.success', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
+          $('#invite_cameras').css('display', 'block');
+          $('#camera_people').css('display', 'block');
           $('#sightcast_meeting_point_id').val(meetingPoint.id);
           $('#edit_sightcast_' + SC_ID).submit();
         });
@@ -162,6 +167,16 @@ $(document).on('ready page:load', function() {
         rtcc.on('plugin.missing', function(downloadUrl) {
            window.open(downloadUrl);
        });
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        rtcc.on('plugin.missing', function(downloadUrl) {
+            window.open(downloadUrl);
+        });
+
+        development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
@@ -205,6 +220,22 @@ $(document).on('ready page:load', function() {
       dataType: 'html',
       data: $(this).serialize()
 
+    });
+  });
+  $('#add_camera').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'json',
+      data: $(this).serialize()
+
+    }).done(function(data) {
+      $('#add_camera_message').html(data.message);
+      $('#camera_people_list').html('');
+      for (var i = 0; i< data.cameras.length; i++) {
+        $('#camera_people_list').append($('<li />').append(data.cameras[i].username));
+      }
     });
   });
 

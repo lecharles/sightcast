@@ -82,7 +82,8 @@ textarea {
   font-weight: lighter;
   letter-spacing: 3px;
   font-size: 55px;
-}
+  }
+
 
 #loginnew {
   background:linear-gradient(
@@ -165,7 +166,6 @@ textarea {
   background-color:#B13756 ;
 }
 
-
 #sightcastbutton {
   background-color:#FF0048 ;
   color: white;
@@ -189,7 +189,6 @@ textarea {
  width: 100%;
 }
 
-
  // this is for video
 
   #video-container {
@@ -206,6 +205,4 @@ textarea {
        -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-
-
-   }
+}
