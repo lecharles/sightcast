@@ -59,6 +59,18 @@ textarea {
   height: 100%;
 }
 
+#loginpage {
+  background:asset-url('perspective.jpg')no-repeat center center fixed;
+  background-size:cover;
+
+}
+
+#loginpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
+
+}
 
 #sightcastnew {
   background:linear-gradient(
@@ -67,6 +79,18 @@ textarea {
         ), asset-url('concert.jpg');
   background-size: cover;
   height: 295px;
+}
+
+#sightcastnewbody {
+  background:asset-url('concert.jpg')no-repeat center center fixed;
+  background-size:cover;
+
+}
+
+#sightcastnewpanel {
+  background-color:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
 }
 
 #sightcastnew h1 {
@@ -199,13 +223,50 @@ textarea {
 
 #sightcastwaitdiv {
   background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('fireworks2.jpg');
-      background-size: cover;
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+        );
       height:370px;
+      border:none;
 }
 
+
+
+
+#editaccountbody {
+  background:asset-url('tropical2.jpg') no-repeat center center fixed;
+
+}
+
+#editaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+
+}
+
+#usersignuppanel {
+    background:rgba(0, 0, 0, 0.6);
+    color:white;
+    border:none;
+
+}
+
+#usersignupbody {
+  background:asset-url('looker.jpg') no-repeat center center fixed;
+  background-size:cover;
+
+
+}
+
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 36e3600da5306479aeb46fe485edf4ce51ad9f93
 #sightcastwaitdiv h1 {
   color: #EFECE2;
   font-weight: lighter;
@@ -275,14 +336,14 @@ textarea {
   #video-container {
        width: 640px;
        height: 360px;
-       border: 2px solid white;
+       border: none;
        background: #0074bc;
        margin-top: 20px;
        margin: 0 auto;
        border-radius:5px;
-       margin-bottom: 35px;
+       margin-bottom: 65px;
        margin-top:35px;
-       display:none;
+       display:block;
        -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
