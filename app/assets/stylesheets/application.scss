@@ -249,13 +249,18 @@ font-size: 60px;
 
 
 .footer {
- background-color: #000;
- color: #DCD9D9;
+ background-color: #FFFFFF;
  margin-top: 40px;
- position: fixed;
  bottom: 0;
+ position: fixed;
  width: 100%;
+ height: 50px;
 }
+
+.footer a {
+  color: #F60448;
+}
+
 
  // this is for video
 
