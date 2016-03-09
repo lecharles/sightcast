@@ -1,7 +1,8 @@
 <div id="sightcastnewform" class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= form_for @sightcast do |f| %>
+        <h1>Create Your SightCast!</h1>
+          <%= form_for @sightcast do |f| %>
           <% if @sightcast.errors.any? %>
             <div id = "error_explanation">
               <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -40,6 +41,6 @@
 <div class="col-md-6">
   <div class="panel panel-default" style="margin-top: 20px" id="sightcastnew">
     <div class="panel-body">
-      <h1>BE A PART OF THE ACTION, CREATE A SCREEN CAST!</h1>
+      <h1>BE A PART OF THE ACTION, CREATE YOUR SightCast!</h1>
     </div>
   </div>
