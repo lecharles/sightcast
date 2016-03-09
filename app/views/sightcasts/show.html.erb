@@ -1,6 +1,5 @@
 <body >
 <div class="container">
-
   <script type="text/javascript">
     <% if current_user %>
       var username = "<%= current_user.username %>"; // for string
@@ -37,16 +36,17 @@
 
     <div class="col-md-3 col-md-offset-1">
       <div class="row well">
-          <div id="error" style="display:none;" class="bg-danger" >
-            <h4>An error occurred:</h4>
-            <div id="error-content">This is the error</div>
-          </div>
-
-          <div class="center-block" >
-              <h4 style="text-align: center" id="connection_status"></h4>
-          </div>
+        <div id="error" style="display:none;" class="bg-danger" >
+          <h4>An error occurred:</h4>
+        <div id="error-content">This is the error</div>
       </div>
     </div>
+
+    <div class="center-block" >
+      <h4 style="text-align: center" id="connection_status"></h4>
+    </div>
+</div>
+
 
     <div class="row well" id="create_meeting_point"  style="display:none;">
       <div class="center-block" style="float:none;">
@@ -66,6 +66,8 @@
         </div>
       </div>
     </div>
+  </div>
+
 
 
     <div class="row well" id="invite_cameras" style="display:none;">
@@ -90,10 +92,8 @@
     </div>
 
     <div class="row well" id="camera_people" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-        <div id="add_camera_message">
-
-        </div>
+      <div class="center-block" style="float: none; width: 500px">
+        <div id="add_camera_message"></div>
         <h4>Camera People</h4>
         <ul id = "camera_people_list">
           <% @sightcast.users.each do | camera | %>
@@ -122,31 +122,10 @@
       </div>
     </div>
 
-    <div class="row well" id="camera_people" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-        <div id="add_camera_message">
-        </div>
-        <h4>Camera People</h4>
-        <ul id = "camera_people_list">
-          <% @sightcast.users.each do | camera | %>
-            <li><%= camera.username %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row well" id="join_meeting_point" style="display:none;">
-      <div class="center-block" style="float:none;">
-        <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
-        <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
-        <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
-      </div>
-    </div>
 
     <div id="mobile-camera" style="display:none;">
       <a id="mobile-camera-id" href="sightcall://?mode=joininternal&appid=5vx1l3kvxfd3&token=XXXXXXXXXXXXXXXX&mpid=YYYYYYYYYYYYYYYYY&displayname=ZZZCamera1ZZZZ&buttons=019&videoout=rear&videofull=out&videosmall=in">Click here to Film With Your Mobile!</a>
     </div>
 
   </div>
-
 </div>

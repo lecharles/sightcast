@@ -36,6 +36,16 @@ textarea {
   height: 550px;
 }
 
+#pages-bgnd {
+    background:linear-gradient(
+          rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+          ), asset-url('mobile.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
+
 #sightcastnew {
   background:linear-gradient(
         rgba(0,0,0,0.5),
@@ -58,7 +68,7 @@ textarea {
         rgba(0,0,0,0.5)
         ), asset-url('editacct.jpg');
   background-size: cover;
-  height: 400px;
+  height: 445px;
 }
 
 #editaccount h1 {
@@ -206,3 +216,45 @@ textarea {
        -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
 }
+
+
+
+.navbar-toggle.collapsed {
+  .top-bar {
+     transform: rotate(0);
+      background-color: #FF0048;
+  }
+  .middle-bar {
+    opacity: 1;
+    background-color: #FF0048;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+    background-color: #FF0048;
+   }
+ }
+
+ .navbar-toggle {
+   border: none;
+   background: transparent !important;
+
+   &:hover {
+     background: transparent !important;
+   }
+
+   .icon-bar {
+     width: 22px;
+     transition: all 0.2s;
+   }
+   .top-bar {
+     transform: rotate(45deg);
+     transform-origin: 10% 10%;
+   }
+   .middle-bar {
+     opacity: 0;
+   }
+   .bottom-bar {
+     transform: rotate(-45deg);
+     transform-origin: 10% 90%;
+   }
+ }
