@@ -16,7 +16,8 @@
 
 
 body {
- background-color: white;
+ background-color: #FAF9F9;
+ // margin-bottom: 200px;
 }
 
 textarea {
@@ -214,14 +215,20 @@ font-size: 60px;
 
 .footer {
  background-color: #000;
- color: white;
+ color: #DCD9D9;
  margin-top: 40px;
  position: fixed;
  bottom: 0;
  width: 100%;
 }
 
+<<<<<<< HEAD
 
+=======
+.footer a {
+ color: #DCD9D9;
+ }
+>>>>>>> footer
 
  // this is for video
 
@@ -281,4 +288,26 @@ font-size: 60px;
      transform: rotate(-45deg);
      transform-origin: 10% 90%;
    }
+ }
+
+
+
+
+ @font-face {
+     font-family: 'si';
+     src: url('PATH_TO/socicon.eot');
+     src: url('PATH_TO/socicon.eot?#iefix') format('embedded-opentype'),
+          url('PATH_TO/socicon.woff') format('woff'),
+          url('PATH_TO/socicon.ttf') format('truetype'),
+          url('PATH_TO/socicon.svg#icomoonregular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+     @font-face {
+         font-family:si;
+         src: url(PATH_TO/socicon.svg) format(svg);
+     }
  }
