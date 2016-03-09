@@ -168,7 +168,7 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
-      $('#connection_status').html("Connecting as viewer!!");
+      $('#connection_status').html("Connecting...");
       rtcc = {},
       meetingPointAttendee = "",
       options = {
