@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
@@ -9,6 +9,7 @@
       <div class="panel-body">
       <h1>Profile:</h1>
         <p>
+          <%= image_tag @user.avatar.url(:thumb) %>
           <strong>Email:</strong>
           <%= @user.email %>
         </p>
