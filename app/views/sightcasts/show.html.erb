@@ -1,68 +1,115 @@
 <body >
 <div class="container">
 
-<script type="text/javascript">
-  <% if current_user %>
-    var username = "<%= current_user.username %>"; // for string
-    getUsername(username);// this is your function in .js file
-    isCaster(<%= @sightcaster %>);
-  <% end %>
-  getCasterName("<%= @caster %>");
-  getAppId("<%= ENV["application_identifier"] %>");
-  getSightCastId(<%= @sightcast.id %>)
-</script>
+  <script type="text/javascript">
+    <% if current_user %>
+      var username = "<%= current_user.username %>"; // for string
+      getUsername(username);// this is your function in .js file
+      isCaster(<%= @sightcaster %>);
+    <% end %>
+
+    <% if @sightcast.meeting_point_id %>
+      var meeting_point_id = "<%= @sightcast.meeting_point_id %>"
+      getMeetingPointId(meeting_point_id)
+    <% end %>
+      isCamera(<%= @camera %>);
+
+    getCasterName("<%= @caster %>");
+    getAppId("<%= ENV["application_identifier"] %>");
+    getSightCastId(<%= @sightcast.id %>)
+  </script>
+
+  <div class = "show_sightcast">
+
+    <h1>Room Name:<%= @sightcast.title %></h1>
+    <h3>Room Description:<%= @sightcast.description %></h3>
+
+    <%= form_for @sightcast do |f| %>
+      <div class = "field">
+        <%= f.hidden_field :meeting_point_id %>
+      </div>
+    <% end %>
 
 
-<div class = "show_sightcast">
-
-  <h1>Room Name:<%= @sightcast.title %></h1>
-  <h3>Room Description:<%= @sightcast.description %></h3>
-
-
-  <%= form_for @sightcast do |f| %>
-    <div class = "field">
-      <%= f.hidden_field :meeting_point_id %>
+    <div class="col-md-7 col-md-offset-1">
+      <div id="video-container"></div>
     </div>
-  <% end %>
 
+    <div class="col-md-3 col-md-offset-1">
+      <div class="row well">
+          <div id="error" style="display:none;" class="bg-danger" >
+            <h4>An error occurred:</h4>
+            <div id="error-content">This is the error</div>
+          </div>
 
-  <div class="col-md-7 col-md-offset-1">
-    <div id="video-container"></div>
-
-</div>
-
-<div class="col-md-3 col-md-offset-1">
-  <div class="row well">
-      <div id="error" style="display:none;" class="bg-danger" >
-        <h4>An error occurred:</h4>
-        <div id="error-content">This is the error</div>
+          <div class="center-block" >
+              <h4 style="text-align: center" id="connection_status"></h4>
+          </div>
       </div>
+    </div>
 
-      <div class="center-block" >
-          <h4 style="text-align: center" id="connection_status"></h4>
+    <div class="row well" id="create_meeting_point"  style="display:none;">
+      <div class="center-block" style="float:none;">
+          <h4 style="text-align: center"> Step 2.</h4><br/>
+          <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
       </div>
-  </div>
+    </div>
 
 
+    <div class="row well" id="host_meeting_point" style="display:none;">
+      <div class="center-block" style="float:none;">
+        <h4 style="text-align: center">Step 3.</h4>
+        <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
+        <div style="display:none;">
+          <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
+          <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
+        </div>
+      </div>
+    </div>
 
-<div class="row well" id="create_meeting_point"  style="display:none;">
-  <div class="center-block" style="float:none;">
-      <h4 style="text-align: center"> Step 2.</h4><br/>
-      <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
-  </div>
-</div>
 
+    <div class="row well" id="invite_cameras" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+        <h4>Enter username of cameraperson you wish to invite: </h4>
+        <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
+          <%= text_field_tag :username, params[:username] %>
+          <%= submit_tag "Add Camera Person" %>
+        <% end %>
+      </div>
+    </div>
 
-<div class="row well" id="host_meeting_point" style="display:none;">
-<div class="center-block" style="float:none;">
-  <h4 style="text-align: center">Step 3.</h4>
-  <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
-  <div style="display:none;">
-  <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
-  <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
-</div>
-</div>
-</div>
+    <div class="row well" id="host_meeting_point" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+
+        <h4>  Now that you have created a meeting point, click host</h4>
+        <button  class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
+
+        <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
+        <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
+      </div>
+    </div>
+
+    <div class="row well" id="camera_people" style="display:none;">
+      <div class="center-block" style="float:none;width:500px">
+        <div id="add_camera_message">
+
+        </div>
+        <h4>Camera People</h4>
+        <ul id = "camera_people_list">
+          <% @sightcast.users.each do | camera | %>
+            <li><%= camera.username %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row well" id="join_meeting_point" style="display:none;">
+       <div class="center-block" style="float:none;width:500px">
+         <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
+         <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
+         <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+       </div>
+     </div>
 
 
     <div class="row well" id="invite_cameras" style="display:none;">
@@ -78,7 +125,6 @@
     <div class="row well" id="camera_people" style="display:none;">
       <div class="center-block" style="float:none;width:500px">
         <div id="add_camera_message">
-
         </div>
         <h4>Camera People</h4>
         <ul id = "camera_people_list">
@@ -86,53 +132,21 @@
             <li><%= camera.username %></li>
           <% end %>
         </ul>
-
       </div>
     </div>
 
     <div class="row well" id="join_meeting_point" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-
-    <div class="row well" id="invite_cameras" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-        <h4>Enter username of cameraperson you wish to invite: </h4>
-        <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
-          <%= text_field_tag :username, params[:username] %>
-          <%= submit_tag "Add Camera Person" %>
-        <% end %>
+      <div class="center-block" style="float:none;">
+        <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
+        <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
+        <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
       </div>
     </div>
 
-    <div class="row well" id="camera_people" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-        <div id="add_camera_message">
-
-        </div>
-        <h4>Camera People</h4>
-        <ul id = "camera_people_list">
-          <% @sightcast.users.each do | camera | %>
-            <li><%= camera.username %></li>
-          <% end %>
-        </ul>
-
-      </div>
+    <div id="mobile-camera" style="display:none;">
+      <a id="mobile-camera-id" href="sightcall://?mode=joininternal&appid=5vx1l3kvxfd3&token=XXXXXXXXXXXXXXXX&mpid=YYYYYYYYYYYYYYYYY&displayname=ZZZCamera1ZZZZ&buttons=019&videoout=rear&videofull=out&videosmall=in">Click here to Film With Your Mobile!</a>
     </div>
 
-    <div class="row well" id="join_meeting_point" style="display:none;">
-      <div class="center-block" style="float:none;width:500px">
-
-
-<div class="row well" id="join_meeting_point" style="display:none;">
-<div class="center-block" style="float:none;">
-    <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
-    <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
-    <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
-</div>
-</div>
+  </div>
 
 </div>
-
-</div>
-
-</div>
-</body>

@@ -9,12 +9,15 @@ class SightcastsController < ApplicationController
   end
 
   def show
-    @sightcaster = false;
+    @sightcaster = false
+    @camera = false
     @sightcast = Sightcast.find(params[:id])
     @caster = @sightcast.host.username
     if current_user
       if current_user == @sightcast.host
         @sightcaster = true
+      elsif @sightcast.users.where(id: current_user.id).length > 0
+        @camera = true
       end
     end
     if params[:username]
