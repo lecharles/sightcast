@@ -6,6 +6,7 @@ var APP_ID;
 var SC_ID;
 var MPID;
 var CAMERA;
+var CAMERA_ARRAY;
 AUTH_URL = 'http://localhost:3000/tokens/get_token?uid=';
 
 
@@ -29,4 +30,7 @@ function getMeetingPointId(meeting_point_id) {
 }
 function isCamera(camera) {
   CAMERA = camera;
+}
+function getCameraArray(cameraArray) {
+  CAMERA_ARRAY = cameraArray;
 }

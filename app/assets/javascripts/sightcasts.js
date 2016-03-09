@@ -4,6 +4,9 @@ $(document).on('ready page:load', function() {
 
 //IF YOU ARE A HOST:
     if (CASTER) {
+      var participants = [];
+      var sightcastCall;
+
       $('#connection_status').html("Step 1.Connecting....");
       // Define the optional parameters
       rtcc = {},
@@ -54,9 +57,43 @@ $(document).on('ready page:load', function() {
         rtcc.initialize();
       },
 
+      function toggleRPiView() {
+        //This is where the piStream Goes
+      }
+
+      function contains(array, obj) {
+         for (var i = 0; i < array.length; i++) {
+             if (array[i] === obj) {
+                 return true;
+             }
+         }
+         return false;
+      }
+
+      function setSightcastControlButtons(participants) {
+        $('#sightcast-control').html(""); //clear each time
+        buttonString = '<button class="center-block btn btn-primary" onclick="toggleRPiView()">RPi</button>';
+        $('#sightcast-control').append(buttonString);
+        for ( var i = 0; i < participants.length; i++ ) {
+          if ( participants[i].displayName === UID_CASTER ) {
+            buttonString = '<button class="center-block btn btn-primary" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          } else if ( contains(CAMERA_ARRAY, participants[i].displayName) ) {
+            buttonString = '<button class="center-block btn btn-primary" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          }
+        }
+      }
+
       defineCallListenersHost = function(hostCall) {
+        sightcastCall = hostCall;
         hostCall.on('active', function() {
           $('#video-container').fadeIn(3000);
+          $('#sightcast-control').css('display', 'block');
+        });
+        hostCall.on('conference.participants', function(allParticipants) {
+          participants = allParticipants.participants;
+          setSightcastControlButtons(participants);
         });
       },
 
