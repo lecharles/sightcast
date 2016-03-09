@@ -64,7 +64,9 @@ $(document).on('ready page:load', function() {
 
       defineCallListenersHost = function(hostCall) {
         hostCall.on('active', function() {
+          $('#sightcastwaitdiv').fadeOut(0);
           $('#video-container').fadeIn(3000);
+
         });
       },
 
@@ -199,7 +201,9 @@ $(document).on('ready page:load', function() {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
+          $('#sightcastwaitdiv').fadeOut(0);
           $('#video-container').fadeIn(3000);
+
         });
       },
       initViewer = function() {
