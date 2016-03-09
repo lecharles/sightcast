@@ -37,10 +37,11 @@
             <div class="col-md-12">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <%= user.email %>
-                  <%= link_to 'Show', user %> |
-                  <%= link_to 'Edit', edit_user_path(user) %> |
-                  <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= image_tag user.avatar.url(:thumb) %>
+                  <%= user.email %><br>
+                  <%= link_to 'Show', user, id: "sightcastbutton-sm", class: "btn btn-primary" %>
+                  <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton-sm", class: "btn btn-primary" %>
+                  <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton-sm", class: "btn btn-primary" %>
                 </div>
               </div>
             </div>
