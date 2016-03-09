@@ -20,13 +20,17 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if current_user %>
+
+        <li><%= link_to current_user.username , user_path(current_user) %></li>
         <li id="sightcastnav"><%= link_to "Create Sightcast", new_sightcast_path %></li>
         <li><%= link_to "Edit Account", edit_user_path(current_user.id) %></li>
         <li><%= link_to "Logout", :logout, method: :post %></li>
 
         <% else %>
-          <li><%= link_to "Register", new_user_path %></li>
+          <li id="sightcastnav"><%= link_to "Register", new_user_path %></li>
           <li><%= link_to "Login", :login %></li>
+
+
         <% end %>
 
         <!-- <li class="dropdown">

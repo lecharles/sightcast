@@ -1,4 +1,4 @@
-<body >
+<body  id="sightcastshowbody" style="padding-bottom:40px;">
 <div class="container">
   <script type="text/javascript">
     <% if current_user %>
@@ -21,10 +21,11 @@
   </script>
 
   <div class = "show_sightcast">
-    <div class="col-md-7 col-sm-offset-1">
+    <div class="col-md-1"></div>
+    <div class="col-md-7 ">
 
-       <h1>Room Name:<%= @sightcast.title %></h1>
-       <h3>Room Description:<%= @sightcast.description %></h3>
+       <h1 id="sightcastindexheader" style="color:white">Room Name:<span style="font-weight:lighter"><%= @sightcast.title %></span</h1>
+       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description:<span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
 
 
        <%= form_for @sightcast do |f| %>
@@ -33,15 +34,17 @@
          </div>
            <% end %>
 
-          <div id="video-container"></div>
-          <div class="panel panel-default" id="sightcastwaitdiv">
+          <div id="video-container" style="margin-top:0px; margin-bottom:20px;"></div>
+          <div class="panel panel-default" id="sightcastwaitdiv" style="margin-bottom:10px;">
             <div class="panel-body">
               <div class="col-md-8">
-              <h1>Hosting is easy as 1,2,3..</h1>
+                <h1>Connecting is easy as 1,2,3..</h1>
               </div>
 
               </div>
             </div>
+
+            <p style="font-size:20px;">Camera people:</p>
             <div id="sightcast-control" style='display:none;'>
            </div>
 
@@ -49,7 +52,7 @@
 
 
       <div class="col-md-3 col-md-offset-1">
-        <div class="panel panel-default" style="margin-bottom:3px;margin-top:20px;">
+        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
           <div class="panel-body">
               <div id="error" style="display:none;" class="bg-danger" >
                 <h4>An error occurred:</h4>
@@ -64,20 +67,20 @@
         </div>
 
 
-        <div class="panel panel-default" style="margin-bottom:3px">
+        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="create_meeting_point"  style="display:none;">
             <div class="center-block" style="float:none;">
               <h4 style="text-align: center"> Step 2.</h4><br/>
-              <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
+              <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Get set..</button>
             </div>
           </div>
         </div>
 
-        <div class="panel panel-default" style="margin-bottom:3px">
+        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="host_meeting_point" style="display:none;">
             <div class="center-block" style="float:none;">
                 <h4 style="text-align: center">Step 3.</h4>
-                <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
+                <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
                 <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
                 <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
@@ -86,7 +89,7 @@
           </div>
         </div>
 
-        <div class="panel panel-default" style="margin-bottom:3px">
+        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="invite_cameras" style="display:none;">
             <div class="center-block" style="float:none;text-align:center;">
               <h4>Enter username of cameraperson you wish to invite: </h4>
@@ -100,7 +103,7 @@
         </div>
 
 
-        <div class="panel panel-default" style="margin-bottom:3px">
+        <!-- <div class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="camera_people" style="display:none;">
             <div class="center-block" style="float:none;width:500px">
                 <div id="add_camera_message"></div>
@@ -112,7 +115,7 @@
                 </ul>
             </div>
           </div>
-        </div>
+        </div> -->
 
       <div class="row well" id="join_meeting_point" style="display:none;">
         <div class="center-block" style="float:none;">
