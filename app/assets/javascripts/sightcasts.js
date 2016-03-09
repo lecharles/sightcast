@@ -24,11 +24,6 @@ $(document).on('ready page:load', function() {
             window.open(downloadUrl);
         });
 
-
-  rtcc.on('plugin.missing', function(downloadUrl) {
-             window.open(downloadUrl);
-         });
-
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html(' Step 1.Connected as host.');
           $('#create_meeting_point').css('display', 'block');
@@ -168,50 +163,51 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
-      $('#connection_status').html("Connecting as viewer!!");
+      $('#connection_status').html("Connecting...");
+
       rtcc = {},
-      meetingPointAttendee = "",
+
       options = {
         debugLevel : 1,
         displayName : "External Viewer",
         defaultStyle: true,
-        container : 'video-container',
+        container: 'video-container',
         legacy: false
-      }
-      initializeRtcc= function() {
-        rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+      },
 
+      initializeRtcc = function() {
+        rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+        // Call if the RtccDriver is not running on the client computer and if the browser is not WebRTC-capable
+        rtcc.onRtccDriverNotStarted = function (downloadUrl) {
+            var answer = confirm('Click OK to download and install the Rtcc client.');
+            if (answer === true) { window.location = downloadUrl; }
+        };
         rtcc.on('plugin.missing', function(downloadUrl) {
            window.open(downloadUrl);
-       });
-
-        rtcc.on('plugin.missing', function(downloadUrl) {
-            window.open(downloadUrl);
         });
 
-        rtcc.on('plugin.missing', function(downloadUrl) {
-            window.open(downloadUrl);
-        });
-
-        development
+        // development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
         });
         rtcc.on('cloud.loggedastheotheruser', function() {
-          getToken(UID_USER, function (token){
-            rtcc.authenticate(1);
-          });
+          rtcc.authenticate(1);
         });
 
         rtcc.on('call.create', defineCallListenersViewer);
 
-
-
-
-
         rtcc.initialize();
       },
+
+      initViewer = function() {
+        initializeRtcc("External Viewer");
+      },
+      joinViewer = function() {
+        var id = $('#meeting_point_id').val();
+        rtcc.joinConfCall(id);
+      },
+
       defineCallListenersViewer = function(viewer_call) {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
@@ -220,13 +216,6 @@ $(document).on('ready page:load', function() {
           $('#video-container').fadeIn(3000);
 
         });
-      },
-      initViewer = function() {
-        initializeRtccViewer();
-      },
-      joinViewer = function() {
-        var id = $('#meeting_point_id').val();
-        rtcc.joinConfCall(id);
       };
       initViewer();
     }
