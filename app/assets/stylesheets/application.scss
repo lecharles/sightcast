@@ -16,7 +16,8 @@
 
 
 body {
- background-color: white;
+ background-color: #FAF9F9;
+ // margin-bottom: 200px;
 }
 
 textarea {
@@ -36,12 +37,25 @@ textarea {
   height: 550px;
 }
 
+#sightcastshowbody {
+  background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+        ), asset-url('tropical2.jpg');
+  background-size: cover;
+}
+
+#sightcastsindexheader a  {
+  font-weight:lighter;
+}
+
 #pages-bgnd {
     background:linear-gradient(
           rgba(0,0,0,0.5),
           rgba(0,0,0,0.5)
-          ), asset-url('mobile.jpg');
+          ), asset-url('sealanding.jpg')no-repeat center center fixed;
   background-size: cover;
+
   height: 100%;
 }
 
@@ -66,7 +80,7 @@ textarea {
   background:linear-gradient(
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ), asset-url('editacct.jpg');
+        ), asset-url('looker.jpg');
   background-size: cover;
   height: 445px;
 }
@@ -92,6 +106,12 @@ textarea {
   font-weight: lighter;
   letter-spacing: 3px;
   font-size: 55px;
+  }
+
+  #hostpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
   }
 
 
@@ -141,11 +161,11 @@ textarea {
    color:white;
  }
 
- .panel-default {
-   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- }
+ // .panel-default {
+ //   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ // }
 
 .navbar {
   padding:0px;
@@ -169,6 +189,7 @@ textarea {
   font-family:sans-serif;
   letter-spacing: 1px;
   font-weight:lighter;
+  border:1px solid #FF336C;
 }
 
 .btn-xlarge:hover {
@@ -176,23 +197,78 @@ textarea {
   background-color:#B13756 ;
 }
 
+#sightcastwaitdiv {
+  background:linear-gradient(
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+        );
+      height:370px;
+}
+
+
+
+
+#editaccountbody {
+  background:asset-url('tropical2.jpg') no-repeat center center fixed;
+
+}
+
+#editaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+
+}
+
+
+
+
+#sightcastwaitdiv h1 {
+color: #EFECE2;
+font-weight: lighter;
+letter-spacing: 3px;
+font-size: 60px;
+}
+
 #sightcastbutton {
-  background-color:#FF0048 ;
+  background-color:#FF336C ;
   color: white;
   letter-spacing: 1px;
-  border: 1px solid #5B1023 ;
+  border: 1px solid #FF336C;
   padding:10px 15px;
 
 }
+
+#control-button {
+  background-color:rgba(0, 0, 0, 0.3) ;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  padding:10px 15px;
+}
+
+#control-button:hover {
+  background-color:rgba(0, 0, 0, 0.5) ;
+
+}
+
+
+
+
 
 #sightcastbutton:hover {
  background-color:#ed0744 ;
 }
 
+#camera_people {
+  margin-top:30px;
+
+}
+
 
 .footer {
  background-color: #000;
- color: white;
+ color: #DCD9D9;
  margin-top: 40px;
  position: fixed;
  bottom: 0;
@@ -209,7 +285,7 @@ textarea {
        margin-top: 20px;
        margin: 0 auto;
        border-radius:5px;
-       margin-bottom: 35px;
+       margin-bottom: 65px;
        margin-top:35px;
        display:none;
        -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
@@ -257,4 +333,26 @@ textarea {
      transform: rotate(-45deg);
      transform-origin: 10% 90%;
    }
+ }
+
+
+
+
+ @font-face {
+     font-family: 'si';
+     src: url('PATH_TO/socicon.eot');
+     src: url('PATH_TO/socicon.eot?#iefix') format('embedded-opentype'),
+          url('PATH_TO/socicon.woff') format('woff'),
+          url('PATH_TO/socicon.ttf') format('truetype'),
+          url('PATH_TO/socicon.svg#icomoonregular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+     @font-face {
+         font-family:si;
+         src: url(PATH_TO/socicon.svg) format(svg);
+     }
  }

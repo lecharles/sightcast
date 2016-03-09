@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     @sightcasts = Sightcast.all
     @users = User.all
   end
+
+  def team
+  end
 end

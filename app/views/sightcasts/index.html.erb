@@ -1,17 +1,21 @@
 <div class="container">
-  <h1>ALL THE SIGHTCASTS</h1>
-    <div class = 'sightcast'>
+    <h1>ALL THE SIGHTCASTS</h1>
+  <div class = 'sightcast'>
       <% @sightcasts.each do | sightcast | %>
-    <div class="col-md-4">
-    <div  class="panel panel-default ">
-      <div class="panel-body">
-      <p><strong>Title: </strong> <%= sightcast.title %></p>
-      <p><strong>Description: </strong> <%= sightcast.description %></p>
-      <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
-      <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-      <% if current_user == sightcast.host %>
-        <p><a href = 'sightcasts/<%= sightcast.id %>/'>Start Sightcast</a></p>
+      <div class="col-md-4">
+        <div  class="panel panel-default" style="height:180px;" >
+          <div class="panel-body">
+          <p><strong>Title: </strong> <%= sightcast.title %></p>
+          <p><strong>Description: </strong> <%= sightcast.description %></p>
+          <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
+          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
+          <% if current_user == sightcast.host %>
+            <p><a href = 'sightcasts/<%= sightcast.id %>/'>Start Sightcast</a></p>
+          <% end %>
+        </div>
+      </div>
+
+      </div>
       <% end %>
     </div>
-  </div>
 </div>
