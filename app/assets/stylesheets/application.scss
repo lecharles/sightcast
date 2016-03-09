@@ -141,11 +141,11 @@ textarea {
    color:white;
  }
 
- .panel-default {
-   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
-   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- }
+ // .panel-default {
+ //   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ // }
 
 .navbar {
   padding:0px;
@@ -176,17 +176,39 @@ textarea {
   background-color:#B13756 ;
 }
 
+#sightcastwaitdiv {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('fireworks2.jpg');
+      background-size: cover;
+      height:370px;
+}
+#sightcastwaitdiv h1 {
+color: #EFECE2;
+font-weight: lighter;
+letter-spacing: 3px;
+font-size: 60px;
+}
+
 #sightcastbutton {
-  background-color:#FF0048 ;
+  background-color:#FF336C ;
   color: white;
   letter-spacing: 1px;
-  border: 1px solid #5B1023 ;
+  border: 1px solid #FF336C;
   padding:10px 15px;
 
 }
 
+
+
 #sightcastbutton:hover {
  background-color:#ed0744 ;
+}
+
+#camera_people {
+  margin-top:30px;
+
 }
 
 
@@ -198,6 +220,8 @@ textarea {
  bottom: 0;
  width: 100%;
 }
+
+
 
  // this is for video
 
