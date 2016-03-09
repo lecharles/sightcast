@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p id="notice"><%= notice %></p>
 
 <div class="container">
   <div class="col-md-6 col-md-offset-3" >
@@ -11,8 +8,10 @@
         <p>
           <%= image_tag @user.avatar.url(:thumb) %>
           <strong>Email:</strong>
-          <%= @user.email %>
+          <%= @user.email %><br>
         </p>
+        <%= link_to 'Edit', edit_user_path(@user), id: "sightcastbutton", class: "btn btn-primary" %>
+        <%= link_to 'Back', users_path, id: "sightcastbutton", class: "btn btn-primary" %>
       </div>
     </div>
   </div>
