@@ -59,6 +59,18 @@ textarea {
   height: 100%;
 }
 
+#loginpage {
+  background:asset-url('perspective.jpg')no-repeat center center fixed;
+  background-size:cover;
+
+}
+
+#loginpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
+
+}
 
 #sightcastnew {
   background:linear-gradient(
@@ -67,6 +79,18 @@ textarea {
         ), asset-url('concert.jpg');
   background-size: cover;
   height: 295px;
+}
+
+#sightcastnewbody {
+  background:asset-url('concert.jpg')no-repeat center center fixed;
+  background-size:cover;
+
+}
+
+#sightcastnewpanel {
+  background-color:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
 }
 
 #sightcastnew h1 {
@@ -203,6 +227,7 @@ textarea {
         rgba(0,0,0,0.3)
         );
       height:370px;
+      border:none;
 }
 
 
@@ -217,6 +242,22 @@ textarea {
   padding-bottom:0px;
   background:rgba(0, 0, 0, 0.6);
   margin-top:30px;
+  border:none;
+  color:white;
+
+}
+
+#usersignuppanel {
+    background:rgba(0, 0, 0, 0.6);
+    color:white;
+    border:none;
+
+}
+
+#usersignupbody {
+  background:asset-url('looker.jpg') no-repeat center center fixed;
+  background-size:cover;
+
 
 }
 
@@ -280,7 +321,7 @@ font-size: 60px;
   #video-container {
        width: 640px;
        height: 360px;
-       border: 2px solid white;
+       border: none;
        background: #0074bc;
        margin-top: 20px;
        margin: 0 auto;
