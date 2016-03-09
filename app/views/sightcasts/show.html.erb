@@ -1,6 +1,5 @@
 <body >
 <div class="container">
-
   <script type="text/javascript">
     <% if current_user %>
       var username = "<%= current_user.username %>"; // for string
@@ -39,7 +38,6 @@
       </div>
 
       <div id="sightcast-control" style='display:none;'>
-
       </div>
 
       <div class="col-md-3 col-md-offset-1">
@@ -53,6 +51,10 @@
             </div>
         </div>
       </div>
+
+    <div class="center-block" >
+      <h4 style="text-align: center" id="connection_status"></h4>
+    </div>
 
       <div class="row well" id="create_meeting_point"  style="display:none;">
         <div class="center-block" style="float:none;">
@@ -72,7 +74,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="row well" id="invite_cameras" style="display:none;">
         <div class="center-block" style="float:none;width:500px">
@@ -155,5 +156,4 @@
     </div>
 
   </div>
-
 </div>

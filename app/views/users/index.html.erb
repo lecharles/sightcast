@@ -1,14 +1,16 @@
-
 <div class="container">
   <h1>SightCast Users</h1>
     <% @users.each do |user| %>
     <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-body">
-      <%= user.email %>
-      <%= link_to 'Show', user %>
-      <%= link_to 'Edit', edit_user_path(user) %>
-      <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <%= image_tag src="/system/users/avatars/000/000/001/thumb/polar_bear.jpg?1457484247" %>
+        <%= user.email %><br>
+        <%= link_to 'Show', user %> |
+        <%= link_to 'Edit', edit_user_path(user) %> |
+        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
   </div>
+<% end %>
 </div>
