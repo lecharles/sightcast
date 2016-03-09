@@ -36,12 +36,25 @@ textarea {
   height: 550px;
 }
 
+#sightcastshowbody {
+  background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+        ), asset-url('tropical2.jpg');
+  background-size: cover;
+}
+
+#sightcastsindexheader a  {
+  font-weight:lighter;
+}
+
 #pages-bgnd {
     background:linear-gradient(
           rgba(0,0,0,0.5),
           rgba(0,0,0,0.5)
-          ), asset-url('mobile.jpg');
+          ), asset-url('sealanding.jpg')no-repeat center center fixed;
   background-size: cover;
+
   height: 100%;
 }
 
@@ -66,7 +79,7 @@ textarea {
   background:linear-gradient(
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ), asset-url('editacct.jpg');
+        ), asset-url('looker.jpg');
   background-size: cover;
   height: 445px;
 }
@@ -92,6 +105,12 @@ textarea {
   font-weight: lighter;
   letter-spacing: 3px;
   font-size: 55px;
+  }
+
+  #hostpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
   }
 
 
@@ -169,6 +188,7 @@ textarea {
   font-family:sans-serif;
   letter-spacing: 1px;
   font-weight:lighter;
+  border:1px solid #FF336C;
 }
 
 .btn-xlarge:hover {
@@ -199,6 +219,21 @@ font-size: 60px;
   padding:10px 15px;
 
 }
+
+#control-button {
+  background-color:rgba(0, 0, 0, 0.3) ;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  padding:10px 15px;
+}
+
+#control-button:hover {
+  background-color:rgba(0, 0, 0, 0.5) ;
+
+}
+
+
 
 
 
