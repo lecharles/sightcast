@@ -72,14 +72,14 @@ $(document).on('ready page:load', function() {
 
       function setSightcastControlButtons(participants) {
         $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class="center-block btn btn-primary" onclick="toggleRPiView()">RPi</button>';
+        buttonString = '<button class=" btn btn-primary" id="control-button" onclick="toggleRPiView()">RPi</button>';
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
           if ( participants[i].displayName === UID_CASTER ) {
-            buttonString = '<button class="center-block btn btn-primary" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary" id="control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           } else if ( contains(CAMERA_ARRAY, participants[i].displayName) ) {
-            buttonString = '<button class="center-block btn btn-primary" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary" id="control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
@@ -88,6 +88,7 @@ $(document).on('ready page:load', function() {
       defineCallListenersHost = function(hostCall) {
         sightcastCall = hostCall;
         hostCall.on('active', function() {
+          $('#sightcastwaitdiv').fadeOut(0);
           $('#video-container').fadeIn(3000);
           $('#sightcast-control').css('display', 'block');
         });
@@ -215,7 +216,9 @@ $(document).on('ready page:load', function() {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
+          $('#sightcastwaitdiv').fadeOut(0);
           $('#video-container').fadeIn(3000);
+
         });
       },
       initViewer = function() {
