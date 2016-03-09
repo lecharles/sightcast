@@ -17,7 +17,7 @@
           <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
             <% if current_user == sightcast.host %>
               <p><a href = 'sightcasts/<%= sightcast.id %>/'>Start SightCast</a></p>
-        <!-- #need to change to sightcast_path or something  -->
+            <!-- #need to change to sightcast_path or something  -->
             <% end %>
             </div>
           </div>
@@ -38,8 +38,8 @@
               <div class="panel panel-default">
                 <div class="panel-body">
                   <%= user.email %>
-                  <%= link_to 'Show', user %>
-                  <%= link_to 'Edit', edit_user_path(user) %>
+                  <%= link_to 'Show', user %> |
+                  <%= link_to 'Edit', edit_user_path(user) %> |
                   <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </div>
               </div>

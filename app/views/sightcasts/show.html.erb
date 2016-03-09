@@ -15,8 +15,8 @@
 
 <div class = "show_sightcast">
 
-  <h1>Room Name:<%= @sightcast.title %></h1>
-  <h3>Room Description:<%= @sightcast.description %></h3>
+  <h1>Room Name: <%= @sightcast.title %></h1>
+  <h3>Room Description: <%= @sightcast.description %></h3>
 
 
   <%= form_for @sightcast do |f| %>
@@ -34,7 +34,7 @@
 <div class="col-md-3 col-md-offset-1">
   <div class="row well">
       <div id="error" style="display:none;" class="bg-danger" >
-        <h4>An error occurred:</h4>
+        <h4>An error occurred: </h4>
         <div id="error-content">This is the error</div>
       </div>
 
@@ -47,7 +47,7 @@
 
 <div class="row well" id="create_meeting_point"  style="display:none;">
   <div class="center-block" style="float:none;">
-      <h4 style="text-align: center"> Step 2.</h4><br/>
+      <h4 style="text-align: center"> Step 2. </h4><br/>
       <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Create Meeting Point</button>
   </div>
 </div>
@@ -55,7 +55,7 @@
 
 <div class="row well" id="host_meeting_point" style="display:none;">
 <div class="center-block" style="float:none;">
-  <h4 style="text-align: center">Step 3.</h4>
+  <h4 style="text-align: center">Step 3. </h4>
   <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">Host Meeting Point</button>
   <div style="display:none;">
   <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
