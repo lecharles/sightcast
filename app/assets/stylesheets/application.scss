@@ -16,8 +16,8 @@
 
 
 body {
-background-color: #FAF9F9;
-padding-bottom: 80px;
+  background-color: #FAF9F9;
+  padding-bottom: 80px;
 }
 
 textarea {
@@ -68,7 +68,6 @@ padding: 0px;
  background-color:rgba(0, 0, 0, 0.3);
  color:white;
  border:none;
-
 }
 
 #sightcastnew {
@@ -83,7 +82,6 @@ padding: 0px;
 #sightcastnewbody {
  background:asset-url('concert.jpg')no-repeat center center fixed;
  background-size:cover;
-
 }
 
 #sightcastnewpanel {
@@ -145,60 +143,58 @@ padding: 0px;
  height: 295px;
 }
 
-
 #join-usernew h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 55px;
- }
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 55px;
+}
 
- #hostpanel {
- background-color:rgba(0, 0, 0, 0.3);
- color:white;
- border:none;
- }
+#hostpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
+}
 
- #pagesindexpanel {
-   background-color:rgba(0, 0, 0, 0.3);
-   color:white;
-   border:none;
+#pagesindexpanel {
+  background-color:rgba(0, 0, 0, 0.3);
+  color:white;
+  border:none;
+}
 
- }
-
- #pagesindexpaneldark {
-   background-color:rgba(0, 0, 0, 0.6);
-   color:white;
-   border:none;
- }
+#pagesindexpaneldark {
+  background-color:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
+}
 
 
 #loginnew {
- background:linear-gradient(
+  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
        ), asset-url('perspective.jpg');
- background-size: cover;
- height: 474px;
+  background-size: cover;
+  height: 474px;
 }
 
 #loginnew h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 45px;
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 45px;
 }
 
 #loginform {
- padding:20px;
+  padding:20px;
 }
 
 #join-form {
- padding:20px;
+  padding:20px;
 }
 
 #editform {
- padding:20px;
+  padding:20px;
 }
 
 #sightcastnewform {
@@ -209,118 +205,112 @@ padding: 0px;
   background-color:#FF0048 ;
   opacity:0.8;
   border-radius:5px;
-
 }
+
 #sightcastnav:hover {
   opacity:0.8;
   background-color:#ed0744 ;
 }
+
 #sightcastnav a {
   color:white;
 }
 
-
 .navbar {
- padding:0px;
- margin-bottom:0px;
- background-color: white;
+  padding:0px;
+  margin-bottom:0px;
+  background-color: white;
 }
 
 .navbar-brand img {
- height: 40px;
+  height: 40px;
 }
 
 .navbar-brand {
- padding: 4px;
+  padding: 4px;
 }
 
 
 .btn-xlarge {
- font-size: 1.7em;
- background-color:#FF0048 ;
- color:#EFECE2 ;
- font-family:sans-serif;
- letter-spacing: 1px;
- font-weight:lighter;
- border:1px solid #FF336C;
+  font-size: 1.7em;
+  background-color:#FF0048 ;
+  color:#EFECE2 ;
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  font-weight:lighter;
+  border:1px solid #FF336C;
 }
 
 .btn-xlarge:hover {
- color:#EFECE2 ;
- background-color:#B13756 ;
+  color:#EFECE2 ;
+  background-color:#B13756 ;
 }
 
 #sightcastwaitdiv {
- background:linear-gradient(
-       rgba(0,0,0,0.3),
-       rgba(0,0,0,0.3)
-       );
-     height:370px;
-     border:none;
-     position:relative;
-     top:-370px;
-
+  background:linear-gradient(
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.3)
+    );
+  height:370px;
+  border:none;
+  position:relative;
+  top:-370px;
 }
 
 
 #editaccountbody {
- background:asset-url('tropical2.jpg') no-repeat center center fixed;
- background-size:cover;
-
+  background:asset-url('tropical2.jpg') no-repeat center center fixed;
+  background-size:cover;
 }
 
 #editaccountpanel {
- padding-bottom:0px;
- background:rgba(0, 0, 0, 0.6);
- margin-top:30px;
- border:none;
- color:white;
-
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
 }
 
 #usersignuppanel {
-   background:rgba(0, 0, 0, 0.6);
-   color:white;
-   border:none;
-
+  background:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
 }
 
 #usersignupbody {
- background:asset-url('looker.jpg') no-repeat center center fixed;
- background-size:cover;
-
-
+  background:asset-url('looker.jpg') no-repeat center center fixed;
+  background-size:cover;
 }
 
 #sightcastwaitdiv h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 60px;
- }
+  color: #EFECE2;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  font-size: 60px;
+}
 
 #sightcastbutton {
- background-color:#FF336C ;
- color: white;
- letter-spacing: 1px;
- border: 1px solid #FF336C;
- padding:10px 15px;
+  background-color:#FF336C ;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #FF336C;
+  padding:10px 15px;
 }
 
 #sightcastbutton-sm {
- background-color:#FF336C ;
- color: white;
- letter-spacing: 1px;
- border: 1px solid #FF336C;
- padding: 1px 2px;
+  background-color:#FF336C ;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #FF336C;
+  padding: 1px 2px;
 }
 
 .control-button {
- background-color:rgba(0, 0, 0, 0.3) ;
- color: white;
- letter-spacing: 1px;
- border: none;
- padding:10px 15px;
+  background-color:rgba(0, 0, 0, 0.3) ;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  padding:10px 15px;
 }
 
 .control-button:hover {
@@ -329,14 +319,12 @@ padding: 0px;
 }
 
 
-
 #sightcastbutton:hover {
-background-color:#ed0744 ;
+  background-color:#ed0744 ;
 }
 
 #camera_people {
  margin-top:30px;
-
 }
 
 
@@ -451,7 +439,6 @@ height: 40px;
          url('PATH_TO/socicon.svg#icomoonregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -459,4 +446,4 @@ height: 40px;
         font-family:si;
         src: url(PATH_TO/socicon.svg) format(svg);
     }
-}
+  }
