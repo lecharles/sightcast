@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
   <div class="col-md-6 " >
     <div class="panel panel-default" style="margin-top:50px;" >
@@ -7,6 +5,8 @@
       <h1>Profile:</h1>
         <p>
           <%= image_tag @user.avatar.url(:thumb) %>
+          <strong>Username:</strong>
+          <%= @user.username %><br>
           <strong>Email:</strong>
           <%= @user.email %><br>
         </p>
