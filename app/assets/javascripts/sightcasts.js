@@ -2,10 +2,13 @@ $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 
+
+
 //IF YOU ARE A HOST:
+
+    $('#video-container').css('opacity', '0.0');
     if (CASTER) {
       var participants = [];
-      var sightcastCall;
 
       $('#connection_status').html("Step 1.Connecting....");
       // Define the optional parameters
@@ -23,11 +26,6 @@ $(document).on('ready page:load', function() {
         rtcc.on('plugin.missing', function(downloadUrl) {
             window.open(downloadUrl);
         });
-
-
-  rtcc.on('plugin.missing', function(downloadUrl) {
-             window.open(downloadUrl);
-         });
 
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html(' Step 1.Connected as host.');
@@ -72,14 +70,18 @@ $(document).on('ready page:load', function() {
 
       function setSightcastControlButtons(participants) {
         $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class=" btn btn-primary" id="control-button" onclick="toggleRPiView()">RPi</button>';
+        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleRPiView()">RPi</button>';
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
-          if ( participants[i].displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary" id="control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+          displayName = participants[i].displayName.replace(/['"]+/g, '');
+          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("PARTICIPANT: " + participants[i].displayName)
+          console.log("UID CASTER: " + UID_CASTER);
+          if ( displayName === UID_CASTER ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
-          } else if ( contains(CAMERA_ARRAY, participants[i].displayName) ) {
-            buttonString = '<button class=" btn btn-primary" id="control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+          } else if ( contains(CAMERA_ARRAY, displayName) ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
@@ -89,7 +91,7 @@ $(document).on('ready page:load', function() {
         sightcastCall = hostCall;
         hostCall.on('active', function() {
           $('#sightcastwaitdiv').fadeOut(0);
-          $('#video-container').fadeIn(3000);
+          $('#video-container').css('opacity', '1.0');
           $('#sightcast-control').css('display', 'block');
         });
         hostCall.on('conference.participants', function(allParticipants) {
@@ -168,29 +170,27 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
-      $('#connection_status').html("Connecting as viewer!!");
+      $('#connection_status').html("Connecting...");
+
       rtcc = {},
-      meetingPointAttendee = "",
+
       options = {
         debugLevel : 1,
         displayName : "External Viewer",
         defaultStyle: true,
-        container : 'video-container',
+        container: 'video-container',
         legacy: false
-      }
-      initializeRtcc= function() {
-        rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+      },
 
+      initializeRtcc = function() {
+        rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
+        // Call if the RtccDriver is not running on the client computer and if the browser is not WebRTC-capable
+        rtcc.onRtccDriverNotStarted = function (downloadUrl) {
+            var answer = confirm('Click OK to download and install the Rtcc client.');
+            if (answer === true) { window.location = downloadUrl; }
+        };
         rtcc.on('plugin.missing', function(downloadUrl) {
            window.open(downloadUrl);
-       });
-
-        rtcc.on('plugin.missing', function(downloadUrl) {
-            window.open(downloadUrl);
-        });
-
-        rtcc.on('plugin.missing', function(downloadUrl) {
-            window.open(downloadUrl);
         });
 
         rtcc.on('cloud.sip.ok', function() {
@@ -198,23 +198,32 @@ $(document).on('ready page:load', function() {
           $('#join_meeting_point').css('display', 'block');
         });
         rtcc.on('cloud.loggedastheotheruser', function() {
-          getToken(UID_USER, function (token){
-            rtcc.authenticate(1);
-          });
+          rtcc.authenticate(1);
         });
 
         rtcc.on('call.create', defineCallListenersViewer);
 
         rtcc.initialize();
       },
+
+      initViewer = function() {
+        initializeRtcc("External Viewer");
+      },
+      joinViewer = function() {
+        var id = $('#meeting_point_id').val();
+        rtcc.joinConfCall(id);
+      },
+
       defineCallListenersViewer = function(viewer_call) {
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
           $('#sightcastwaitdiv').fadeOut(0);
-          $('#video-container').fadeIn(3000);
+          $('#video-container').css('opacity', '1.0');
+
 
         });
+
       },
       initViewer = function() {
         initializeRtcc();
