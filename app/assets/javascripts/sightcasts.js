@@ -68,7 +68,6 @@ $(document).on('ready page:load', function() {
         $('#sightcast-control').html(""); //clear each time
         buttonString = '<button class=" btn btn-primary control-button" onclick="toggleRPiView()">RPi</button>';
         $('#sightcast-control').append(buttonString);
-        debugger;
         for ( var i = 0; i < participants.length; i++ ) {
           if ( participants[i].displayName === UID_CASTER ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
