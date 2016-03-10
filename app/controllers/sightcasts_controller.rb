@@ -1,6 +1,6 @@
 class SightcastsController < ApplicationController
   def index
-    @sightcasts = Sightcast.all.paginate(page: params[:page], per_page: 9)
+    @sightcasts = Sightcast.all.paginate(page: params[:page], per_page: 6)
     # .paginate for per page views
     # .where(active: true)
   end

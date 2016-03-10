@@ -9,7 +9,7 @@
             <% @sightcasts.each do | sightcast | %>
 
     <div class="col-md-4">
-      <div class="panel panel-default" style="height:180px;">
+      <div id="pagesindexpaneldark" class="panel panel-default" style="height:180px;">
         <div class="panel-body" id="pages-panel">
           <p><strong>Title: </strong> <%= sightcast.title %></p>
           <p><strong>Description: </strong> <%= sightcast.description %></p>
@@ -30,12 +30,12 @@
 </div>
 
   <div class="col-md-3">
-    <div class="panel panel-default">
+    <div id="pagesindexpanel"  class="panel panel-default">
       <div class="panel-body">
-        <h1>All Users</h1>
+        <h1 style="font-weight:lighter">All Users</h1>
           <% @users.each do |user| %>
             <div class="col-md-12">
-              <div class="panel panel-default">
+              <div id="pagesindexpaneldark" class="panel panel-default">
                 <div class="panel-body">
                   <%= image_tag user.avatar.url(:thumb) %>
                   <%= user.email %><br>
@@ -49,6 +49,6 @@
         </div>
       </div>
     </div>
-
+    <%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
   </div>
 </body>

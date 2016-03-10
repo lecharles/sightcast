@@ -148,9 +148,15 @@ textarea {
 
   #pagesindexpanel {
     background-color:rgba(0, 0, 0, 0.3);
-
+    color:white;
     border:none;
 
+  }
+
+  #pagesindexpaneldark {
+    background-color:rgba(0, 0, 0, 0.6);
+    color:white;
+    border:none;
   }
 
 
@@ -248,6 +254,7 @@ textarea {
 
 #editaccountbody {
   background:asset-url('tropical2.jpg') no-repeat center center fixed;
+  background-size:cover;
 
 }
 
