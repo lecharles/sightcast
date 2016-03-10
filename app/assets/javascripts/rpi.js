@@ -6,7 +6,7 @@ function error_img () {
   setTimeout("mjpeg_img.src = 'https://rpicast.ngrok.io/cam_pic.php?time=' + new Date().getTime();", 100);
 }
 function initRPi() {
-  mjpeg_img = document.getElementById("test_dest");
+  mjpeg_img = document.getElementById("vmjpeg_dest");
   mjpeg_img.onload = reload_img;
   mjpeg_img.onerror = error_img;
   reload_img();
