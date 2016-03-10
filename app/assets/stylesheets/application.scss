@@ -53,7 +53,7 @@ textarea {
     background:linear-gradient(
           rgba(0,0,0,0.5),
           rgba(0,0,0,0.5)
-          ), asset-url('sealanding.jpg')no-repeat center center fixed;
+          ), asset-url('coastline.jpg')no-repeat center center fixed;
   background-size: cover;
 
   height: 100%;
@@ -146,6 +146,13 @@ textarea {
   border:none;
   }
 
+  #pagesindexpanel {
+    background-color:rgba(0, 0, 0, 0.3);
+
+    border:none;
+
+  }
+
 
 #loginnew {
   background:linear-gradient(
@@ -193,11 +200,6 @@ textarea {
    color:white;
  }
 
- // .panel-default {
- //   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- //   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- //   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- // }
 
 .navbar {
   padding:0px;
@@ -236,6 +238,9 @@ textarea {
         );
       height:370px;
       border:none;
+      position:relative;
+      top:-370px;
+
 }
 
 
@@ -349,6 +354,8 @@ textarea {
        -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+       z-index:0;
+
 }
 
 
