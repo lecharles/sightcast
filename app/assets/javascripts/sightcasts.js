@@ -218,14 +218,6 @@ $(document).on('ready page:load', function() {
         rtcc.initialize();
       },
 
-      initViewer = function() {
-        initializeRtcc("External Viewer");
-      },
-      joinViewer = function() {
-        var id = $('#meeting_point_id').val();
-        rtcc.joinConfCall(id);
-      },
-
       defineCallListenersViewer = function(viewer_call) {
         sightcastCall = viewer_call
         viewer_call.on('active', function() {
