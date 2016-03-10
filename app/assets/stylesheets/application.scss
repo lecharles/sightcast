@@ -59,6 +59,28 @@ padding: 0px;
 
 }
 
+#sightcastshowbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.1),
+       rgba(0,0,0,0.1)
+       ), asset-url('sunset.jpg');
+ background-size: cover;
+}
+
+#sightcastshowpanel h1 {
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+ color: white;
+}
+
+#sightcastshowpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+}
+
 
 
 #showaccount {
@@ -74,7 +96,7 @@ padding: 0px;
  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
-       ), asset-url('urban.jpg')no-repeat center center;
+       ), asset-url('urban.jpg')no-repeat center center fixed;
  background-size: cover;
 }
 
@@ -85,9 +107,37 @@ padding: 0px;
  font-size: 60px;
 }
 
-#showaccountbody {
-  background:asset-url('urban.jpg') no-repeat center center fixed;
-  background-size:cover;
+#showaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+#sightcast {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#sightcastbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('urban.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+#showaccount h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
 }
 
 #showaccountpanel {
@@ -104,7 +154,7 @@ padding: 0px;
  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
-       ), asset-url('looker.jpg');
+       ), asset-url('ocean.jpg');
  background-size: cover;
  height: 445px;
 }
@@ -113,7 +163,7 @@ padding: 0px;
  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
-       ), asset-url('tropical2.jpg')no-repeat center center;
+       ), asset-url('ocean.jpg')no-repeat center center fixed;
  background-size: cover;
 }
 
@@ -122,11 +172,6 @@ padding: 0px;
  font-weight: lighter;
  letter-spacing: 3px;
  font-size: 60px;
-}
-
-#editaccountbody {
-  background:asset-url('tropical2.jpg') no-repeat center center fixed;
-  background-size:cover;
 }
 
 #editaccountpanel {
@@ -145,15 +190,6 @@ padding: 0px;
  border:none;
 }
 
-
-
-#sightcastshowbody {
- background:linear-gradient(
-       rgba(0,0,0,0.7),
-       rgba(0,0,0,0.7)
-       ), asset-url('tropical2.jpg');
- background-size: cover;
-}
 
 
 #sightcastnew {
@@ -389,14 +425,13 @@ padding: 0px;
 
 
 .footer {
-background-color: #FFFFFF;
-margin-top: 40px;
-bottom: 0;
-position: fixed;
-width: 100%;
-height: 40px;
+  background-color: #FFFFFF;
+  margin-top: 40px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 40px;
 }
-
 
 .footer a {
  color: #F60448;
