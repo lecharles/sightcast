@@ -1,4 +1,5 @@
 $(document).on('ready page:load', function() {
+  setTimeout('initRPi();', 100);
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 
@@ -193,7 +194,6 @@ $(document).on('ready page:load', function() {
            window.open(downloadUrl);
         });
 
-        // development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
@@ -224,6 +224,19 @@ $(document).on('ready page:load', function() {
 
 
         });
+        viewer_call.on('call.create', function() {
+          viewer_call.videoStop();
+          viewer_call.audioMute();
+
+        });
+
+      },
+      initViewer = function() {
+        initializeRtcc();
+      },
+      joinViewer = function() {
+        var id = $('#meeting_point_id').val();
+        rtcc.joinConfCall(id);
       };
       initViewer();
     }

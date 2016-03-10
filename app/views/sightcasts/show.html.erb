@@ -27,14 +27,13 @@
        <h1 id="sightcastindexheader" style="color:white">Room Name:<span style="font-weight:lighter"><%= @sightcast.title %></span</h1>
        <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description:<span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
 
-
        <%= form_for @sightcast do |f| %>
          <div class = "field">
            <%= f.hidden_field :meeting_point_id %>
          </div>
            <% end %>
 
-          <div id="video-container" style="margin-top:0px; margin-bottom:20px;"></div>
+
           <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
 
             <div class="panel-body">
@@ -47,10 +46,10 @@
 
             <!-- <p style="font-size:20px;">Camera people:</p> -->
             <div id="sightcast-control" style='display:none;'>
+
+           </div>
+
             </div>
-
-      </div>
-
 
       <div class="col-md-3 ">
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
@@ -118,7 +117,10 @@
        <a id="mobile-camera-id" href="#">Click here to Film With Your Mobile!</a>
       </div>
 
-    </div>
+      <div id="video-container"></div>
+      <div><img id="mjpeg_dest" /></div>
+      </div>
+      </div>
 
     <div class="col-md-2">
               <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
