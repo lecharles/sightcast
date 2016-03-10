@@ -7,7 +7,7 @@ var SC_ID;
 var MPID;
 var CAMERA;
 var CAMERA_ARRAY;
-AUTH_URL = 'http://localhost:3000/tokens/get_token?uid=';
+AUTH_URL = 'https://salty-brook-83534.herokuapp.com/tokens/get_token?uid=';
 
 
 function isCaster(sightcaster) {
