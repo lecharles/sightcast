@@ -1,8 +1,9 @@
-<div class="container">
-  <h1>SightCast Users</h1>
+<body id="user-index-background">
+  <div class="container">
+  <h1 style="font-weight: lighter; color: white;">SightCast Users</h1>
     <% @users.each do |user| %>
     <div class="col-md-4">
-      <div class="panel panel-default">
+      <div id="user-panel" class="panel panel-default">
         <div class="panel-body">
         <%= image_tag src="/system/users/avatars/000/000/001/thumb/polar_bear.jpg?1457484247" %>
         <%= user.email %><br>
@@ -12,5 +13,6 @@
       </div>
     </div>
   </div>
-<% end %>
-</div>
+  <% end %>
+  </div>
+</body>
