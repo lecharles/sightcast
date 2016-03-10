@@ -8,14 +8,18 @@
           <div class = 'sightcast'>
             <% @sightcasts.each do | sightcast | %>
 
-    <div class="col-md-4">
-      <div id="pagesindexpaneldark" class="panel panel-default" style="height:180px;">
-        <div class="panel-body" id="pages-panel">
-          <p><strong>Title: </strong> <%= sightcast.title %></p>
-          <p><strong>Description: </strong> <%= sightcast.description %></p>
-          <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
-          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-
+        <div class="col-md-4">
+          <div id="pagesindexpaneldark" class="panel panel-default" style="height:180px;">
+            <div class="panel-body" id="pages-panel">
+              <p><strong>Title: </strong> <%= sightcast.title %></p>
+              <p><strong>Description: </strong> <%= sightcast.description %></p>
+              <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
+              <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
+              <% if current_user == sightcast.host %>
+                <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
+              <% else %>
+                <p><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
+              <% end %>
             </div>
           </div>
         </div>
@@ -46,5 +50,5 @@
         </div>
       </div>
     </div>
-  
+
 </body>
