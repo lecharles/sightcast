@@ -64,6 +64,83 @@ padding: 0px;
 
 }
 
+
+#showaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#showaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('urban.jpg')no-repeat center center;
+ background-size: cover;
+}
+
+#showaccount h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+}
+
+#showaccountbody {
+  background:asset-url('urban.jpg') no-repeat center center fixed;
+  background-size:cover;
+}
+
+#showaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+#editaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#editaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('tropical2.jpg')no-repeat center center;
+ background-size: cover;
+}
+
+#editaccount h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+}
+
+#editaccountbody {
+  background:asset-url('tropical2.jpg') no-repeat center center fixed;
+  background-size:cover;
+}
+
+#editaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
 #loginpanel {
  background-color:rgba(0, 0, 0, 0.3);
  color:white;
@@ -95,30 +172,6 @@ padding: 0px;
  font-weight: lighter;
  letter-spacing: 3px;
  font-size: 55px;
-}
-
-#editaccount {
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('looker.jpg');
- background-size: cover;
- height: 445px;
-}
-
-#editaccountbody {
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('tropical2.jpg')no-repeat center center;
- background-size: cover;
-}
-
-#editaccount h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 60px;
 }
 
 #user-panel {
@@ -257,19 +310,6 @@ padding: 0px;
   top:-390px;
 }
 
-
-#editaccountbody {
-  background:asset-url('tropical2.jpg') no-repeat center center fixed;
-  background-size:cover;
-}
-
-#editaccountpanel {
-  padding-bottom:0px;
-  background:rgba(0, 0, 0, 0.6);
-  margin-top:30px;
-  border:none;
-  color:white;
-}
 
 #usersignuppanel {
   background:rgba(0, 0, 0, 0.6);
