@@ -69,7 +69,9 @@ $(document).on('ready page:load', function() {
         buttonString = '<button class=" btn btn-primary control-button" onclick="toggleRPiView()">RPi</button>';
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
-          console.log(CAMERA_ARRAY + " " + participants[i].displayName + " " + UID_CASTER)
+          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("PARTICIPANT: " + participants[i].displayName)
+          console.log("UID CASTER: " + UID_CASTER);
           if ( participants[i].displayName === UID_CASTER ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
             $('#sightcast-control').append(buttonString);
