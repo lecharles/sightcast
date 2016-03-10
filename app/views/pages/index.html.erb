@@ -17,7 +17,8 @@
           <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
             <% if current_user == sightcast.host %>
               <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
-            <!-- #need to change to sightcast_path or something  -->
+            <% else %>
+              <p><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
             <% end %>
             </div>
           </div>
