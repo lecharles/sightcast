@@ -15,7 +15,7 @@
           <p><strong>Description: </strong> <%= sightcast.description %></p>
           <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
           <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-            
+
             </div>
           </div>
         </div>
@@ -46,6 +46,5 @@
         </div>
       </div>
     </div>
-    <%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
-  </div>
+  
 </body>
