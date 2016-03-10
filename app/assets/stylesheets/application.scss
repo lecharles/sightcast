@@ -17,7 +17,7 @@
 
 body {
  background-color: #FAF9F9;
- padding-bottom: 80px;
+ // margin-bottom: 200px;
 }
 
 textarea {
@@ -53,24 +53,12 @@ textarea {
     background:linear-gradient(
           rgba(0,0,0,0.5),
           rgba(0,0,0,0.5)
-          ), asset-url('coastline.jpg')no-repeat center center fixed;
+          ), asset-url('sealanding.jpg')no-repeat center center fixed;
   background-size: cover;
 
   height: 100%;
 }
 
-#loginpage {
-  background:asset-url('perspective.jpg')no-repeat center center fixed;
-  background-size:cover;
-
-}
-
-#loginpanel {
-  background-color:rgba(0, 0, 0, 0.3);
-  color:white;
-  border:none;
-
-}
 
 #sightcastnew {
   background:linear-gradient(
@@ -79,18 +67,6 @@ textarea {
         ), asset-url('concert.jpg');
   background-size: cover;
   height: 295px;
-}
-
-#sightcastnewbody {
-  background:asset-url('concert.jpg')no-repeat center center fixed;
-  background-size:cover;
-
-}
-
-#sightcastnewpanel {
-  background-color:rgba(0, 0, 0, 0.6);
-  color:white;
-  border:none;
 }
 
 #sightcastnew h1 {
@@ -109,32 +85,11 @@ textarea {
   height: 445px;
 }
 
-#editaccountbody {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('tropical2.jpg')no-repeat center center;
-  background-size: cover;
-}
-
 #editaccount h1 {
   color: #EFECE2;
   font-weight: lighter;
   letter-spacing: 3px;
-  font-size: 60px;
-}
-
-#user-panel {
-  background-color:rgba(0, 0, 0, 0.6);
-  color:white;
-  border:none;
-}
-
-#user-index-background{
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('sunset.jpg');
+  font-size: 40px;
 }
 
 #join-usernew {
@@ -145,7 +100,6 @@ textarea {
   background-size: cover;
   height: 295px;
 }
-
 
 #join-usernew h1 {
   color: #EFECE2;
@@ -158,19 +112,6 @@ textarea {
   background-color:rgba(0, 0, 0, 0.3);
   color:white;
   border:none;
-  }
-
-  #pagesindexpanel {
-    background-color:rgba(0, 0, 0, 0.3);
-    color:white;
-    border:none;
-
-  }
-
-  #pagesindexpaneldark {
-    background-color:rgba(0, 0, 0, 0.6);
-    color:white;
-    border:none;
   }
 
 
@@ -220,6 +161,11 @@ textarea {
    color:white;
  }
 
+ // .panel-default {
+ //   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ //   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
+ // }
 
 .navbar {
   padding:0px;
@@ -257,10 +203,6 @@ textarea {
         rgba(0,0,0,0.3)
         );
       height:370px;
-      border:none;
-      position:relative;
-      top:-370px;
-
 }
 
 
@@ -268,7 +210,6 @@ textarea {
 
 #editaccountbody {
   background:asset-url('tropical2.jpg') no-repeat center center fixed;
-  background-size:cover;
 
 }
 
@@ -276,31 +217,18 @@ textarea {
   padding-bottom:0px;
   background:rgba(0, 0, 0, 0.6);
   margin-top:30px;
-  border:none;
-  color:white;
 
 }
 
-#usersignuppanel {
-    background:rgba(0, 0, 0, 0.6);
-    color:white;
-    border:none;
-
-}
-
-#usersignupbody {
-  background:asset-url('looker.jpg') no-repeat center center fixed;
-  background-size:cover;
 
 
-}
 
 #sightcastwaitdiv h1 {
-  color: #EFECE2;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  font-size: 60px;
-  }
+color: #EFECE2;
+font-weight: lighter;
+letter-spacing: 3px;
+font-size: 60px;
+}
 
 #sightcastbutton {
   background-color:#FF336C ;
@@ -308,17 +236,10 @@ textarea {
   letter-spacing: 1px;
   border: 1px solid #FF336C;
   padding:10px 15px;
+
 }
 
-#sightcastbutton-sm {
-  background-color:#FF336C ;
-  color: white;
-  letter-spacing: 1px;
-  border: 1px solid #FF336C;
-  padding: 1px 2px;
-}
-
-.control-button {
+#control-button {
   background-color:rgba(0, 0, 0, 0.3) ;
   color: white;
   letter-spacing: 1px;
@@ -326,7 +247,7 @@ textarea {
   padding:10px 15px;
 }
 
-.control-button:hover {
+#control-button:hover {
   background-color:rgba(0, 0, 0, 0.5) ;
 
 }
@@ -346,37 +267,46 @@ textarea {
 
 
 .footer {
- background-color: #FFFFFF;
+ background-color: #000;
+ color: #DCD9D9;
  margin-top: 40px;
- bottom: 0;
  position: fixed;
+ bottom: 0;
  width: 100%;
- height: 40px;
 }
-
-.footer a {
-  color: #F60448;
-}
-
 
  // this is for video
 
   #video-container {
        width: 640px;
        height: 360px;
-       border: none;
+       border: 2px solid white;
        background: #0074bc;
        margin-top: 20px;
        margin: 0 auto;
        border-radius:5px;
        margin-bottom: 65px;
        margin-top:35px;
-       display:block;
+       display:none;
        -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
        box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-       z-index:0;
+}
 
+  #vmjpeg_dest {
+     width: 640px;
+     height: 360px;
+     border: 2px solid white;
+     background: #0074bc;
+     margin-top: 20px;
+     margin: 0 auto;
+     border-radius:5px;
+     margin-bottom: 65px;
+     margin-top:35px;
+     display:none;
+     -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+     -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+     box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
 }
 
 
@@ -419,13 +349,6 @@ textarea {
      transform: rotate(-45deg);
      transform-origin: 10% 90%;
    }
- }
-
- .pagination {
-   background-color:rgba(0, 0, 0, 0.6);
-   color:white;
-   border:none;
-
  }
 
 
