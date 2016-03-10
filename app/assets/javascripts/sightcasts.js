@@ -193,7 +193,6 @@ $(document).on('ready page:load', function() {
             window.open(downloadUrl);
         });
 
-        development
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as viewer!!');
           $('#join_meeting_point').css('display', 'block');
@@ -205,10 +204,6 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('call.create', defineCallListenersViewer);
-
-
-
-
 
         rtcc.initialize();
       },
@@ -222,7 +217,7 @@ $(document).on('ready page:load', function() {
         });
       },
       initViewer = function() {
-        initializeRtccViewer();
+        initializeRtcc();
       },
       joinViewer = function() {
         var id = $('#meeting_point_id').val();
