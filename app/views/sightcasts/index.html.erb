@@ -7,6 +7,7 @@
           <div class="panel-body">
             <p><strong>Title: </strong> <%= sightcast.title %></p>
             <p><strong>Description: </strong> <%= sightcast.description %></p>
+            <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
             <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
             <% if current_user == sightcast.host %>
               <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
