@@ -61,7 +61,7 @@
               </div>
 
               <div class="center-block" >
-                <h4 style="text-align: center" id="connection_status"></h4>
+                <h4 style="text-align: center;font-weight:lighter;" id="connection_status"></h4>
               </div>
 
           </div>
@@ -71,7 +71,7 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="create_meeting_point"  style="display:none;">
             <div class="center-block" style="float:none;">
-              <h4 style="text-align: center"> Step 2.</h4><br/>
+              <h4 style="text-align: center;font-weight:lighter;"> Step 2.</h4><br/>
               <button id="sightcastbutton" class="center-block  btn btn-primary btn-lg" onclick="create()">Get set..</button>
             </div>
           </div>
@@ -80,7 +80,7 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="host_meeting_point" style="display:none;">
             <div class="center-block" style="float:none;">
-                <h4 style="text-align: center">Step 3.</h4>
+                <h4 style="text-align: center;font-weight:lighter;">Step 3.</h4>
                 <button id="sightcastbutton"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
                 <h4>To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
@@ -107,9 +107,9 @@
 
         <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
-              <h4>  Enter the meeting point id (generated on the host side) and click join</h4>
-              <input class="center-block" style="width:230px" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
-              <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+              <h4> Click join to view the Sightcast</h4>
+
+               <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
           </div>
         </div>
 
@@ -124,7 +124,7 @@
                 <div class="panel-body" id="camera_people" style="display:none;">
                   <div class="center-block" style="float:none;">
                       <div  id="add_camera_message"></div>
-                      <h4 style="text-align: center" >Camera People</h4>
+                      <h4 style="text-align: center;font-weight:lighter;" >Camera People</h4>
                       <ul id = "camera_people_list">
                         <% @sightcast.users.each do | camera | %>
                           <li><%= camera.username %></li>
