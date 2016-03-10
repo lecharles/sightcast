@@ -17,7 +17,7 @@
 
 body {
  background-color: #FAF9F9;
- // margin-bottom: 200px;
+ padding-bottom: 80px;
 }
 
 textarea {
@@ -107,6 +107,14 @@ textarea {
         ), asset-url('looker.jpg');
   background-size: cover;
   height: 445px;
+}
+
+#editaccountbody {
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('tropical2.jpg');
+  background-size: cover;
 }
 
 #editaccount h1 {
