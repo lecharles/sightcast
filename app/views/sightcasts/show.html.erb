@@ -108,8 +108,9 @@
         <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
               <h4> Click join to view the Sightcast</h4>
+              <input class="center-block" style="display:none" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
 
-               <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+              <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
           </div>
         </div>
 
