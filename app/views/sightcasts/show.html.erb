@@ -21,7 +21,7 @@
   </script>
 
   <div class = "show_sightcast">
-    <div class="col-md-1"></div>
+
     <div class="col-md-7 ">
 
        <h1 id="sightcastindexheader" style="color:white">Room Name:<span style="font-weight:lighter"><%= @sightcast.title %></span</h1>
@@ -52,7 +52,7 @@
       </div>
 
 
-      <div class="col-md-3 col-md-offset-1">
+      <div class="col-md-3 ">
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
           <div class="panel-body">
               <div id="error" style="display:none;" class="bg-danger" >
@@ -104,19 +104,6 @@
         </div>
 
 
-        <div class="panel panel-default" style="margin-bottom:3px">
-          <div class="panel-body" id="camera_people" style="display:none;">
-            <div class="center-block" style="float:none;width:500px">
-                <div id="add_camera_message"></div>
-                <h4>Camera People</h4>
-                <ul id = "camera_people_list">
-                  <% @sightcast.users.each do | camera | %>
-                    <li><%= camera.username %></li>
-                  <% end %>
-                </ul>
-            </div>
-          </div>
-        </div>
 
         <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
@@ -131,5 +118,23 @@
       </div>
 
     </div>
+
+    <div class="col-md-2">
+              <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
+                <div class="panel-body" id="camera_people" style="display:none;">
+                  <div class="center-block" style="float:none;">
+                      <div  id="add_camera_message"></div>
+                      <h4 style="text-align: center" >Camera People</h4>
+                      <ul id = "camera_people_list">
+                        <% @sightcast.users.each do | camera | %>
+                          <li><%= camera.username %></li>
+                        <% end %>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+    </div>
+
+
 </div>
 </div>
