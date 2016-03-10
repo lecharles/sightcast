@@ -2,7 +2,11 @@ $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 
+
+
 //IF YOU ARE A HOST:
+
+    $('#video-container').css('opacity', '0.0');
     if (CASTER) {
       var participants = [];
 
@@ -87,7 +91,7 @@ $(document).on('ready page:load', function() {
         sightcastCall = hostCall;
         hostCall.on('active', function() {
           $('#sightcastwaitdiv').fadeOut(0);
-          $('#video-container').fadeIn(3000);
+          $('#video-container').css('opacity', '1.0');
           $('#sightcast-control').css('display', 'block');
         });
         hostCall.on('conference.participants', function(allParticipants) {
