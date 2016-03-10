@@ -12,243 +12,322 @@
  */
 
  @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap";
 
 
 body {
- background-color: #FAF9F9;
- // margin-bottom: 200px;
+background-color: #FAF9F9;
+padding-bottom: 80px;
 }
 
 textarea {
-   resize: none;
+  resize: none;
 }
 
 #panelsupport {
- padding: 0px;
+padding: 0px;
 }
 
 #landing {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('fontainebleau.jpg');
-  background-size: cover;
-  height: 550px;
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('fontainebleau.jpg');
+ background-size: cover;
+ height: 550px;
 }
 
 #sightcastshowbody {
-  background:linear-gradient(
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.7)
-        ), asset-url('tropical2.jpg');
-  background-size: cover;
+ background:linear-gradient(
+       rgba(0,0,0,0.7),
+       rgba(0,0,0,0.7)
+       ), asset-url('tropical2.jpg');
+ background-size: cover;
 }
 
 #sightcastsindexheader a  {
-  font-weight:lighter;
+ font-weight:lighter;
 }
 
 #pages-bgnd {
-    background:linear-gradient(
-          rgba(0,0,0,0.5),
-          rgba(0,0,0,0.5)
-          ), asset-url('sealanding.jpg')no-repeat center center fixed;
-  background-size: cover;
+   background:linear-gradient(
+         rgba(0,0,0,0.5),
+         rgba(0,0,0,0.5)
+         ), asset-url('coastline.jpg')no-repeat center center fixed;
+ background-size: cover;
 
-  height: 100%;
+ height: 100%;
 }
 
+#loginpage {
+ background:asset-url('perspective.jpg')no-repeat center center fixed;
+ background-size:cover;
+
+}
+
+#loginpanel {
+ background-color:rgba(0, 0, 0, 0.3);
+ color:white;
+ border:none;
+
+}
 
 #sightcastnew {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('concert.jpg');
-  background-size: cover;
-  height: 295px;
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('concert.jpg');
+ background-size: cover;
+ height: 295px;
+}
+
+#sightcastnewbody {
+ background:asset-url('concert.jpg')no-repeat center center fixed;
+ background-size:cover;
+
+}
+
+#sightcastnewpanel {
+ background-color:rgba(0, 0, 0, 0.6);
+ color:white;
+ border:none;
 }
 
 #sightcastnew h1 {
-  color: #EFECE2;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  font-size: 55px;
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 55px;
 }
 
 #editaccount {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('looker.jpg');
-  background-size: cover;
-  height: 445px;
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#editaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('tropical2.jpg')no-repeat center center;
+ background-size: cover;
 }
 
 #editaccount h1 {
-  color: #EFECE2;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  font-size: 40px;
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+}
+
+#user-panel {
+ background-color:rgba(0, 0, 0, 0.6);
+ color:white;
+ border:none;
+}
+
+#user-index-background{
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('sunset.jpg');
 }
 
 #join-usernew {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('concert.jpg');
-  background-size: cover;
-  height: 295px;
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('concert.jpg');
+ background-size: cover;
+ height: 295px;
 }
 
-#join-usernew h1 {
-  color: #EFECE2;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  font-size: 55px;
-  }
 
-  #hostpanel {
-  background-color:rgba(0, 0, 0, 0.3);
-  color:white;
-  border:none;
-  }
+#join-usernew h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 55px;
+ }
+
+ #hostpanel {
+ background-color:rgba(0, 0, 0, 0.3);
+ color:white;
+ border:none;
+ }
+
+ #pagesindexpanel {
+   background-color:rgba(0, 0, 0, 0.3);
+   color:white;
+   border:none;
+
+ }
+
+ #pagesindexpaneldark {
+   background-color:rgba(0, 0, 0, 0.6);
+   color:white;
+   border:none;
+ }
 
 
 #loginnew {
-  background:linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ), asset-url('perspective.jpg');
-  background-size: cover;
-  height: 474px;
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('perspective.jpg');
+ background-size: cover;
+ height: 474px;
 }
 
 #loginnew h1 {
-  color: #EFECE2;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  font-size: 45px;
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 45px;
 }
 
 #loginform {
-  padding:20px;
+ padding:20px;
 }
 
 #join-form {
-  padding:20px;
+ padding:20px;
 }
 
 #editform {
+ padding:20px;
+}
+
+#sightcastnewform {
   padding:20px;
 }
 
- #sightcastnewform {
-   padding:20px;
- }
+#sightcastnav {
+  background-color:#FF0048 ;
+  opacity:0.8;
+  border-radius:5px;
 
- #sightcastnav {
-   background-color:#FF0048 ;
-   opacity:0.8;
-   border-radius:5px;
+}
+#sightcastnav:hover {
+  opacity:0.8;
+  background-color:#ed0744 ;
+}
+#sightcastnav a {
+  color:white;
+}
 
- }
- #sightcastnav:hover {
-   opacity:0.8;
-   background-color:#ed0744 ;
- }
- #sightcastnav a {
-   color:white;
- }
-
- // .panel-default {
- //   -webkit-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- //   -moz-box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- //   box-shadow: 0px 0px 5px 0px rgba(129,215,205,1);
- // }
 
 .navbar {
-  padding:0px;
-  margin-bottom:0px;
-  background-color: white;
+ padding:0px;
+ margin-bottom:0px;
+ background-color: white;
 }
 
 .navbar-brand img {
-  height: 40px;
+ height: 40px;
 }
 
 .navbar-brand {
-  padding: 4px;
+ padding: 4px;
 }
 
 
 .btn-xlarge {
-  font-size: 1.7em;
-  background-color:#FF0048 ;
-  color:#EFECE2 ;
-  font-family:sans-serif;
-  letter-spacing: 1px;
-  font-weight:lighter;
-  border:1px solid #FF336C;
+ font-size: 1.7em;
+ background-color:#FF0048 ;
+ color:#EFECE2 ;
+ font-family:sans-serif;
+ letter-spacing: 1px;
+ font-weight:lighter;
+ border:1px solid #FF336C;
 }
 
 .btn-xlarge:hover {
-  color:#EFECE2 ;
-  background-color:#B13756 ;
+ color:#EFECE2 ;
+ background-color:#B13756 ;
 }
 
 #sightcastwaitdiv {
-  background:linear-gradient(
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.3)
-        );
-      height:370px;
+ background:linear-gradient(
+       rgba(0,0,0,0.3),
+       rgba(0,0,0,0.3)
+       );
+     height:370px;
+     border:none;
+     position:relative;
+     top:-370px;
+
 }
 
 
 
 
 #editaccountbody {
-  background:asset-url('tropical2.jpg') no-repeat center center fixed;
+ background:asset-url('tropical2.jpg') no-repeat center center fixed;
+ background-size:cover;
 
 }
 
 #editaccountpanel {
-  padding-bottom:0px;
-  background:rgba(0, 0, 0, 0.6);
-  margin-top:30px;
+ padding-bottom:0px;
+ background:rgba(0, 0, 0, 0.6);
+ margin-top:30px;
+ border:none;
+ color:white;
 
 }
 
+#usersignuppanel {
+   background:rgba(0, 0, 0, 0.6);
+   color:white;
+   border:none;
+
+}
+
+#usersignupbody {
+ background:asset-url('looker.jpg') no-repeat center center fixed;
+ background-size:cover;
 
 
+}
 
 #sightcastwaitdiv h1 {
-color: #EFECE2;
-font-weight: lighter;
-letter-spacing: 3px;
-font-size: 60px;
-}
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+ }
 
 #sightcastbutton {
-  background-color:#FF336C ;
-  color: white;
-  letter-spacing: 1px;
-  border: 1px solid #FF336C;
-  padding:10px 15px;
-
+ background-color:#FF336C ;
+ color: white;
+ letter-spacing: 1px;
+ border: 1px solid #FF336C;
+ padding:10px 15px;
 }
 
-#control-button {
-  background-color:rgba(0, 0, 0, 0.3) ;
-  color: white;
-  letter-spacing: 1px;
-  border: none;
-  padding:10px 15px;
+#sightcastbutton-sm {
+ background-color:#FF336C ;
+ color: white;
+ letter-spacing: 1px;
+ border: 1px solid #FF336C;
+ padding: 1px 2px;
 }
 
-#control-button:hover {
-  background-color:rgba(0, 0, 0, 0.5) ;
+.control-button {
+ background-color:rgba(0, 0, 0, 0.3) ;
+ color: white;
+ letter-spacing: 1px;
+ border: none;
+ padding:10px 15px;
+}
+
+.control-button:hover {
+ background-color:rgba(0, 0, 0, 0.5) ;
 
 }
 
@@ -257,118 +336,116 @@ font-size: 60px;
 
 
 #sightcastbutton:hover {
- background-color:#ed0744 ;
+background-color:#ed0744 ;
 }
 
 #camera_people {
-  margin-top:30px;
+ margin-top:30px;
 
 }
 
 
 .footer {
- background-color: #000;
- color: #DCD9D9;
- margin-top: 40px;
- position: fixed;
- bottom: 0;
- width: 100%;
+background-color: #FFFFFF;
+margin-top: 40px;
+bottom: 0;
+position: fixed;
+width: 100%;
+height: 40px;
 }
 
- // this is for video
-
-  #video-container {
-       width: 640px;
-       height: 360px;
-       border: 2px solid white;
-       background: #0074bc;
-       margin-top: 20px;
-       margin: 0 auto;
-       border-radius:5px;
-       margin-bottom: 65px;
-       margin-top:35px;
-       display:none;
-       -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-       -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-       box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+.footer a {
+ color: #F60448;
 }
 
-  #vmjpeg_dest {
-     width: 640px;
-     height: 360px;
-     border: 2px solid white;
-     background: #0074bc;
-     margin-top: 20px;
-     margin: 0 auto;
-     border-radius:5px;
-     margin-bottom: 65px;
-     margin-top:35px;
-     display:none;
-     -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-     -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
-     box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+
+// this is for video
+
+ #video-container {
+      width: 640px;
+      height: 360px;
+      border: none;
+      background: #0074bc;
+      margin-top: 20px;
+      margin: 0 auto;
+      border-radius:5px;
+      margin-bottom: 65px;
+      margin-top:35px;
+      display:block;
+      -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+      -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+      box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
+      z-index:0;
+
 }
 
 
 
 .navbar-toggle.collapsed {
+ .top-bar {
+    transform: rotate(0);
+     background-color: #FF0048;
+ }
+ .middle-bar {
+   opacity: 1;
+   background-color: #FF0048;
+ }
+ .bottom-bar {
+   transform: rotate(0);
+   background-color: #FF0048;
+  }
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
   .top-bar {
-     transform: rotate(0);
-      background-color: #FF0048;
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
   }
   .middle-bar {
-    opacity: 1;
-    background-color: #FF0048;
+    opacity: 0;
   }
   .bottom-bar {
-    transform: rotate(0);
-    background-color: #FF0048;
-   }
- }
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
 
- .navbar-toggle {
-   border: none;
-   background: transparent !important;
+.pagination {
+  background-color:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
 
-   &:hover {
-     background: transparent !important;
-   }
-
-   .icon-bar {
-     width: 22px;
-     transition: all 0.2s;
-   }
-   .top-bar {
-     transform: rotate(45deg);
-     transform-origin: 10% 10%;
-   }
-   .middle-bar {
-     opacity: 0;
-   }
-   .bottom-bar {
-     transform: rotate(-45deg);
-     transform-origin: 10% 90%;
-   }
- }
+}
 
 
 
 
- @font-face {
-     font-family: 'si';
-     src: url('PATH_TO/socicon.eot');
-     src: url('PATH_TO/socicon.eot?#iefix') format('embedded-opentype'),
-          url('PATH_TO/socicon.woff') format('woff'),
-          url('PATH_TO/socicon.ttf') format('truetype'),
-          url('PATH_TO/socicon.svg#icomoonregular') format('svg');
-     font-weight: normal;
-     font-style: normal;
+@font-face {
+    font-family: 'si';
+    src: url('PATH_TO/socicon.eot');
+    src: url('PATH_TO/socicon.eot?#iefix') format('embedded-opentype'),
+         url('PATH_TO/socicon.woff') format('woff'),
+         url('PATH_TO/socicon.ttf') format('truetype'),
+         url('PATH_TO/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
- }
+}
 
- @media screen and (-webkit-min-device-pixel-ratio:0) {
-     @font-face {
-         font-family:si;
-         src: url(PATH_TO/socicon.svg) format(svg);
-     }
- }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:si;
+        src: url(PATH_TO/socicon.svg) format(svg);
+    }
+}
