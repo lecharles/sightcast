@@ -1,25 +1,11 @@
 $(document).on('ready page:load', function() {
-
-
-  if($('div.show_sightcast').length) {
-    if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
-    var mjpeg_img;
-
-    function reload_img () {
-      mjpeg_img.src = "https://rpicast.ngrok.io/cam_pic.php?time=" + new Date().getTime();
-    }
-    function error_img () {
-      setTimeout("mjpeg_img.src = 'https://rpicast.ngrok.io/cam_pic.php?time=' + new Date().getTime();", 100);
-    }
-    function initRPi() {
-      mjpeg_img = $("#vmjpeg_dest");
-      mjpeg_img.onload = reload_img;
-      mjpeg_img.onerror = error_img;
-      reload_img();
-    }
-
-
+if($('div.show_sightcast').length) {
     setTimeout(initRPi, 100);
+
+    if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
+    // var mjpeg_img;
+
+
 
 
 //IF YOU ARE A HOST:
