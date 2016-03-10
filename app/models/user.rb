@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :sightcasts
 
   validates :username, length: { minimum: 6 }, if: -> { new_record? || changes["username"] }
-  validates_format_of :username, :with => /^[A-Za-z0-9.&]*\z/
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes["password"] }
   validates :password, confirmation: true, if: -> { new_record? || changes["password"] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes["password"] }
