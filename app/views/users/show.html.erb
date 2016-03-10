@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="col-md-6 " >
-    <div class="panel panel-default" style="margin-top:50px;" >
-      <div class="panel-body">
-      <h1>Profile:</h1>
+<body id="usershowbody">
+ <div  class="col-md-6 col-md-offset-3">
+  <div id="hostpanel" class="panel panel-default" style="margin-top:20px";>
+    <div  class="panel-body">
+      <h1 style="font-weight:lighter;">Profile</h1>
         <p>
           <%= image_tag @user.avatar.url(:thumb) %>
           <strong>Username:</strong>
@@ -15,6 +15,4 @@
       </div>
     </div>
   </div>
-
-  <div class="col-md-3"></div>
-</div>
+</body>
