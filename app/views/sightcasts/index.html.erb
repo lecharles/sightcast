@@ -17,6 +17,5 @@
       </div>
     <% end %>
   </div>
+  <%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
 </div>
-
-<%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
