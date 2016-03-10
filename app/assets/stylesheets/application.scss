@@ -124,6 +124,19 @@ textarea {
   font-size: 60px;
 }
 
+#user-panel {
+  background-color:rgba(0, 0, 0, 0.6);
+  color:white;
+  border:none;
+}
+
+#user-index-background{
+  background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ), asset-url('sunset.jpg');
+}
+
 #join-usernew {
   background:linear-gradient(
         rgba(0,0,0,0.5),
@@ -132,6 +145,7 @@ textarea {
   background-size: cover;
   height: 295px;
 }
+
 
 #join-usernew h1 {
   color: #EFECE2;
@@ -304,7 +318,7 @@ textarea {
   padding: 1px 2px;
 }
 
-#control-button {
+.control-button {
   background-color:rgba(0, 0, 0, 0.3) ;
   color: white;
   letter-spacing: 1px;
@@ -312,7 +326,7 @@ textarea {
   padding:10px 15px;
 }
 
-#control-button:hover {
+.control-button:hover {
   background-color:rgba(0, 0, 0, 0.5) ;
 
 }
@@ -405,6 +419,13 @@ textarea {
      transform: rotate(-45deg);
      transform-origin: 10% 90%;
    }
+ }
+
+ .pagination {
+   background-color:rgba(0, 0, 0, 0.6);
+   color:white;
+   border:none;
+
  }
 
 
