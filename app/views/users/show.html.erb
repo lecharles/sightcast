@@ -7,6 +7,8 @@
       <h1>Profile:</h1>
         <p>
           <%= image_tag @user.avatar.url(:thumb) %>
+          <strong>Username:</strong>
+          <%= @user.username %><br>
           <strong>Email:</strong>
           <%= @user.email %><br>
         </p>
