@@ -222,6 +222,7 @@ $(document).on('ready page:load', function() {
           $('#sightcastwaitdiv').fadeOut(0);
           $('#video-container').css('opacity', '1.0');
 
+
         });
       };
       initViewer();
