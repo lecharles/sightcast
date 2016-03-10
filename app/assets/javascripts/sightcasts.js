@@ -220,7 +220,7 @@ $(document).on('ready page:load', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
           $('#sightcastwaitdiv').fadeOut(0);
-          $('#video-container').fadeIn(3000);
+          $('#video-container').css('opacity', '1.0');
 
         });
       };
