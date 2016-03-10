@@ -15,7 +15,7 @@ $(document).on('ready page:load', function() {
   }
 
 
-  setTimeout('initRPi();', 100);
+  setTimeout(initRPi, 100);
 
   if($('div.show_sightcast').length) {
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
