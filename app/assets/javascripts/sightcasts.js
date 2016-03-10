@@ -59,37 +59,7 @@ if($('div.show_sightcast').length) {
         rtcc.initialize();
       },
 
-      function toggleRPiView() {
-        //This is where the piStream Goes
-      }
 
-      function contains(array, obj) {
-         for (var i = 0; i < array.length; i++) {
-             if (array[i] === obj) {
-                 return true;
-             }
-         }
-         return false;
-      }
-
-      function setSightcastControlButtons(participants) {
-        $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleRPiView()">RPi</button>';
-        $('#sightcast-control').append(buttonString);
-        for ( var i = 0; i < participants.length; i++ ) {
-          displayName = participants[i].displayName.replace(/['"]+/g, '');
-          console.log("CAMERAS: " + CAMERA_ARRAY);
-          console.log("PARTICIPANT: " + participants[i].displayName)
-          console.log("UID CASTER: " + UID_CASTER);
-          if ( displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
-            $('#sightcast-control').append(buttonString);
-          } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
-            $('#sightcast-control').append(buttonString);
-          }
-        }
-      }
 
       defineCallListenersHost = function(hostCall) {
         sightcastCall = hostCall;
@@ -124,6 +94,48 @@ if($('div.show_sightcast').length) {
         }
         else {
           alert("Create meeting point first!");
+        }
+      },
+      toggleView = function(whichView, speakerId) {
+        if (whichView === 'RPi') {
+          $('#video-container').css('opacity', '0.0')
+          $('#vmjpeg_dest').css('display', 'block');
+          sightcastCall.sendInbandMessage("RPi");
+        }
+        else if (whichView === 'SightCall') {
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '1.0');
+          sightcastCall.sendInbandMessage("SightCall");
+          sightcastCall.lockActiveSpeaker(speakerId);
+
+        }
+      },
+
+      contains = function(array, obj) {
+         for (var i = 0; i < array.length; i++) {
+             if (array[i] === obj) {
+                 return true;
+             }
+         }
+         return false;
+      },
+
+      setSightcastControlButtons = function(participants) {
+        $('#sightcast-control').html(""); //clear each time
+        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
+        $('#sightcast-control').append(buttonString);
+        for ( var i = 0; i < participants.length; i++ ) {
+          displayName = participants[i].displayName.replace(/['"]+/g, '');
+          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("PARTICIPANT: " + participants[i].displayName)
+          console.log("UID CASTER: " + UID_CASTER);
+          if ( displayName === UID_CASTER ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          } else if ( contains(CAMERA_ARRAY, displayName) ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          }
         }
       };
 
@@ -219,6 +231,7 @@ if($('div.show_sightcast').length) {
       },
 
       defineCallListenersViewer = function(viewer_call) {
+        sightcastCall = viewer_call
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
@@ -232,10 +245,25 @@ if($('div.show_sightcast').length) {
           viewer_call.audioMute();
 
         });
+        viewer_call.on('inband.message.receive', function(theMessage) {
+          toggleViewer(theMessage)
+        });
 
       },
       initViewer = function() {
         initializeRtcc();
+      },
+      toggleViewer = function(message) {
+        if (message === 'RPi') {
+          $('#video-container').css('opacity', '0.0');
+          $('#vmjpeg_dest').css('display', 'block');
+        }
+        else if (message === 'SightCall') {
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '1.0');
+
+        }
+
       },
       joinViewer = function() {
         var id = $('#meeting_point_id').val();
