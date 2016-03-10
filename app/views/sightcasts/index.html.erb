@@ -9,11 +9,14 @@
             <p><strong>Description: </strong> <%= sightcast.description %></p>
             <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
             <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-            
+            <% if current_user == sightcast.host %>
+              <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
+            <% else %>
+              <p><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-  <%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
 </div>
