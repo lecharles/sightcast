@@ -24,9 +24,11 @@ textarea {
   resize: none;
 }
 
+
 #panelsupport {
 padding: 0px;
 }
+
 
 #landing {
  background:linear-gradient(
@@ -37,13 +39,6 @@ padding: 0px;
  height: 550px;
 }
 
-#sightcastshowbody {
- background:linear-gradient(
-       rgba(0,0,0,0.7),
-       rgba(0,0,0,0.7)
-       ), asset-url('tropical2.jpg');
- background-size: cover;
-}
 
 #sightcastsindexheader a  {
  font-weight:lighter;
@@ -63,6 +58,8 @@ padding: 0px;
  background-size:cover;
 
 }
+
+
 
 #showaccount {
  background:linear-gradient(
@@ -100,6 +97,8 @@ padding: 0px;
   border:none;
   color:white;
 }
+
+
 
 #editaccount {
  background:linear-gradient(
@@ -146,6 +145,17 @@ padding: 0px;
  border:none;
 }
 
+
+
+#sightcastshowbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.7),
+       rgba(0,0,0,0.7)
+       ), asset-url('tropical2.jpg');
+ background-size: cover;
+}
+
+
 #sightcastnew {
  background:linear-gradient(
        rgba(0,0,0,0.5),
@@ -173,6 +183,8 @@ padding: 0px;
  font-size: 55px;
 }
 
+
+
 #user-panel {
  background-color:rgba(0, 0, 0, 0.6);
  color:white;
@@ -185,6 +197,8 @@ padding: 0px;
        rgba(0,0,0,0.5)
        ), asset-url('sunset.jpg');
 }
+
+
 
 #join-usernew {
  background:linear-gradient(
@@ -208,6 +222,8 @@ padding: 0px;
   border:none;
 }
 
+
+
 #pagesindexpanel {
   background-color:rgba(0, 0, 0, 0.3);
   color:white;
@@ -219,6 +235,8 @@ padding: 0px;
   color:white;
   border:none;
 }
+
+
 
 
 #loginnew {
@@ -253,6 +271,8 @@ padding: 0px;
   padding:20px;
 }
 
+
+
 #sightcastnav {
   background-color:#FF0048 ;
   opacity:0.8;
@@ -267,6 +287,7 @@ padding: 0px;
 #sightcastnav a {
   color:white;
 }
+
 
 .navbar {
   padding:0px;
@@ -384,7 +405,6 @@ height: 40px;
 
 
 
-
 // this is for video
 #video-container {
    width: 640px;
@@ -424,7 +444,7 @@ height: 40px;
 .navbar-toggle.collapsed {
  .top-bar {
     transform: rotate(0);
-     background-color: #FF0048;
+    background-color: #FF0048;
  }
  .middle-bar {
    opacity: 1;
@@ -460,14 +480,6 @@ height: 40px;
     transform-origin: 10% 90%;
   }
 }
-
-.pagination {
-  background-color:rgba(0, 0, 0, 0.6);
-  color:white;
-  border:none;
-
-}
-
 
 @font-face {
     font-family: 'si';
