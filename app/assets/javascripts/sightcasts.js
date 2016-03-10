@@ -74,10 +74,10 @@ $(document).on('ready page:load', function() {
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + participants[i].displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
