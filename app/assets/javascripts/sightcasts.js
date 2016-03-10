@@ -223,6 +223,11 @@ $(document).on('ready page:load', function() {
           $('#video-container').css('opacity', '1.0');
 
         });
+        viewer_call.on('call.create', function() {
+          viewer_call.videoStop();
+          viewer_call.audioMute();
+
+        });
       };
       initViewer();
     }
