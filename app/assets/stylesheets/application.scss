@@ -26,7 +26,7 @@ textarea {
 
 
 #panelsupport {
-padding: 0px;
+  padding: 0px;
 }
 
 
@@ -60,12 +60,13 @@ padding: 0px;
 }
 
 #sightcastshowbody {
- background:linear-gradient(
-       rgba(0,0,0,0.1),
-       rgba(0,0,0,0.1)
-       ), asset-url('sunset.jpg');
- background-size: cover;
+  background:linear-gradient(
+       rgba(0,0,0,0.7),
+       rgba(0,0,0,0.7)
+       ), asset-url('tropical2.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 #sightcastshowpanel h1 {
  font-weight: lighter;
