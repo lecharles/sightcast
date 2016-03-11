@@ -316,7 +316,6 @@ $(document).on('ready page:load', function() {
 
     }).done(function(data) {
       $('#camera_people').css('display', 'block');
-      CAMERA_ARRAY = [];
       $('#add_camera_message').html(data.message);
       $('#camera_people_list').html('');
       for (var i = 0; i< data.cameras.length; i++) {

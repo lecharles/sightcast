@@ -6,7 +6,7 @@ var APP_ID;
 var SC_ID;
 var MPID;
 var CAMERA;
-var CAMERA_ARRAY;
+var CAMERA_ARRAY = [];
 
 var sightcastCall;
 
