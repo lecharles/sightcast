@@ -126,7 +126,7 @@ $(document).on('ready page:load', function() {
           if ( displayName === UID_CASTER ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
-          } else if ( contains(cams_array, displayName) ) {
+          } else if ( contains(CAMERA_ARRAY, displayName) ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
