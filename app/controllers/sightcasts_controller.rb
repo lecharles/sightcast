@@ -39,9 +39,6 @@ class SightcastsController < ApplicationController
       else
         message = "Username not found in database"
       end
-    else
-      @sightcast.users.delete(@sightcast.users.all)
-      @sightcast.viewers = 0
     end
 
 
