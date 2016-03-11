@@ -6,10 +6,10 @@
     <div class="panel-body">
       <h1 style="font-weight:lighter;">Profile</h1>
         <%= image_tag @user.avatar.url(:thumb) %>
-        <p> <strong>Username:</strong>
+        <p><strong>Username:</strong>
         <%= @user.username %></p>
-          <strong>Email:</strong>
-        <%= @user.email %><br>
+        <p><strong>Email:</strong>
+        <%= @user.email %></p>
 
       <%= link_to 'Edit', edit_user_path(@user), id: "sightcastbutton", class: "btn btn-primary" %>
       <%= link_to 'Back', users_path, id: "sightcastbutton", class: "btn btn-primary" %>
