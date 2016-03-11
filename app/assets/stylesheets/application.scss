@@ -116,7 +116,27 @@ padding: 0px;
 }
 
 
-#sightcast {
+
+#sightcast-index-body {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('ocean.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+
+#sightcastpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
+#showaccount {
  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
@@ -125,7 +145,7 @@ padding: 0px;
  height: 445px;
 }
 
-#sightcastbody {
+#showaccountbody {
  background:linear-gradient(
        rgba(0,0,0,0.5),
        rgba(0,0,0,0.5)
@@ -133,20 +153,6 @@ padding: 0px;
  background-size: cover;
 }
 
-#showaccount h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 60px;
-}
-
-#showaccountpanel {
-  padding-bottom:0px;
-  background:rgba(0, 0, 0, 0.6);
-  margin-top:30px;
-  border:none;
-  color:white;
-}
 
 
 #editaccount {
