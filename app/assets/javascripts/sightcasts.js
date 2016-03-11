@@ -124,7 +124,7 @@ $(document).on('ready page:load', function() {
       setSightcastControlButtons = function(participants) {
         var num_viewers = 0;
         $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button id="RPiButton" class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">1) RPi</button>';
+        buttonString = '<button id="RPiButton" class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">[1] RPi</button>';
         $('#sightcast-control').append(buttonString);
         var button_index = 2;
 
