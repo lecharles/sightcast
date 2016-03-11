@@ -63,12 +63,20 @@ class SightcastsController < ApplicationController
 
   def update
     @sightcast = Sightcast.find(params[:id])
-    @sightcast.users.delete(@sightcast.users.all)
+    if (params[:sightcast][:meeting_point_id])
+      @sightcast.users.delete(@sightcast.users.all)
+    end
 
     if @sightcast.update_attributes(sightcast_params)
-      redirect_to sightcast_path(@sightcast)
+      message = "Sightcast updated.";
     else
-      redirect_to sightcast_path(@sightcast)
+      message = "Problem updating Sightcast.";
+    end
+
+    respond_to do |format|
+      format.html
+      msg = { :num_viewers => params[:sightcast][:viewers], :message => message }
+      format.json { render :json => msg }
     end
   end
 
@@ -77,7 +85,7 @@ class SightcastsController < ApplicationController
 
   private
   def sightcast_params
-    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id)
+    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id, :viewers)
   end
 
 end
