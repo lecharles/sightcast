@@ -303,10 +303,12 @@ $(document).on('ready page:load', function() {
       data: $(this).serialize()
 
     }).done(function(data) {
+      CAMERA_ARRAY = [];
       $('#add_camera_message').html(data.message);
       $('#camera_people_list').html('');
       for (var i = 0; i< data.cameras.length; i++) {
         $('#camera_people_list').append($('<li />').append(data.cameras[i].username));
+        CAMERA_ARRAY.push(data.cameras[i].username);
       }
     });
   });
