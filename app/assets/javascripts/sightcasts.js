@@ -14,6 +14,7 @@ $(document).on('ready page:load', function() {
 
     $('#video-container').css('opacity', '0.0');
     if (CASTER) {
+      CAMERA_ARRAY = [];
       var participants = [];
 
       $('#connection_status').html("Step 1. Connecting...");
@@ -128,7 +129,7 @@ $(document).on('ready page:load', function() {
         $('#sightcast-control').append(buttonString);
         var button_index = 2;
         var cameras;
-        if typeof CAMERA_ARRAY === 'undefined') {
+        if (typeof CAMERA_ARRAY === 'undefined') {
           cameras = [];
         }
         else {
