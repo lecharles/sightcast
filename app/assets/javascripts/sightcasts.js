@@ -1,27 +1,9 @@
 $(document).on('ready page:load', function() {
 
-
   if($('div.show_sightcast').length) {
-    if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
-    var mjpeg_img;
-
-    function reload_img () {
-      mjpeg_img.src = "https://rpicast.ngrok.io/cam_pic.php?time=" + new Date().getTime();
-    }
-    function error_img () {
-      setTimeout("mjpeg_img.src = 'https://rpicast.ngrok.io/cam_pic.php?time=' + new Date().getTime();", 100);
-    }
-    function initRPi() {
-      mjpeg_img = $("#vmjpeg_dest");
-      mjpeg_img.onload = reload_img;
-      mjpeg_img.onerror = error_img;
-      reload_img();
-    }
-
-
     setTimeout(initRPi, 100);
 
-
+    if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 //IF YOU ARE A HOST:
 
     $('#video-container').css('opacity', '0.0');
@@ -73,37 +55,7 @@ $(document).on('ready page:load', function() {
         rtcc.initialize();
       },
 
-      function toggleRPiView() {
-        //This is where the piStream Goes
-      }
 
-      function contains(array, obj) {
-         for (var i = 0; i < array.length; i++) {
-             if (array[i] === obj) {
-                 return true;
-             }
-         }
-         return false;
-      }
-
-      function setSightcastControlButtons(participants) {
-        $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleRPiView()">RPi</button>';
-        $('#sightcast-control').append(buttonString);
-        for ( var i = 0; i < participants.length; i++ ) {
-          displayName = participants[i].displayName.replace(/['"]+/g, '');
-          console.log("CAMERAS: " + CAMERA_ARRAY);
-          console.log("PARTICIPANT: " + participants[i].displayName)
-          console.log("UID CASTER: " + UID_CASTER);
-          if ( displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
-            $('#sightcast-control').append(buttonString);
-          } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="sightcastCall.lockActiveSpeaker(' + participants[i].id + ')">' + displayName + '</button>';
-            $('#sightcast-control').append(buttonString);
-          }
-        }
-      }
 
       defineCallListenersHost = function(hostCall) {
         sightcastCall = hostCall;
@@ -138,6 +90,48 @@ $(document).on('ready page:load', function() {
         }
         else {
           alert("Create meeting point first!");
+        }
+      },
+      toggleView = function(whichView, speakerId) {
+        if (whichView === 'RPi') {
+          $('#video-container').css('opacity', '0.0')
+          $('#vmjpeg_dest').css('display', 'block');
+          sightcastCall.sendInbandMessage("RPi");
+        }
+        else if (whichView === 'SightCall') {
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '1.0');
+          sightcastCall.sendInbandMessage("SightCall");
+          sightcastCall.lockActiveSpeaker(speakerId);
+
+        }
+      },
+
+      contains = function(array, obj) {
+         for (var i = 0; i < array.length; i++) {
+             if (array[i] === obj) {
+                 return true;
+             }
+         }
+         return false;
+      },
+
+      setSightcastControlButtons = function(participants) {
+        $('#sightcast-control').html(""); //clear each time
+        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
+        $('#sightcast-control').append(buttonString);
+        for ( var i = 0; i < participants.length; i++ ) {
+          displayName = participants[i].displayName.replace(/['"]+/g, '');
+          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("PARTICIPANT: " + participants[i].displayName)
+          console.log("UID CASTER: " + UID_CASTER);
+          if ( displayName === UID_CASTER ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          } else if ( contains(CAMERA_ARRAY, displayName) ) {
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            $('#sightcast-control').append(buttonString);
+          }
         }
       };
 
@@ -224,15 +218,8 @@ $(document).on('ready page:load', function() {
         rtcc.initialize();
       },
 
-      initViewer = function() {
-        initializeRtcc("External Viewer");
-      },
-      joinViewer = function() {
-        var id = $('#meeting_point_id').val();
-        rtcc.joinConfCall(id);
-      },
-
       defineCallListenersViewer = function(viewer_call) {
+        sightcastCall = viewer_call
         viewer_call.on('active', function() {
           viewer_call.videoStop();
           viewer_call.audioMute();
@@ -246,10 +233,25 @@ $(document).on('ready page:load', function() {
           viewer_call.audioMute();
 
         });
+        viewer_call.on('inband.message.receive', function(theMessage) {
+          toggleViewer(theMessage)
+        });
 
       },
       initViewer = function() {
         initializeRtcc();
+      },
+      toggleViewer = function(message) {
+        if (message === 'RPi') {
+          $('#video-container').css('opacity', '0.0');
+          $('#vmjpeg_dest').css('display', 'block');
+        }
+        else if (message === 'SightCall') {
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '1.0');
+
+        }
+
       },
       joinViewer = function() {
         var id = $('#meeting_point_id').val();
