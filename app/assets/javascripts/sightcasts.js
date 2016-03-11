@@ -211,7 +211,7 @@ $(document).on('ready page:load', function() {
 
       options = {
         debugLevel : 1,
-        displayName : "External Viewer",
+        displayName : "External Viewer " + Math.random()*1000000,
         defaultStyle: true,
         container: 'video-container',
         legacy: false
