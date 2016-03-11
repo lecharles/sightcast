@@ -33,36 +33,31 @@
            <div><img id="vmjpeg_dest" /></div>
 
 
-    <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
-      <div class="panel-body">
-        <div class="col-md-8">
-          <h1>Connecting is easy as 1,2,3..</h1>
-        </div>
-
-              </div>
-            </div>
-
-            <!-- <p style="font-size:20px;">Camera people:</p> -->
-            <div id="sightcast-control" style='display:none;'>
-
-           </div>
-
-            </div>
-
-      <div class="col-md-3 ">
-        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
+        <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
           <div class="panel-body">
-              <div id="error" style="display:none;" class="bg-danger" >
-                <h4>An error occurred:</h4>
-                <div id="error-content">This is the error</div>
-              </div>
-
-              <div class="center-block" >
-                <h4 style="text-align: center;font-weight:lighter;" id="connection_status"></h4>
-              </div>
-
+            <div class="col-md-8">
+              <h1>Connecting is easy as 1,2,3..</h1>
+            </div>
           </div>
         </div>
+
+            <!-- <p style="font-size:20px;">Camera people:</p> -->
+      <div id="sightcast-control" style='display:none;'></div>
+    </div>
+
+    <div class="col-md-3 ">
+      <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
+        <div class="panel-body">
+          <div id="error" style="display:none;" class="bg-danger" >
+            <h4>An error occurred:</h4>
+            <div id="error-content">This is the error</div>
+          </div>
+
+            <div class="center-block" >
+              <h4 style="text-align: center;font-weight:lighter;" id="connection_status"></h4>
+            </div>
+        </div>
+      </div>
 
 
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
@@ -97,7 +92,6 @@
               <% end %>
             </div>
           </div>
-
         </div>
 
         <div id="hostpanel" class="panel panel-default" >
@@ -111,8 +105,6 @@
         </div>
 
 
-
-
         <!-- <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
               <h4> Click join to view the Sightcast</h4>
@@ -122,23 +114,17 @@
           </div>
         </div> -->
 
-
-
-
       <div id="mobile-camera" style="display:none;">
        <a id="mobile-camera-id" href="#">Click here to Film With Your Mobile!</a>
       </div>
-
-
-    </div>
-
+  </div>
 
   <div class="col-md-2">
     <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
       <div class="panel-body" id="camera_people" style="display:none;">
         <div class="center-block" style="float:none;">
           <div  id="add_camera_message"></div>
-            <h4 style="text-align: center;font-weight:lighter;" >Camera People</h4>
+            <h4 style="text-align: center;font-weight:lighter;">Sight People</h4>
               <ul id = "camera_people_list">
               <% @sightcast.users.each do | camera | %>
                 <li><%= camera.username %></li>
