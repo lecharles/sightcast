@@ -10,7 +10,7 @@ $(document).on('ready page:load', function() {
     if (CASTER) {
       var participants = [];
 
-      $('#connection_status').html("Step 1.Connecting....");
+      $('#connection_status').html("Step 1. Connecting....");
       // Define the optional parameters
       rtcc = {},
       meetingPoint = "",
@@ -28,7 +28,7 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html(' Step 1.Connected as host.');
+          $('#connection_status').html(' Connected as Host!');
           $('#create_meeting_point').css('display', 'block');
         });
 
@@ -118,18 +118,27 @@ $(document).on('ready page:load', function() {
 
       setSightcastControlButtons = function(participants) {
         $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
+        buttonString = '<button id="RPiButton" class="btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
         $('#sightcast-control').append(buttonString);
+
+//REFERENCE CODE TO ADAPT ***************************
+        $("#RPiButton").keyup(function(e){
+          if(e.keyCode == 49){
+            $("#RPiButton").trigger("click");
+          }
+        });
+//REFERENCE CODE TO ADAPT ***************************
+
         for ( var i = 0; i < participants.length; i++ ) {
           displayName = participants[i].displayName.replace(/['"]+/g, '');
           console.log("CAMERAS: " + CAMERA_ARRAY);
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
@@ -141,7 +150,7 @@ $(document).on('ready page:load', function() {
 
 //IF YOU ARE A CAMERA
     else if (CAMERA) {
-      $('#connection_status').html("Connecting as CAMERA!!");
+      $('#connection_status').html("Connecting as SightCam!");
       rtcc = {},
       meetingPoint = "",
       options = {
@@ -157,7 +166,7 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html('Connection Status: Connected as Camera!!');
+          $('#connection_status').html('Connection Status: Connected as SightCam.');
           $('#mobile-camera-id').attr('href', 'sightcall://?mode=joininternal&appid=' + APP_ID + '&token=' + token + '&mpid=' + MPID + '&displayname=' + UID_USER + '&buttons=019&videoout=rear&videofull=out&videosmall=in');
           $('#mobile-camera').css('display', 'block');
         });
@@ -206,7 +215,7 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html('Connection Status: Connected as viewer!!');
+          $('#connection_status').html('Connection Status: Connected as Viewer!');
           $('#join_meeting_point').css('display', 'block');
         });
         rtcc.on('cloud.loggedastheotheruser', function() {
