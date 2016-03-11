@@ -63,7 +63,9 @@ class SightcastsController < ApplicationController
 
   def update
     @sightcast = Sightcast.find(params[:id])
-    @sightcast.users.delete(@sightcast.users.all)
+    if params[:sightcast][:meeting_point_id]
+      @sightcast.users.delete(@sightcast.users.all)
+    end
 
     if @sightcast.update_attributes(sightcast_params)
       redirect_to sightcast_path(@sightcast)
