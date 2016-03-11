@@ -226,7 +226,6 @@ $(document).on('ready page:load', function() {
         container: 'video-container',
         legacy: false
       },
-      alert(options.displayName);
 
 
       initializeRtcc = function() {
