@@ -128,11 +128,11 @@ $(document).on('ready page:load', function() {
         $('#sightcast-control').append(buttonString);
         var button_index = 2;
         var cameras;
-        if CAMERA_ARRAY.length > 0 {
-          cameras = CAMERA_ARRAY;
+        if typeof CAMERA_ARRAY === 'undefined') {
+          cameras = [];
         }
         else {
-          cameras = [];
+          cameras = CAMERA_ARRAY;
         }
 
         for ( var i = 0; i < participants.length; i++ ) {
