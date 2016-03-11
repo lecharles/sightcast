@@ -149,7 +149,6 @@ padding: 0px;
 }
 
 
-
 #editaccount {
  background:linear-gradient(
        rgba(0,0,0,0.5),
@@ -227,11 +226,13 @@ padding: 0px;
  border:none;
 }
 
-#user-index-background{
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('sunset.jpg');
+
+#usershowbody {
+  background:linear-gradient(
+       rgba(0,0,0,0.2),
+       rgba(0,0,0,0.2)
+       ), asset-url('tropicallanding.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 
@@ -363,7 +364,7 @@ padding: 0px;
   height:370px;
   border:none;
   position:relative;
-  top:-390px;
+  top:-430px;
 }
 
 
@@ -444,9 +445,8 @@ padding: 0px;
 #video-container {
    width: 640px;
    height: 360px;
-   border: none;
+   border: 3px solid white;
    background: #0074bc;
-   margin-top: 20px;
    margin: 0 auto;
    border-radius:5px;
    margin-bottom: 65px;
@@ -460,16 +460,23 @@ padding: 0px;
  }
 
 #vmjpeg_dest {
+   position:relative;
+   bottom:42px;
+ }
+//
+#vmjpeg_dest {
    width: 640px;
    height: 360px;
    border: 2px solid white;
-   background: #0074bc;
+  //  background: #0074bc;
    margin-top: 20px;
    margin: 0 auto;
    border-radius:5px;
    margin-bottom: 65px;
    margin-top:35px;
-   display:none;
+  position:absolute;
+  display:none;
+  z-index:1;
    -webkit-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
    -moz-box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
    box-shadow: 0px 0px 39px 0px rgba(148,148,148,1);
