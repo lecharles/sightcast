@@ -150,6 +150,7 @@ padding: 0px;
   font-size: 55px;
 }
 
+
 #hostpanel {
   background-color:rgba(0, 0, 0, 0.3);
   color:white;
@@ -297,6 +298,11 @@ padding: 0px;
   letter-spacing: 1px;
   border: 1px solid #FF336C;
   padding:10px 15px;
+  font-weight:lighter;
+}
+
+#usernamenav a {
+  color:#FF336C;
 }
 
 #sightcastbutton-sm {
