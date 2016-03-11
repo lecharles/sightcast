@@ -1,5 +1,4 @@
 $(document).on('ready page:load', function() {
-  var EXTERNAL_INDEX = 1;
   if($('div.show_sightcast').length) {
     setTimeout(initRPi, 100);
 
@@ -187,7 +186,7 @@ $(document).on('ready page:load', function() {
 
       options = {
         debugLevel : 1,
-        displayName : "External Viewer " + EXTERNAL_INDEX,
+        displayName : "External Viewer " + 1000000 * Math.random(),
         defaultStyle: true,
         container: 'video-container',
         legacy: false
