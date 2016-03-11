@@ -1,5 +1,5 @@
 $(document).on('ready page:load', function() {
-
+  VAR EXTERNAL_INDEX = 1;
   if($('div.show_sightcast').length) {
     setTimeout(initRPi, 100);
 
@@ -43,7 +43,6 @@ $(document).on('ready page:load', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
           $('#invite_cameras').css('display', 'block');
-          $('#camera_people').css('display', 'block');
           $('#sightcast_meeting_point_id').val(meetingPoint.id);
           $('#edit_sightcast_' + SC_ID).submit();
         });
@@ -122,13 +121,13 @@ $(document).on('ready page:load', function() {
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
           displayName = participants[i].displayName.replace(/['"]+/g, '');
-          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("CAMERAS: " + cams_array);
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
-          } else if ( contains(CAMERA_ARRAY, displayName) ) {
+          } else if ( contains(cams_array, displayName) ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
@@ -188,11 +187,12 @@ $(document).on('ready page:load', function() {
 
       options = {
         debugLevel : 1,
-        displayName : "External Viewer",
+        displayName : "External Viewer " + EXTERNAL_INDEX,
         defaultStyle: true,
         container: 'video-container',
         legacy: false
       },
+      EXTERNAL_INDEX++;
 
       initializeRtcc = function() {
         rtcc = new Rtcc(APP_ID, UID_CASTER, 'external', options);
@@ -281,9 +281,13 @@ $(document).on('ready page:load', function() {
     }).done(function(data) {
       $('#add_camera_message').html(data.message);
       $('#camera_people_list').html('');
+      CAMERA_ARRAY = []
       for (var i = 0; i< data.cameras.length; i++) {
+        CAMERA_ARRAY.push(data.cameras[i].username);
+
         $('#camera_people_list').append($('<li />').append(data.cameras[i].username));
       }
+      $('#camera_people').css('display', 'block');
     });
   });
 
