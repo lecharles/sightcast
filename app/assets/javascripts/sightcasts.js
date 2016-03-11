@@ -1,5 +1,5 @@
 $(document).on('ready page:load', function() {
-  VAR EXTERNAL_INDEX = 1;
+  var EXTERNAL_INDEX = 1;
   if($('div.show_sightcast').length) {
     setTimeout(initRPi, 100);
 
