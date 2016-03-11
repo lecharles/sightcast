@@ -122,6 +122,9 @@ $(document).on('ready page:load', function() {
       },
 
       setSightcastControlButtons = function(participants) {
+        if (CAMERA_ARRAY == undefined)
+          CAMERA_ARRAY = []
+        end
         var num_viewers = 0;
         $('#sightcast-control').html(""); //clear each time
         buttonString = '<button id="RPiButton" class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">1) RPi</button>';
