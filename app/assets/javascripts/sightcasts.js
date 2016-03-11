@@ -1,6 +1,7 @@
 $(document).on('ready page:load', function() {
 
   if($('div.show_sightcast').length) {
+    CAMERA_ARRAY = [];
     // $(document).keypress(function (e) {
     //   var key = e.keyCode || e.charCode;
     //   if (key >= 48 && key <= 57) {
@@ -14,7 +15,7 @@ $(document).on('ready page:load', function() {
 
     $('#video-container').css('opacity', '0.0');
     if (CASTER) {
-      CAMERA_ARRAY = [];
+
       var participants = [];
 
       $('#connection_status').html("Step 1. Connecting...");
