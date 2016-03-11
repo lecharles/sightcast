@@ -121,14 +121,6 @@ $(document).on('ready page:load', function() {
         buttonString = '<button id="RPiButton" class="btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
         $('#sightcast-control').append(buttonString);
 
-//REFERENCE CODE TO ADAPT ***************************
-        $("#RPiButton").keyup(function(e){
-          if(e.keyCode == 49){
-            $("#RPiButton").trigger("click");
-          }
-        });
-//REFERENCE CODE TO ADAPT ***************************
-
         for ( var i = 0; i < participants.length; i++ ) {
           displayName = participants[i].displayName.replace(/['"]+/g, '');
           console.log("CAMERAS: " + CAMERA_ARRAY);
