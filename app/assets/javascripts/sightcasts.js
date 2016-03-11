@@ -122,6 +122,7 @@ $(document).on('ready page:load', function() {
       },
 
       setSightcastControlButtons = function(participants) {
+        var num_viewers = 0;
         $('#sightcast-control').html(""); //clear each time
         buttonString = '<button id="RPiButton" class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">1) RPi</button>';
         $('#sightcast-control').append(buttonString);
@@ -139,7 +140,14 @@ $(document).on('ready page:load', function() {
             buttonString = '<button id="camera' + i + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">'+ (i+2) + ') ' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
+          else {
+            num_viewers++;
+
+          }
         }
+        $('#sightcast_viewers').val(num_viewers);
+        $('#edit_sightcast_' + SC_ID).submit();
+
       };
 
       $(document).keypress(function (e) {
@@ -288,9 +296,12 @@ $(document).on('ready page:load', function() {
     $.ajax({
       url: $(this).attr('action'),
       type: $(this).attr('method'),
-      dataType: 'html',
+      dataType: 'json',
       data: $(this).serialize()
 
+    }).done(function(data) {
+      $('#display_viewers').css('display', 'block');
+      $('#num_viewers').html(data.num_viewers);
     });
   });
   $('#add_camera').on('submit', function(e) {
