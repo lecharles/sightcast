@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def index
-    @sightcasts = Sightcast.all.paginate(page: params[:page], per_page: 6)
+    @sightcasts = Sightcast.all
     @users = User.all
   end
 

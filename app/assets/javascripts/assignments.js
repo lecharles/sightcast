@@ -10,8 +10,8 @@ var CAMERA_ARRAY;
 
 var sightcastCall;
 
-// AUTH_URL = 'https://salty-brook-83534.herokuapp.com/tokens/get_token?uid=';
-AUTH_URL = 'http://localhost:3000/tokens/get_token?uid='
+AUTH_URL = 'https://sightcall-carlos.herokuapp.com/tokens/get_token?uid=';
+// AUTH_URL = 'http://localhost:3000/tokens/get_token?uid='
 
 function isCaster(sightcaster) {
   CASTER = sightcaster;
