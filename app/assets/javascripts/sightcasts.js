@@ -138,7 +138,7 @@ $(document).on('ready page:load', function() {
             buttonString = '<button id="camera' + (i+2) + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">['+ (i+2) + '] ' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
             button_index++;
-          } else if ( contains(cameras, displayName) ) {
+          } else if ( contains(CAMERA_ARRAY, displayName) ) {
             buttonString = '<button id="camera' + (i+2) + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">['+ (i+2) + '] ' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
             button_index++;
