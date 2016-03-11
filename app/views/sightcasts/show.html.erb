@@ -36,7 +36,7 @@
         <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
           <div class="panel-body">
             <div class="col-md-8">
-              <h1>Connecting is easy as 1,2,3..</h1>
+              <h1>Connecting is easy as 1, 2, 3!</h1>
             </div>
           </div>
         </div>
@@ -63,8 +63,8 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="create_meeting_point"  style="display:none;">
             <div class="center-block" style="float:none;">
-              <h4 style="text-align: center;font-weight:lighter;"> Step 2.</h4><br/>
-              <button id="sightcastbutton" style="font-weight:lighter" class="center-block  btn btn-primary btn-lg" onclick="create()">Get set..</button>
+              <h4 style="text-align: center;font-weight:lighter;"> Step 2. </h4><br/>
+              <button id="sightcastbutton" style="font-weight:lighter" class="center-block  btn btn-primary btn-lg" onclick="create()">Ready!</button>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="host_meeting_point" style="display:none;">
             <div class="center-block" style="float:none;">
-                <h4 style="text-align: center;font-weight:lighter;">Step 3.</h4>
+                <h4 style="text-align: center;font-weight:lighter;">Step 3. </h4>
                 <button id="sightcastbutton" style="font-weight:lighter"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
                 <h4 style="font-weight:lighter">To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
@@ -124,7 +124,7 @@
       <div class="panel-body" id="camera_people" style="display:none;">
         <div class="center-block" style="float:none;">
           <div  id="add_camera_message"></div>
-            <h4 style="text-align: center;font-weight:lighter;">Sight People</h4>
+            <h4 style="text-align: center;font-weight:lighter;">SightCam(s)</h4>
               <ul id = "camera_people_list">
               <% @sightcast.users.each do | camera | %>
                 <li><%= camera.username %></li>
