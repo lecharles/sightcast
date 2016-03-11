@@ -121,9 +121,9 @@ $(document).on('ready page:load', function() {
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
 
-          displayName = participants[0].displayName.replace(/['"]+/g, '');
+          displayName = participants[i].displayName.replace(/['"]+/g, '');
           console.log("CAMERAS: " + CAMERA_ARRAY);
-          console.log("PARTICIPANT: " + participants[0].displayName)
+          console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
             buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
