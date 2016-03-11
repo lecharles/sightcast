@@ -1,5 +1,11 @@
 $(document).on('ready page:load', function() {
   if($('div.show_sightcast').length) {
+    $(document).keypress(function (e) {
+      var key = e.keyCode || e.charCode;
+      if (key >= 48 && key <= 57) {
+          alert('You pressed ' + (key - 48));
+      }
+    });
     setTimeout(initRPi, 100);
 
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
@@ -117,7 +123,7 @@ $(document).on('ready page:load', function() {
       setSightcastControlButtons = function(participants) {
 
         $('#sightcast-control').html(""); //clear each time
-        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
+        buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">1 RPi</button>';
         $('#sightcast-control').append(buttonString);
         for ( var i = 0; i < participants.length; i++ ) {
 
@@ -126,10 +132,10 @@ $(document).on('ready page:load', function() {
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">'(i+2) + ' ' + displayName'</button>';
             $('#sightcast-control').append(buttonString);
           } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button class=" btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">'(i+2) + ' ' + displayName'</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
