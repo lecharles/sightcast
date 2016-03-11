@@ -24,9 +24,11 @@ textarea {
   resize: none;
 }
 
+
 #panelsupport {
 padding: 0px;
 }
+
 
 #landing {
  background:linear-gradient(
@@ -37,13 +39,6 @@ padding: 0px;
  height: 550px;
 }
 
-#sightcastshowbody {
- background:linear-gradient(
-       rgba(0,0,0,0.7),
-       rgba(0,0,0,0.7)
-       ), asset-url('tropical2.jpg');
- background-size: cover;
-}
 
 #sightcastsindexheader a  {
  font-weight:lighter;
@@ -64,11 +59,143 @@ padding: 0px;
 
 }
 
+#sightcastshowbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.1),
+       rgba(0,0,0,0.1)
+       ), asset-url('sunset.jpg');
+ background-size: cover;
+}
+
+#sightcastshowpanel h1 {
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+ color: white;
+}
+
+#sightcastshowpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+}
+
+
+
+#showaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#showaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('urban.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+#showaccount h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+}
+
+#showaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
+#sightcast-index-body {
+ background:linear-gradient(
+       rgba(0,0,0,0.3),
+       rgba(0,0,0,0.3)
+       ), asset-url('sunset.jpg');
+ background-size: cover;
+}
+
+
+#sightcastpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.2);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
+#showaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#showaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('urban.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+
+
+#editaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('ocean.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#editaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('ocean.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+#editaccount h1 {
+ color: #EFECE2;
+ font-weight: lighter;
+ letter-spacing: 3px;
+ font-size: 60px;
+}
+
+#editaccountpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.6);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
 #loginpanel {
  background-color:rgba(0, 0, 0, 0.3);
  color:white;
  border:none;
 }
+
+
 
 #sightcastnew {
  background:linear-gradient(
@@ -97,29 +224,7 @@ padding: 0px;
  font-size: 55px;
 }
 
-#editaccount {
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('looker.jpg');
- background-size: cover;
- height: 445px;
-}
 
-#editaccountbody {
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('tropical2.jpg')no-repeat center center;
- background-size: cover;
-}
-
-#editaccount h1 {
- color: #EFECE2;
- font-weight: lighter;
- letter-spacing: 3px;
- font-size: 60px;
-}
 
 #user-panel {
  background-color:rgba(0, 0, 0, 0.6);
@@ -127,12 +232,16 @@ padding: 0px;
  border:none;
 }
 
-#user-index-background{
- background:linear-gradient(
-       rgba(0,0,0,0.5),
-       rgba(0,0,0,0.5)
-       ), asset-url('sunset.jpg');
+
+#usershowbody {
+  background:linear-gradient(
+       rgba(0,0,0,0.2),
+       rgba(0,0,0,0.2)
+       ), asset-url('tropicallanding.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
+
+
 
 #join-usernew {
  background:linear-gradient(
@@ -156,6 +265,8 @@ padding: 0px;
   border:none;
 }
 
+
+
 #pagesindexpanel {
   background-color:rgba(0, 0, 0, 0.3);
   color:white;
@@ -167,6 +278,8 @@ padding: 0px;
   color:white;
   border:none;
 }
+
+
 
 
 #loginnew {
@@ -201,6 +314,8 @@ padding: 0px;
   padding:20px;
 }
 
+
+
 #sightcastnav {
   background-color:#FF0048 ;
   opacity:0.8;
@@ -215,6 +330,7 @@ padding: 0px;
 #sightcastnav a {
   color:white;
 }
+
 
 .navbar {
   padding:0px;
@@ -256,21 +372,6 @@ padding: 0px;
   position:relative;
   top:-430px;
 }
-
-
-#editaccountbody {
-  background:asset-url('tropical2.jpg') no-repeat center center fixed;
-  background-size:cover;
-}
-
-#editaccountpanel {
-  padding-bottom:0px;
-  background:rgba(0, 0, 0, 0.6);
-  margin-top:30px;
-  border:none;
-  color:white;
-}
-
 
 
 #usersignuppanel {
@@ -331,19 +432,17 @@ padding: 0px;
 
 
 .footer {
-background-color: #FFFFFF;
-margin-top: 40px;
-bottom: 0;
-position: fixed;
-width: 100%;
-height: 40px;
+  background-color: #FFFFFF;
+  margin-top: 40px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 40px;
 }
-
 
 .footer a {
  color: #F60448;
 }
-
 
 
 
@@ -393,7 +492,7 @@ height: 40px;
 .navbar-toggle.collapsed {
  .top-bar {
     transform: rotate(0);
-     background-color: #FF0048;
+    background-color: #FF0048;
  }
  .middle-bar {
    opacity: 1;
@@ -429,14 +528,6 @@ height: 40px;
     transform-origin: 10% 90%;
   }
 }
-
-.pagination {
-  background-color:rgba(0, 0, 0, 0.6);
-  color:white;
-  border:none;
-
-}
-
 
 @font-face {
     font-family: 'si';
