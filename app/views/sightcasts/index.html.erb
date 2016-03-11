@@ -1,23 +1,26 @@
-<div class="container">
-  <h1>ALL THE SIGHTCASTS</h1>
-  <div class = 'sightcast'>
-    <% @sightcasts.each do | sightcast | %>
+<body id="sightcast-index-body">
+ <div class="col-md-8 col-md-offset-2">
+  <div id="sightcastpanel" class="panel panel-default" >
+    <div class="panel-body">
+      <h1 style="font-weight:lighter;">ALL THE SIGHTCASTS</h1>
+      <% @sightcasts.each do | sightcast | %>
       <div class="col-md-4">
-        <div  class="panel panel-default" style="height:180px;" >
-          <div class="panel-body">
-            <p><strong>Title: </strong> <%= sightcast.title %></p>
-            <p><strong>Description: </strong> <%= sightcast.description %></p>
-            <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
-            <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-            <% if current_user == sightcast.host %>
-              <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
-            <% else %>
-              <p><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
-            <% end %>
+        <div id="hostpanel" class="panel panel-default" style="height:180px;" >
+          <div class="panel-body" id="hostpanel">
+          <p><strong>Title: </strong> <%= sightcast.title %></p>
+          <p><strong>Description: </strong> <%= sightcast.description %></p>
+          <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
+          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
+          <% if current_user == sightcast.host %>
+          <p><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
+          <% else %>
+          <p><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
+          <% end %>
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <%= will_paginate @sightcasts, renderer: BootstrapPagination::Rails %>
 </div>
+</body>
