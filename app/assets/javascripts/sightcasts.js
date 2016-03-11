@@ -121,20 +121,37 @@ $(document).on('ready page:load', function() {
         buttonString = '<button id="RPiButton" class="btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0, 0)">RPi</button>';
         $('#sightcast-control').append(buttonString);
 
+
         for ( var i = 0; i < participants.length; i++ ) {
           displayName = participants[i].displayName.replace(/['"]+/g, '');
           console.log("CAMERAS: " + CAMERA_ARRAY);
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
-            buttonString = '<button class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button id="camera' + i + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           } else if ( contains(CAMERA_ARRAY, displayName) ) {
-            buttonString = '<button class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
+            buttonString = '<button id="camera' + i + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
           }
         }
       };
+
+      $(document).keypress(function (e) {
+        var key = e.keyCode;
+        // alert('You pressed ' + (key));
+        if ( key == 49 ) {
+          $('#RPiButton').click();
+        } else if (( key > 49 ) && ( key < 58 )){
+          // alert('#camera');
+          $('#camera' + (key - 50)).click();
+        }
+      });
+
+      // $('#RPiButton').keypress(function(event){
+      //   if(event.which == 49){
+      //   }
+      // });
 
       init();
 
