@@ -1,7 +1,7 @@
 $(document).on('ready page:load', function() {
 
   if($('div.show_sightcast').length) {
-    CAMERA_ARRAY = [];
+    
     // $(document).keypress(function (e) {
     //   var key = e.keyCode || e.charCode;
     //   if (key >= 48 && key <= 57) {
