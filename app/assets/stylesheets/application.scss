@@ -26,7 +26,7 @@ textarea {
 
 
 #panelsupport {
-padding: 0px;
+  padding: 0px;
 }
 
 
@@ -60,12 +60,13 @@ padding: 0px;
 }
 
 #sightcastshowbody {
- background:linear-gradient(
-       rgba(0,0,0,0.1),
-       rgba(0,0,0,0.1)
-       ), asset-url('sunset.jpg');
- background-size: cover;
+  background:linear-gradient(
+       rgba(0,0,0,0.7),
+       rgba(0,0,0,0.7)
+       ), asset-url('tropical2.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 #sightcastshowpanel h1 {
  font-weight: lighter;
@@ -179,13 +180,6 @@ padding: 0px;
  font-size: 60px;
 }
 
-#editaccountpanel {
-  padding-bottom:0px;
-  background:rgba(0, 0, 0, 0.6);
-  margin-top:30px;
-  border:none;
-  color:white;
-}
 
 
 
@@ -242,6 +236,15 @@ padding: 0px;
 }
 
 
+#user-index-background {
+  background:linear-gradient(
+       rgba(0,0,0,0.2),
+       rgba(0,0,0,0.2)
+       ), asset-url('rock.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
 
 #join-usernew {
  background:linear-gradient(
@@ -259,12 +262,14 @@ padding: 0px;
   font-size: 55px;
 }
 
+
 #hostpanel {
   background-color:rgba(0, 0, 0, 0.3);
   color:white;
   border:none;
+  margin-top:30px;
+  border:none;
 }
-
 
 
 #pagesindexpanel {
@@ -389,7 +394,7 @@ padding: 0px;
   color: #EFECE2;
   font-weight: lighter;
   letter-spacing: 3px;
-  font-size: 60px;
+  font-size: 70px;
 }
 
 #sightcastbutton {
@@ -398,6 +403,11 @@ padding: 0px;
   letter-spacing: 1px;
   border: 1px solid #FF336C;
   padding:10px 15px;
+  font-weight:lighter;
+}
+
+#usernamenav a {
+  color:#FF336C;
 }
 
 #sightcastbutton-sm {

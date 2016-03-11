@@ -1,18 +1,25 @@
 <body id="user-index-background">
-  <div class="container">
-  <h1 style="font-weight: lighter; color: white;">SightCast Users</h1>
-    <% @users.each do |user| %>
-    <div class="col-md-4">
-      <div id="user-panel" class="panel panel-default">
-        <div class="panel-body">
-        <%= image_tag src="/system/users/avatars/000/000/001/thumb/polar_bear.jpg?1457484247" %>
-        <%= user.email %><br>
-        <%= link_to 'Show', user, id: "sightcastbutton", class: "btn btn-primary" %>
-        <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton", class: "btn btn-primary" %>
-        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton", class: "btn btn-primary" %>
+  <div class="col-md-8 col-md-offset-2">
+    <div id="hostpanel" class="panel panel-default" >
+      <div class="panel-body">
+        <h1 style="font-weight: lighter; color: white;">SightCast Users</h1>
+        <% @users.each do |user| %>
+        <div class="col-md-4">
+          <div id="user-panel" class="panel panel-default">
+            <div class="panel-body">
+            <%= image_tag user.avatar.url(:thumb) %>
+              <p> <strong>Username:</strong>
+                  <%= user.username %></p>
+              <p><strong>Email:</strong>
+                  <%= user.email %></p>
+            <%= link_to 'Show', user, id: "sightcastbutton", class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton", class: "btn btn-primary" %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton", class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
+    <% end %>
     </div>
   </div>
-  <% end %>
-  </div>
+</div>
 </body>
