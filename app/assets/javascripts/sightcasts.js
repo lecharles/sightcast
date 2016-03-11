@@ -127,17 +127,24 @@ $(document).on('ready page:load', function() {
         buttonString = '<button id="RPiButton" class=" btn btn-primary control-button" onclick="toggleView(' + "'RPi'" + ', 0)">[1] RPi</button>';
         $('#sightcast-control').append(buttonString);
         var button_index = 2;
+        var cameras;
+        if CAMERA_ARRAY {
+          cameras = CAMERA_ARRAY;
+        }
+        else {
+          cameras = [];
+        }
 
         for ( var i = 0; i < participants.length; i++ ) {
           displayName = participants[i].displayName.replace(/['"]+/g, '');
-          console.log("CAMERAS: " + CAMERA_ARRAY);
+          console.log("CAMERAS: " + cameras);
           console.log("PARTICIPANT: " + participants[i].displayName)
           console.log("UID CASTER: " + UID_CASTER);
           if ( displayName === UID_CASTER ) {
             buttonString = '<button id="camera' + (button_index-2) + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">['+ button_index + '] ' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
             button_index++;
-          } else if ( contains(CAMERA_ARRAY, displayName) ) {
+          } else if ( contains(cameras, displayName) ) {
             buttonString = '<button id="camera' + (button_index-2) + '" class="btn btn-primary control-button" onclick="toggleView(' + "'SightCall'" + ', ' + participants[i].id + ')">['+ button_index + '] ' + displayName + '</button>';
             $('#sightcast-control').append(buttonString);
             button_index++;
