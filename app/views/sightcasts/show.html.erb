@@ -21,8 +21,10 @@
 
   <div class = "show_sightcast">
     <div class="col-md-7 ">
-       <h1 id="sightcastindexheader" style="color:white">Room Name: <span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
-       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description: <span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
+
+       <h1 id="sightcastindexheader" style="color:white">Event:<span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
+       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Description:<span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
+       
        <%= form_for @sightcast do |f| %>
          <div class = "field">
            <%= f.hidden_field :meeting_point_id %>
@@ -30,7 +32,6 @@
            <% end %>
            <div id="video-container"></div>
            <div><img id="vmjpeg_dest" /></div>
-
 
         <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
           <div class="panel-body">
@@ -74,7 +75,7 @@
                 <h4 style="text-align: center;font-weight:lighter;">Step 3. </h4>
                 <button id="sightcastbutton" style="font-weight:lighter"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
-                <h4 style="font-weight:lighter">To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
+                <h4 style="font-weight:lighter">To Join this Sightcast, attendees need the meeting point id.</h4>
                 <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
               </div>
             </div>
@@ -84,10 +85,10 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="invite_cameras" style="display:none;">
             <div class="center-block" style="float:none;text-align:center;">
-              <h4 style="font-weight:lighter">Enter username of cameraperson you wish to invite: </h4>
+              <h4 style="font-weight:lighter">Enter username of SightCam you wish to invite: </h4>
               <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
-                <span style="color:grey; background-color:rgba(255, 255, 255, 0.81);"><%= text_field_tag :username, params[:username] %></span><br/><br/>
-                <%= submit_tag("Add Camera Person",class: "btn btn-primary", style:"font-weight:lighter", :id => "sightcastbutton" )  %>
+                <%= text_field_tag :username, params[:username] %><br/><br/>
+                <%= submit_tag("Add SightCam",class: "btn btn-primary", style:"font-weight:lighter", :id => "sightcastbutton" )  %>
               <% end %>
             </div>
           </div>
@@ -95,7 +96,7 @@
 
         <div id="hostpanel" class="panel panel-default" >
           <div  class="panel-body"  id="join_meeting_point" style="display:none;float:none;" >
-            <h4 style="font-weight:lighter"> Click join to view the Sightcast</h4>
+            <h4 style="font-weight:lighter"> Click join to view this Sightcast</h4>
             <input style="display:none;" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
 
             <button id="sightcastbutton" style="font-weight:lighter"  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
@@ -114,16 +115,15 @@
         </div> -->
 
       <div id="mobile-camera" style="display:none;">
-       <a id="mobile-camera-id" href="#">Click here to Film With Your Mobile!</a>
+       <a id="mobile-camera-id" href="#">Click here to Film with your mobile as SightCam!</a>
       </div>
-  </div>
 
   <div class="col-md-2">
     <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
       <div class="panel-body" id="camera_people" style="display:none;">
         <div class="center-block" style="float:none;">
           <div  id="add_camera_message"></div>
-            <h4 style="text-align: center;font-weight:lighter;">SightCam(s)</h4>
+            <h4 style="text-align: center;font-weight:lighter;">SightCam List:</h4>
               <ul id = "camera_people_list">
               <% @sightcast.users.each do | camera | %>
                 <li><%= camera.username %></li>
