@@ -14,10 +14,6 @@ class SightcastsController < ApplicationController
     @camera = false
     @sightcast = Sightcast.find(params[:id])
     @caster = @sightcast.host.username
-    @cameras = []
-    @sightcast.users.each do |camera|
-      @cameras << camera.username
-    end
     if current_user
       if current_user == @sightcast.host
         @sightcaster = true
@@ -67,6 +63,7 @@ class SightcastsController < ApplicationController
 
   def update
     @sightcast = Sightcast.find(params[:id])
+    @sightcast.users.delete(@sightcast.users.all)
 
     if @sightcast.update_attributes(sightcast_params)
       redirect_to sightcast_path(@sightcast)
