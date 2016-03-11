@@ -40,8 +40,10 @@
                   <%= image_tag user.avatar.url(:thumb) %>
                   <%= user.email %><br>
                   <%= link_to 'Show', user, id: "sightcastbutton-sm", class: "btn btn-primary" %>
-                  <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton-sm", class: "btn btn-primary" %>
-                  <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton-sm", class: "btn btn-primary" %>
+                  <% if current_user == user %>
+                    <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton-sm", class: "btn btn-primary" %>
+                    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton-sm", class: "btn btn-primary" %>
+                  <% end %>
                 </div>
               </div>
             </div>
