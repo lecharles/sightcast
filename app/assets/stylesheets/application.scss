@@ -59,6 +59,25 @@ textarea {
 
 }
 
+#sightcast-show-link a {
+  color: #F61453;
+  text-decoration: none;
+}
+
+#sightcast-show-link a:hover {
+  color: pink;
+}
+
+#sightcast-view-link a {
+  color: pink;
+  text-decoration: none;
+}
+
+#sightcast-view-link a:hover {
+  color: white;
+}
+
+
 #sightcastshowbody {
   background:linear-gradient(
        rgba(0,0,0,0.7),
