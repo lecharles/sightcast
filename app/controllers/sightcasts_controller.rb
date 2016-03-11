@@ -65,6 +65,7 @@ class SightcastsController < ApplicationController
     @sightcast = Sightcast.find(params[:id])
     if (params[:sightcast][:meeting_point_id])
       @sightcast.users.delete(@sightcast.users.all)
+      @sightcast.viewers = 0
     end
 
     if @sightcast.update_attributes(sightcast_params)
