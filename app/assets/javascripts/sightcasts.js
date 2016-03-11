@@ -16,7 +16,7 @@ $(document).on('ready page:load', function() {
     if (CASTER) {
       var participants = [];
 
-      $('#connection_status').html("Step 1. Connecting....");
+      $('#connection_status').html("Step 1. Connecting...");
       // Define the optional parameters
       rtcc = {},
       meetingPoint = "",
@@ -34,7 +34,7 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html(' Connected as Host!');
+          $('#connection_status').html(' Connected as <span id="sc-host-style">Host!</span>');
           $('#create_meeting_point').css('display', 'block');
         });
 
@@ -230,7 +230,7 @@ $(document).on('ready page:load', function() {
         });
 
         rtcc.on('cloud.sip.ok', function() {
-          $('#connection_status').html('Connection Status: Connected as Viewer!');
+          $('#connection_status').html('Connection Status: Connected as <span id="sc-host-style">Viewer!</span>');
           $('#join_meeting_point').css('display', 'block');
         });
         rtcc.on('cloud.loggedastheotheruser', function() {
