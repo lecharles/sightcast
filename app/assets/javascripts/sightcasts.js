@@ -222,11 +222,11 @@ $(document).on('ready page:load', function() {
       options = {
         debugLevel : 1,
         displayName : "External Viewer " + Math.random()*1000000,
-        alert(displayName);
         defaultStyle: true,
         container: 'video-container',
         legacy: false
       },
+      alert(options);
 
 
       initializeRtcc = function() {
