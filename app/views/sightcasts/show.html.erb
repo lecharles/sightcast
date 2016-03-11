@@ -21,15 +21,10 @@
 
   <div class = "show_sightcast">
     <div class="col-md-7 ">
-<<<<<<< HEAD
 
        <h1 id="sightcastindexheader" style="color:white">Event:<span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
        <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Description:<span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
-
-=======
-       <h1 id="sightcastindexheader" style="color:white">Room Name: <span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
-       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description: <span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
->>>>>>> 854a4d4443bbe8177c501cbf33450c424c2a0faf
+       
        <%= form_for @sightcast do |f| %>
          <div class = "field">
            <%= f.hidden_field :meeting_point_id %>
