@@ -21,7 +21,7 @@
 
         <% if current_user %>
 
-        <li><%= link_to current_user.username , user_path(current_user) %></li>
+        <li id="usernamenav"><%= link_to current_user.username , user_path(current_user) %></li>
         <li id="sightcastnav"><%= link_to "Create Sightcast", new_sightcast_path %></li>
         <li><%= link_to "Edit Account", edit_user_path(current_user.id) %></li>
         <li><%= link_to "Logout", :logout, method: :post %></li>

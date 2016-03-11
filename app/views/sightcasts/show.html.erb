@@ -20,63 +20,50 @@
   </script>
 
   <div class = "show_sightcast">
-
     <div class="col-md-7 ">
-
-       <h1 id="sightcastindexheader" style="color:white">Room Name:<span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
-       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description:<span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
-
+       <h1 id="sightcastindexheader" style="color:white">Room Name: <span style="font-weight:lighter"><%= @sightcast.title %></span></h1>
+       <h3 id="sightcastindexheader" style="color:white; padding-bottom:7px;">Room Description: <span style="font-weight:lighter"><%= @sightcast.description %></span></h3>
        <%= form_for @sightcast do |f| %>
          <div class = "field">
            <%= f.hidden_field :meeting_point_id %>
          </div>
            <% end %>
            <div id="video-container"></div>
-
            <div><img id="vmjpeg_dest" /></div>
 
 
-
-
-
-          <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
-
-            <div class="panel-body">
-              <div class="col-md-8">
-                <h1>Connecting is easy as 1,2,3..</h1>
-              </div>
-
-              </div>
-            </div>
-
-            <!-- <p style="font-size:20px;">Camera people:</p> -->
-            <div id="sightcast-control" style='display:none;'>
-
-           </div>
-
-            </div>
-
-      <div class="col-md-3 ">
-        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
+        <div class="panel panel-default" id="sightcastwaitdiv" style="margin-botrailtom:10px;">
           <div class="panel-body">
-              <div id="error" style="display:none;" class="bg-danger" >
-                <h4>An error occurred:</h4>
-                <div id="error-content">This is the error</div>
-              </div>
-
-              <div class="center-block" >
-                <h4 style="text-align: center;font-weight:lighter;" id="connection_status"></h4>
-              </div>
-
+            <div class="col-md-8">
+              <h1>Connecting is easy as 1, 2, 3!</h1>
+            </div>
           </div>
         </div>
+
+            <!-- <p style="font-size:20px;">Camera people:</p> -->
+      <div id="sightcast-control" style='display:none;'></div>
+    </div>
+
+    <div class="col-md-3 ">
+      <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px;margin-top:30px;">
+        <div class="panel-body">
+          <div id="error" style="display:none;" class="bg-danger" >
+            <h4>An error occurred:</h4>
+            <div id="error-content">This is the error</div>
+          </div>
+
+            <div class="center-block" >
+              <h4 style="text-align: center;font-weight:lighter;" id="connection_status"></h4>
+            </div>
+        </div>
+      </div>
 
 
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="create_meeting_point"  style="display:none;">
             <div class="center-block" style="float:none;">
-              <h4 style="text-align: center;font-weight:lighter;"> Step 2.</h4><br/>
-              <button id="sightcastbutton" style="font-weight:lighter" class="center-block  btn btn-primary btn-lg" onclick="create()">Get set..</button>
+              <h4 style="text-align: center;font-weight:lighter;"> Step 2. </h4><br/>
+              <button id="sightcastbutton" style="font-weight:lighter" class="center-block  btn btn-primary btn-lg" onclick="create()">Ready!</button>
             </div>
           </div>
         </div>
@@ -84,7 +71,7 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="host_meeting_point" style="display:none;">
             <div class="center-block" style="float:none;">
-                <h4 style="text-align: center;font-weight:lighter;">Step 3.</h4>
+                <h4 style="text-align: center;font-weight:lighter;">Step 3. </h4>
                 <button id="sightcastbutton" style="font-weight:lighter"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
                 <h4 style="font-weight:lighter">To Join the conference, attendees need the meeting point id (copy and paste the number to the attendee side)</h4>
@@ -99,12 +86,11 @@
             <div class="center-block" style="float:none;text-align:center;">
               <h4 style="font-weight:lighter">Enter username of cameraperson you wish to invite: </h4>
               <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
-                <%= text_field_tag :username, params[:username] %><br/><br/>
+                <span style="color:grey; background-color:rgba(255, 255, 255, 0.81);"><%= text_field_tag :username, params[:username] %></span><br/><br/>
                 <%= submit_tag("Add Camera Person",class: "btn btn-primary", style:"font-weight:lighter", :id => "sightcastbutton" )  %>
               <% end %>
             </div>
           </div>
-
         </div>
 
         <div id="hostpanel" class="panel panel-default" >
@@ -118,8 +104,6 @@
         </div>
 
 
-
-
         <!-- <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
               <h4> Click join to view the Sightcast</h4>
@@ -129,33 +113,27 @@
           </div>
         </div> -->
 
-
-
-
       <div id="mobile-camera" style="display:none;">
        <a id="mobile-camera-id" href="#">Click here to Film With Your Mobile!</a>
       </div>
+  </div>
 
-
+  <div class="col-md-2">
+    <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
+      <div class="panel-body" id="camera_people" style="display:none;">
+        <div class="center-block" style="float:none;">
+          <div  id="add_camera_message"></div>
+            <h4 style="text-align: center;font-weight:lighter;">SightCam(s)</h4>
+              <ul id = "camera_people_list">
+              <% @sightcast.users.each do | camera | %>
+                <li><%= camera.username %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-    <div class="col-md-2">
-              <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
-                <div class="panel-body" id="camera_people" style="display:none;">
-                  <div class="center-block" style="float:none;">
-                      <div  id="add_camera_message"></div>
-                      <h4 style="text-align: center;font-weight:lighter;" >Camera People</h4>
-                      <ul id = "camera_people_list">
-                        <% @sightcast.users.each do | camera | %>
-                          <li><%= camera.username %></li>
-                        <% end %>
-                      </ul>
-                  </div>
-                </div>
-              </div>
-    </div>
-
-
+  </div>
 </div>
-</div>
+</body>
