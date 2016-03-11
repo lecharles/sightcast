@@ -25,12 +25,12 @@ class SightcastsController < ApplicationController
       @new_camera = User.where(username: params[:username]).first
       if @new_camera
         if @sightcast.users.exists?(@new_camera.id)
-          message = "User is already a cameraperson for this sightcast."
+          message = "User is already a SightCam for this Sightcast."
         else
           if @sightcast.users << @new_camera
-            message =  "Camera added."
+            message =  "SightCam added."
           else
-            message = "Error adding camera to database."
+            message = "Error adding SightCam to database."
           end
 
         end
@@ -54,7 +54,7 @@ class SightcastsController < ApplicationController
     if @sightcast.save
       redirect_to sightcasts_path, notice: "Sightcast created"
     else
-      redirect_to new_sightcast_path(@sightcast), notice: "Error saving new sightcast"
+      redirect_to new_sightcast_path(@sightcast), notice: "Error saving new Sightcast"
     end
   end
 
