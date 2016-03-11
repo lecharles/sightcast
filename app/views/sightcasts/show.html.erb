@@ -100,7 +100,7 @@
             <div class="center-block" style="float:none;text-align:center;">
               <h4 style="font-weight:lighter">Enter username of cameraperson you wish to invite: </h4>
               <%= form_tag sightcast_path(@sightcast), method: :get, authentication: false, id: 'add_camera' do %>
-                <%= text_field_tag :username, params[:username] %><br/><br/>
+                <span style="color:grey; background-color:rgba(255, 255, 255, 0.81);"><%= text_field_tag :username, params[:username] %></span><br/><br/>
                 <%= submit_tag("Add Camera Person",class: "btn btn-primary", style:"font-weight:lighter", :id => "sightcastbutton" )  %>
               <% end %>
             </div>
