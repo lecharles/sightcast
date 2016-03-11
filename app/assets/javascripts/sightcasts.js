@@ -49,7 +49,6 @@ $(document).on('ready page:load', function() {
           $('#meeting_point_id_display').val(meetingPoint.id);
           $('#host_meeting_point').css('display', 'block');
           $('#invite_cameras').css('display', 'block');
-          $('#camera_people').css('display', 'block');
           $('#sightcast_meeting_point_id').val(meetingPoint.id);
           $('#edit_sightcast_' + SC_ID).submit();
         });
@@ -303,6 +302,7 @@ $(document).on('ready page:load', function() {
       data: $(this).serialize()
 
     }).done(function(data) {
+      $('#camera_people').css('display', 'block');
       CAMERA_ARRAY = [];
       $('#add_camera_message').html(data.message);
       $('#camera_people_list').html('');
