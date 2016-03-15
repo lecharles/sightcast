@@ -13,8 +13,10 @@
               <p><strong>Email:</strong>
                   <%= user.email %></p>
             <%= link_to 'Show', user, id: "sightcastbutton", class: "btn btn-primary" %>
-            <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton", class: "btn btn-primary" %>
-            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton", class: "btn btn-primary" %>
+            <% if user == current_user %>
+              <%= link_to 'Edit', edit_user_path(user), id: "sightcastbutton", class: "btn btn-primary" %>
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "sightcastbutton", class: "btn btn-primary" %>
+            <% end %>
           </div>
         </div>
       </div>
