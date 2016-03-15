@@ -65,10 +65,4 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  # Paginate gem to allow sightcasts per page
-  gem 'will_paginate', '~> 3.1'
-
-  # Paginate gem to allow prettiness of the pages
-  gem 'will_paginate-bootstrap'
 end
