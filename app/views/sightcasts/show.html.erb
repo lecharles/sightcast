@@ -11,7 +11,7 @@
       var meeting_point_id = "<%= @sightcast.meeting_point_id %>"
       getMeetingPointId(meeting_point_id)
     <% end %>
-      isCamera(<%= @camera %>);
+    isCamera(<%= @camera %>);
 
     getCasterName("<%= @caster %>");
     getAppId("<%= ENV["application_identifier"] %>");
@@ -28,6 +28,7 @@
        <%= form_for @sightcast do |f| %>
            <%= f.hidden_field :meeting_point_id %>
            <%= f.hidden_field :viewers %>
+           <%= f.hidden_field :active %>
         <% end %>
            <div id="video-container"></div>
            <div><img id="vmjpeg_dest" /></div>
@@ -100,6 +101,15 @@
 
             <button id="sightcastbutton" style="font-weight:lighter"  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
 
+          </div>
+        </div>
+
+        <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
+          <div class="panel-body" id="end_sightcast" style="display:none;">
+            <div class="center-block" style="float:none;text-align:center;">
+              <h4 style="font-weight:lighter">Click to end Sightcast</h4>
+              <button id="end_sightcast_button" style="font-weight:lighter"  class="center-block btn btn-primary btn-lg" onclick="endSightcast()">End Sightcast</button>
+            </div>
           </div>
         </div>
 

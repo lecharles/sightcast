@@ -88,7 +88,7 @@ class SightcastsController < ApplicationController
 
   private
   def sightcast_params
-    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id, :viewers)
+    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id, :viewers, :active)
   end
 
 end
