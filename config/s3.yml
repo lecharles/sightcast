@@ -1,0 +1,12 @@
+development: &DEFAULTS
+  bucket: sightcast-images
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+
+test:
+  <<: *DEFAULTS
+  bucket: sightcast-images_test
+
+production:
+  <<: *DEFAULTS
+  bucket: sightcast-images
