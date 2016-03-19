@@ -129,6 +129,8 @@ $(document).on('ready page:load', function() {
       endSightcast = function() {
         meetingPoint.remove();
         sightcastCall.hangup();
+        $('#sightcast_active').val(false);
+        $('#edit_sightcast_' + SC_ID).submit();
       },
 
       setSightcastControlButtons = function(participants) {
