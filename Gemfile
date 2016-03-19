@@ -70,4 +70,5 @@ group :development do
   gem 'spring'
 
   gem 'aws-sdk', '~> 2.2', '>= 2.2.22'
+  
 end
