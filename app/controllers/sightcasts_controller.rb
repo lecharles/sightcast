@@ -50,6 +50,7 @@ class SightcastsController < ApplicationController
   end
 
   def create
+    puts "PARAMS: #{sightcast_params}"
     @sightcast = Sightcast.new(sightcast_params)
     @sightcast.active = false
     @sightcast.host = current_user
