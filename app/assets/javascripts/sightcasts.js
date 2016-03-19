@@ -138,6 +138,8 @@ $(document).on('ready page:load', function() {
         sightcastCall.hangup();
         $('#sightcast_active').val(false);
         $('#edit_sightcast_' + SC_ID).submit();
+        $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended');
+        $('#sightcastwaitdiv').css('display', 'block');
       },
 
       setSightcastControlButtons = function(participants) {
@@ -305,6 +307,8 @@ $(document).on('ready page:load', function() {
           // alert('Sightcast ended by host!');
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
+          $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended by host');
+          $('#sightcastwaitdiv').css('display', 'block');
           viewer_call.hangup();
         }
 
