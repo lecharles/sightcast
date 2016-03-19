@@ -76,4 +76,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # AWS S3 for storing images/avatar uploads using Paperclip
+  config.paperclip_defaults = {
+    storage: :s3,
+
+  }
 end
