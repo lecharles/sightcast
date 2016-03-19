@@ -302,10 +302,10 @@ $(document).on('ready page:load', function() {
 
         }
         else if (message === 'End Sightcast') {
+          alert('Sightcast ended by host!');
+          viewer_call.hangup();
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
-          viewer_call.hangup();
-          alert('Sightcast ended by host!');
         }
 
       },
