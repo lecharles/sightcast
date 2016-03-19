@@ -119,7 +119,7 @@ $(document).on('ready page:load', function() {
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
           sightcastCall.sendInbandMessage("End Sightcast");
-          alert('Sightcast ended!');
+          // alert('Sightcast ended!');
         }
       },
 
@@ -302,7 +302,7 @@ $(document).on('ready page:load', function() {
 
         }
         else if (message === 'End Sightcast') {
-          alert('Sightcast ended by host!');
+          // alert('Sightcast ended by host!');
           viewer_call.hangup();
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
