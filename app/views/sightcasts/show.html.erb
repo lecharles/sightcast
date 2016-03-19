@@ -96,10 +96,14 @@
 
         <div id="hostpanel" class="panel panel-default" >
           <div  class="panel-body"  id="join_meeting_point" style="display:none;float:none;" >
-            <h4 style="font-weight:lighter"> Click join to view this Sightcast</h4>
-            <input style="display:none;" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
+            <% if @sightcast.active %>
+              <h4 style="font-weight:lighter"> Click join to view this Sightcast</h4>
+              <input style="display:none;" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
 
-            <button id="sightcastbutton" style="font-weight:lighter"  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+              <button id="sightcastbutton" style="font-weight:lighter"  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
+            <% else %>
+              <h4 style="font-weight:lighter">Sightcast isn't active yet to join.</h4>
+            <% end %>
 
           </div>
         </div>
