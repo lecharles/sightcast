@@ -58,7 +58,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # gem 'capistrano-rails', group: :development
 
   # AWS S3 File storage to work with Paperclip gem
-  gem 'aws-sdk', '< 2.0'
+  # gem 'aws-sdk', '< 2.0'
 
 
 
