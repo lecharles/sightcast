@@ -115,6 +115,12 @@ $(document).on('ready page:load', function() {
           sightcastCall.lockActiveSpeaker(speakerId);
 
         }
+        else if (whichView === 'EndCall') {
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '0.0');
+          sightcastCall.sendInbandMessage("End Sightcast");
+          // alert('Sightcast ended!');
+        }
       },
 
       contains = function(array, obj) {
@@ -127,10 +133,13 @@ $(document).on('ready page:load', function() {
       },
 
       endSightcast = function() {
+        toggleView('EndCall', 0);
         meetingPoint.remove();
         sightcastCall.hangup();
         $('#sightcast_active').val(false);
         $('#edit_sightcast_' + SC_ID).submit();
+        $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended');
+        $('#sightcastwaitdiv').css('display', 'block');
       },
 
       setSightcastControlButtons = function(participants) {
@@ -293,6 +302,14 @@ $(document).on('ready page:load', function() {
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '1.0');
 
+        }
+        else if (message === 'End Sightcast') {
+          // alert('Sightcast ended by host!');
+          $('#vmjpeg_dest').css('display', 'none');
+          $('#video-container').css('opacity', '0.0');
+          $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended by host');
+          $('#sightcastwaitdiv').css('display', 'block');
+          viewer_call.hangup();
         }
 
       },
