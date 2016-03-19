@@ -57,7 +57,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 
 group :development, :test do
