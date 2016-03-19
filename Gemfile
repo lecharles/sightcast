@@ -28,7 +28,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Paperclip for avatar, User Profile
-gem "paperclip", "~> 4.3"
+gem "paperclip"
 
 
 # Use Uglifier as compressor for JavaScript assets
@@ -57,6 +57,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'aws-sdk'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -69,6 +72,5 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'aws-sdk', '~> 2.2', '>= 2.2.22'
-  
+
 end
