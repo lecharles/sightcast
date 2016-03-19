@@ -50,6 +50,7 @@ class SightcastsController < ApplicationController
   end
 
   def create
+    puts "PARAMS: #{sightcast_params}"
     @sightcast = Sightcast.new(sightcast_params)
     @sightcast.active = false
     @sightcast.host = current_user
@@ -88,7 +89,7 @@ class SightcastsController < ApplicationController
 
   private
   def sightcast_params
-    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id, :viewers)
+    params.require(:sightcast).permit(:title, :description, :scheduled_at, :meeting_point_id, :viewers, :active)
   end
 
 end
