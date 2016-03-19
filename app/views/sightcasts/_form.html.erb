@@ -31,8 +31,9 @@
           </div> -->
 
           <div class="field">
-            <div class='col-sm-6'>
-                <div class="form-group">
+            <label for="sightcast_scheduled_at">Scheduled At</label>
+            <!-- <div class='col-sm-6'> -->
+                <!-- <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <input type='text' class="form-control"
                         name = "sightcast[scheduled_at]" id = "sightcast_scheduled_at" />
@@ -40,12 +41,16 @@
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
+            <div id="datetimepicker1"></div>
             <script type="text/javascript">
                 $(function () {
                     $('#datetimepicker1').datetimepicker({
-                      format: 'YYYY-MM-DD h:mm A'
+                      format: 'YYYY-MM-DD h:mm A',
+                      inline: true,
+                      sideBySide: true
+
                     });
                 });
             </script>
