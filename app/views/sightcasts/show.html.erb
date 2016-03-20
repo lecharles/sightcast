@@ -75,7 +75,7 @@
                 <h4 style="text-align: center;font-weight:lighter;">Step 3. </h4>
                 <button id="sightcastbutton" style="font-weight:lighter"   class="center-block btn btn-primary btn-lg" onclick="host()">CAST!</button>
               <div style="display:none;">
-                <h4 style="font-weight:lighter">To Join this Sightcast, attendees need the meeting point id.</h4>
+                <h4 style="font-weight:lighter">To Join this SightCast, attendees need the meeting point id.</h4>
                 <input class="center-block" style="width:230px" id="meeting_point_id_display" type="text"/>
               </div>
             </div>
@@ -97,7 +97,7 @@
         <div id="hostpanel" class="panel panel-default" >
           <div  class="panel-body"  id="join_meeting_point" style="display:none;float:none;" >
             <% if @sightcast.active %>
-              <h4 style="font-weight:lighter"> Click join to view this Sightcast</h4>
+              <h4 style="font-weight:lighter">Click join to view this SightCast</h4>
               <input style="display:none;" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
 
 
@@ -112,7 +112,7 @@
         <div id="hostpanel" class="panel panel-default" style="margin-bottom:3px">
           <div class="panel-body" id="end_sightcast" style="display:none;">
             <div class="center-block" style="float:none;text-align:center;">
-              <h4 style="font-weight:lighter">Click to end Sightcast</h4>
+              <h4 style="font-weight:lighter">Click to end SightCast</h4>
               <button id="end_sightcast_button" style="font-weight:lighter;background-color:#ff0048;border:none;"  class="center-block btn btn-primary btn-lg" onclick="endSightcast()">End Sightcast</button>
             </div>
           </div>
@@ -121,7 +121,7 @@
 
         <!-- <div class="row well" id="join_meeting_point" style="display:none;">
           <div class="center-block" style="float:none;">
-              <h4> Click join to view the Sightcast</h4>
+              <h4> Click join to view the SightCast</h4>
               <input class="center-block" style="display:none" id="meeting_point_id" type="text" value='<%=@sightcast.meeting_point_id %>'/>
 
               <button  class="center-block btn btn-primary btn-lg" onclick="joinViewer()">Join</button>
