@@ -31,7 +31,7 @@ class SightcastsController < ApplicationController
       @new_camera = User.where(username: params[:username]).first
       if @new_camera
         if @sightcast.users.exists?(@new_camera.id)
-          message = "User is already a SightCam for this Sightcast."
+          message = "User is already a SightCam for this SightCast."
         else
           if @sightcast.users << @new_camera
             message =  "SightCam added."
@@ -60,9 +60,9 @@ class SightcastsController < ApplicationController
     @sightcast.active = false
     @sightcast.host = current_user
     if @sightcast.save
-      redirect_to sightcasts_path, notice: "Sightcast created"
+      redirect_to sightcasts_path, notice: "SightCast created"
     else
-      redirect_to new_sightcast_path(@sightcast), notice: "Error saving new Sightcast"
+      redirect_to new_sightcast_path(@sightcast), notice: "Error saving new SightCast"
     end
   end
 
@@ -77,9 +77,9 @@ class SightcastsController < ApplicationController
     end
 
     if @sightcast.update_attributes(sightcast_params)
-      message = "Sightcast updated."
+      message = "SightCast updated."
     else
-      message = "Problem updating Sightcast."
+      message = "Problem updating SightCast."
     end
 
     respond_to do |format|
@@ -92,9 +92,9 @@ class SightcastsController < ApplicationController
   def destroy
     @sightcast = Sightcast.find(params[:id])
     if @sightcast.destroy
-      redirect_to sightcasts_path, notice: "Sightcast deleted"
+      redirect_to sightcasts_path, notice: "SightCast deleted"
     else
-      redirect_to sightcasts_path, notice: "Problem deleting Sightcast."
+      redirect_to sightcasts_path, notice: "Problem deleting SightCast."
     end
   end
 
