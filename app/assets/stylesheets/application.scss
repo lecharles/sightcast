@@ -21,6 +21,8 @@
 body {
   background-color: #FAF9F9;
   padding-bottom: 80px;
+  height:100%;
+
 }
 
 textarea {
@@ -476,11 +478,12 @@ letter-spacing: 2px;
 
 .footer {
   background-color: #FFFFFF;
-  margin-top: 40px;
-  bottom: 0;
-  position: fixed;
+  letter-spacing: 2px;
+  position:fixed;
+  bottom:0;
   width: 100%;
   height: 40px;
+  font-weight:lighter;
 }
 
 .footer a {
