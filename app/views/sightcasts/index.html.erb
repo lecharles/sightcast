@@ -2,23 +2,51 @@
  <div class="col-md-8 col-md-offset-2">
   <div id="sightcastpanel" class="panel panel-default" >
     <div class="panel-body">
-      <h1 style="font-weight:lighter;">ONGOING AND UPCOMING SIGHTCASTS</h1>
-      <% @sightcasts.each do | sightcast | %>
-      <div class="col-md-4">
-        <div id="hostpanel" class="panel panel-default" style="height:180px;" >
-          <div class="panel-body">
-          <p><strong>Title: </strong> <%= sightcast.title %></p>
-          <p><strong>Description: </strong> <%= sightcast.description %></p>
-          <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
-          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at %></p>
-          <% if current_user == sightcast.host %>
-          <p id="sightcast-show-link"><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
-          <% else %>
-          <p id="sightcast-view-link"><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
-          <% end %>
+
+      <h1 style="font-weight:lighter;">ACTIVE SIGHTCASTS</h1>
+        <% if @active_sightcasts.length > 0 %>
+          <% @active_sightcasts.each do | sightcast | %>
+          <div class="col-md-4">
+            <div id="hostpanel" class="panel panel-default" style="height:180px;" >
+              <div class="panel-body" id="hostpanel">
+              <p><strong>Title: </strong> <%= sightcast.title %></p>
+              <p><strong>Description: </strong> <%= sightcast.description %></p>
+              <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
+              <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+              <% if current_user == sightcast.host %>
+              <p id="sightcast-show-link"><%= link_to "Start Sightcast", sightcast_path(sightcast) %></p>
+              <% else %>
+              <p id="sightcast-view-link"><%= link_to "View Sightcast", sightcast_path(sightcast) %></p>
+              <% end %>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          <% end %>
+        <% else %>
+          No active sightcasts at this time.
+        <% end %>
+    </div>
+  </div>
+  <div id="sightcastpanel" class="panel panel-default" >
+    <div class="panel-body">
+      <h1 style="font-weight:lighter;">SCHEDULED UPCOMING SIGHTCASTS</h1>
+      <% if @scheduled_sightcasts.length > 0 %>
+
+        <% @scheduled_sightcasts.each do | sightcast | %>
+          <div class="col-md-4">
+            <div id="hostpanel" class="panel panel-default" style="height:180px;" >
+              <div class="panel-body" id="hostpanel">
+              <p><strong>Title: </strong> <%= sightcast.title %></p>
+              <p><strong>Description: </strong> <%= sightcast.description %></p>
+              <p><strong>Sightcaster: </strong> <%= sightcast.host.username %></p>
+              <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        No scheduled sightcasts at this time.
+
       <% end %>
     </div>
   </div>
