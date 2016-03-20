@@ -1,4 +1,4 @@
-//Authenticating ALL Sightcast Users (Host & Camera) on Sightcall's Cloud via getToken:
+//Authenticating ALL SightCast Users (Host & Camera) on Sightcall's Cloud via getToken:
 
 getToken = function(uid, callback) {
   var xhr;
