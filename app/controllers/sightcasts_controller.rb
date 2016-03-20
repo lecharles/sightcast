@@ -86,6 +86,12 @@ class SightcastsController < ApplicationController
   end
 
   def destroy
+    @sightcast = Sightcast.find(params[:id])
+    if @sightcast.destroy
+      redirect_to sightcasts_path, notice: "Sightcast deleted"
+    else
+      redirect_to sightcasts_path, notice: "Problem deleting Sightcast."
+    end
   end
 
   private
