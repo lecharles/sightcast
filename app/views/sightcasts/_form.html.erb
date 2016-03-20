@@ -31,7 +31,8 @@
           </div> -->
 
           <div class="field">
-            <label for="sightcast_scheduled_at">Scheduled At</label>
+            <%= f.label :scheduled_at %>
+            <%= f.hidden_field :scheduled_at, class: "form-control" %>
             <!-- <div class='col-sm-6'> -->
                 <!-- <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
@@ -43,16 +44,20 @@
                     </div>
                 </div> -->
             <!-- </div> -->
-            <div id="datetimepicker1"></div>
+            <div id="datetimepicker1">
+              <!-- <input type='text' class="form-control"
+              name = "sightcast[scheduled_at]" id = "sightcast_scheduled_at" /> -->
+            </div>
             <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker1').datetimepicker({
-                      format: 'YYYY-MM-DD h:mm A',
-                      inline: true,
-                      sideBySide: true
+              $(function () {
+                  $('#datetimepicker1').datetimepicker({
+                    format: 'YYYY-MM-DD h:mm A',
+                    inline: true,
+                    sideBySide: true,
+                    defaultDate: '<%=Time.now.strftime('%a %b %d, %Y %I:%M %p')%>'
 
-                    });
-                });
+                  });
+              });
             </script>
           </div>
 
@@ -61,5 +66,12 @@
         </div>
         <% end %>
     </div>
+
   </div>
 </div>
+<script type="text/javascript">
+  $('#new_sightcast').submit(function(e) {
+    $('#sightcast_scheduled_at').val($('#datetimepicker1').data("DateTimePicker").viewDate()._d);
+  });
+
+</script>
