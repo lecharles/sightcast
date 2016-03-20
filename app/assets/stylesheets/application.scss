@@ -17,14 +17,14 @@
 
 
 
-
 body {
   background-color: #FAF9F9;
   padding-bottom: 80px;
-}
+  height:100%;
 
-textarea {
-  resize: none;
+  textarea {
+    resize: none;
+  }
 }
 
 
@@ -182,6 +182,43 @@ textarea {
 
 
 
+#sightcast-index-body {
+ background:linear-gradient(
+       rgba(0,0,0,0.3),
+       rgba(0,0,0,0.3)
+       ), asset-url('sunset.jpg');
+ background-size: cover;
+}
+
+
+#sightcastpanel {
+  padding-bottom:0px;
+  background:rgba(0, 0, 0, 0.2);
+  margin-top:30px;
+  border:none;
+  color:white;
+}
+
+
+
+#showaccount {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('looker.jpg');
+ background-size: cover;
+ height: 445px;
+}
+
+#showaccountbody {
+ background:linear-gradient(
+       rgba(0,0,0,0.5),
+       rgba(0,0,0,0.5)
+       ), asset-url('urban.jpg')no-repeat center center fixed;
+ background-size: cover;
+}
+
+
 #editaccount {
  background:linear-gradient(
        rgba(0,0,0,0.5),
@@ -207,6 +244,14 @@ textarea {
 }
 
 
+#notice, #alert{
+  color:white;
+  text-align:center;
+  width:100%;
+font-size:20px;
+font-weight:lighter;
+letter-spacing: 2px;
+}
 
 
 #loginpanel {
@@ -404,7 +449,6 @@ textarea {
   top:-430px;
 }
 
-
 #usersignuppanel {
   background:rgba(0, 0, 0, 0.6);
   color:white;
@@ -452,6 +496,28 @@ textarea {
   padding:10px 15px;
 }
 
+
+#usernamenav a {
+  color:#FF336C;
+}
+
+#sightcastbutton-sm {
+  background-color:#FF336C ;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #FF336C;
+  padding: 1px 2px;
+}
+
+.control-button {
+  background-color:rgba(0, 0, 0, 0.3) ;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  padding:10px 15px;
+}
+
+
 .control-button:hover {
  background-color:rgba(0, 0, 0, 0.5) ;
 
@@ -469,11 +535,12 @@ textarea {
 
 .footer {
   background-color: #FFFFFF;
-  margin-top: 40px;
-  bottom: 0;
-  position: fixed;
+  letter-spacing: 2px;
+  position:fixed;
+  bottom:0;
   width: 100%;
   height: 40px;
+  font-weight:lighter;
 }
 
 .footer a {
