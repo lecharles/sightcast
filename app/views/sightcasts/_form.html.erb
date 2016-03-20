@@ -31,8 +31,12 @@
           </div> -->
 
           <div class="field">
+<<<<<<< HEAD
+            <label for="sightcast_scheduled_at">Scheduled At</label>
+=======
             <%= f.label :scheduled_at %>
             <%= f.hidden_field :scheduled_at, class: "form-control" %>
+>>>>>>> 1ad25282b6d4c71dff688c07be1f5a64e2089347
             <!-- <div class='col-sm-6'> -->
                 <!-- <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
@@ -44,6 +48,18 @@
                     </div>
                 </div> -->
             <!-- </div> -->
+<<<<<<< HEAD
+            <div id="datetimepicker1"></div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker1').datetimepicker({
+                      format: 'YYYY-MM-DD h:mm A',
+                      inline: true,
+                      sideBySide: true
+
+                    });
+                });
+=======
             <div id="datetimepicker1">
               <!-- <input type='text' class="form-control"
               name = "sightcast[scheduled_at]" id = "sightcast_scheduled_at" /> -->
@@ -58,6 +74,7 @@
 
                   });
               });
+>>>>>>> 1ad25282b6d4c71dff688c07be1f5a64e2089347
             </script>
           </div>
 
@@ -69,9 +86,12 @@
 
   </div>
 </div>
+<<<<<<< HEAD
+=======
 <script type="text/javascript">
   $('#new_sightcast').submit(function(e) {
     $('#sightcast_scheduled_at').val($('#datetimepicker1').data("DateTimePicker").viewDate()._d);
   });
 
 </script>
+>>>>>>> 1ad25282b6d4c71dff688c07be1f5a64e2089347
