@@ -209,7 +209,7 @@ $(document).on('ready page:load', function() {
 
         rtcc.on('cloud.sip.ok', function() {
           $('#connection_status').html('Connection Status: Connected as SightCam.');
-          $('#mobile-camera-id').attr('href', 'sightcall://?mode=joininternal&appid=' + APP_ID + '&token=' + token + '&mpid=' + MPID + '&displayname=' + UID_USER + '&buttons=019&videoout=rear&videofull=out&videosmall=in');
+          $('#mobile-camera-button').attr("onclick", "location.href='sightcall://?mode=joininternal&appid=' + APP_ID + '&token=' + token + '&mpid=' + MPID + '&displayname=' + UID_USER + '&buttons=019&videoout=rear&videofull=out&videosmall=in'");
           $('#mobile-camera').css('display', 'block');
           document.getElementById('#mobile-camera-id').click();
         });
