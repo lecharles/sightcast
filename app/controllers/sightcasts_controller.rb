@@ -1,7 +1,11 @@
 class SightcastsController < ApplicationController
   def index
+
+
     @active_sightcasts = Sightcast.where(active: true)
     @scheduled_sightcasts = Sightcast.where("scheduled_at > ?", Time.now - 1.hours).order(:scheduled_at)
+
+
     # .paginate for per page views
     # .where(active: true)
   end

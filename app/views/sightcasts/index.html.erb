@@ -2,6 +2,7 @@
  <div class="col-md-8 col-md-offset-2">
   <div id="sightcastpanel" class="panel panel-default" >
     <div class="panel-body">
+
       <h1 style="font-weight:lighter;">ACTIVE SIGHTCASTS</h1>
         <% if @active_sightcasts.length > 0 %>
           <% @active_sightcasts.each do | sightcast | %>
@@ -48,6 +49,9 @@
           </div>
         <% end %>
       <% else %>
+
+        No scheduled sightcasts at this time.
+
       <% end %>
     </div>
   </div>
