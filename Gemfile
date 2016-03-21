@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-# Pusher for API secrets and other crazyness
-gem 'pusher'
+
 # User sessions sorcery
 gem 'sorcery'
 # Enhanced server logs
@@ -27,8 +26,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Bootstrap for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 
-# Paperclip for avatar, User Profile
-gem "paperclip"
+# # Paperclip for avatar, User Profile
+# gem "paperclip"
 
 
 # Use Uglifier as compressor for JavaScript assets
