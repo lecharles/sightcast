@@ -192,7 +192,6 @@ $(document).on('ready page:load', function() {
 
 //IF YOU ARE A CAMERA
     else if (CAMERA) {
-      setTimeout(initRPi("viewer"), 100);
       $('#connection_status').html("Connecting as SightCam!");
       rtcc = {},
       meetingPoint = "",
@@ -235,6 +234,7 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
+      setTimeout(initRPi("viewer"), 100);
       $('#connection_status').html("Connecting...");
 
       rtcc = {},
