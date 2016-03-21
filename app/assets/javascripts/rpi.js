@@ -9,7 +9,7 @@ function initRPi(view) {
   if (view === "host") {
     mjpeg_img = document.getElementById("vmjpeg_dest");
   }
-  else if (view === "viewer") {
+  else {
     mjpeg_img = document.getElementById("viewer_vmjpeg_dest");
   }
   mjpeg_img.onload = reload_img;
