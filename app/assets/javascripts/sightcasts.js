@@ -298,16 +298,16 @@ $(document).on('ready page:load', function() {
       toggleViewer = function(message) {
         if (message === 'RPi') {
           $('#video-container').css('opacity', '0.0');
-          $('#vmjpeg_dest').css('display', 'block');
+          $('#viewer_vmjpeg_dest').css('display', 'block');
         }
         else if (message === 'SightCall') {
-          $('#vmjpeg_dest').css('display', 'none');
+          $('#viewer_vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '1.0');
 
         }
         else if (message === 'End Sightcast') {
           // alert('Sightcast ended by host!');
-          $('#vmjpeg_dest').css('display', 'none');
+          $('#viewer_vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
           $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended by host');
           $('#sightcastwaitdiv').css('display', 'block');
