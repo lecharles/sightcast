@@ -1,17 +1,35 @@
 <body id="usershowbody">
- <div  class="col-md-6 col-md-offset-3">
-  <div id="hostpanel" class="panel panel-default" style="margin-top:20px";>
-    <div class="panel-body">
-      <h1 style="font-weight:lighter;">Profile</h1>
-        <%= image_tag @user.avatar.url(:thumb) %>
-        <p><strong>Username:</strong>
-        <%= @user.username %></p>
-        <p><strong>Email:</strong>
-        <%= @user.email %></p>
+  <div  class="col-md-6 col-md-offset-3">
+    <div id="hostpanel" class="panel panel-default" style="margin-top:20px";>
+      <div class="panel-body">
+        <h1 style="font-weight:lighter;">Profile</h1>
+          <%= image_tag @user.avatar.url(:thumb) %>
+          <p><strong>Username:</strong>
+          <%= @user.username %></p>
+          <p><strong>Email:</strong>
+          <%= @user.email %></p>
+        <h1 style="font-weight:lighter;">Hosted SightCasts</h1>
+        <% @hosted_sightcasts.each do |sightcast| %>
+          <p><strong>Title: </strong> <%= sightcast.title %></p>
+          <p><strong>Description: </strong> <%= sightcast.description %></p>
+          <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
+          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
 
-      <%= link_to 'Edit', edit_user_path(@user), id: "sightcastbutton", class: "btn btn-primary" %>
-      <%= link_to 'Back', users_path, id: "sightcastbutton", class: "btn btn-primary" %>
+        <% end %>
+        <h1 style="font-weight:lighter;">SightCasts Where SightCam</h1>
+        <% @hosted_sightcasts.each do |sightcast| %>
+          <p><strong>Title: </strong> <%= sightcast.title %></p>
+          <p><strong>Description: </strong> <%= sightcast.description %></p>
+          <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
+          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+
+        <% end %>
+        <% if @user == current_user %>
+          <%= link_to 'Edit', edit_user_path(@user), id: "sightcastbutton", class: "btn btn-primary" %>
+        <% end %>
+        <%= link_to 'Back', users_path, id: "sightcastbutton", class: "btn btn-primary" %>
       </div>
+
     </div>
   </div>
 </body>

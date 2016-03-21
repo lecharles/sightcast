@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @hosted_sightcasts = Sightcast.where(host: @user)
+    @sightcam_sightcasts = @user.sightcasts
   end
 
   # GET /users/new
