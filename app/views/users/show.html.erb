@@ -8,22 +8,36 @@
           <%= @user.username %></p>
           <p><strong>Email:</strong>
           <%= @user.email %></p>
-        <h1 style="font-weight:lighter;">Hosted SightCasts</h1>
-        <% @hosted_sightcasts.each do |sightcast| %>
-          <p><strong>Title: </strong> <%= sightcast.title %></p>
-          <p><strong>Description: </strong> <%= sightcast.description %></p>
-          <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
-          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+        <% if @hosted_sightcasts.length > 0 %>
+          <h1 style="font-weight:lighter;">Hosted Upcoming SightCasts</h1>
+          <% @hosted_sightcasts.each do |sightcast| %>
+            <p><strong>Title: </strong> <%= sightcast.title %></p>
+            <p><strong>Description: </strong> <%= sightcast.description %></p>
+            <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
+            <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+            <% if current_user == @user %>
+              <p id="sightcast-show-link"><%= link_to "Start SightCast", sightcast_path(sightcast) %></p>
+              <p id="sightcast-delete-link"><%= link_to "Delete SightCast", sightcast_path(sightcast), method: :delete %></p>
+            <% end %>
+
+          <% end %>
+        <% end %>
+
+        <% if @sightcam_sightcasts.length > 0 %>
+          <h1 style="font-weight:lighter;">SightCasts Where SightCam</h1>
+          <% @sightcam_sightcasts.each do |sightcast| %>
+            <p><strong>Title: </strong> <%= sightcast.title %></p>
+            <p><strong>Description: </strong> <%= sightcast.description %></p>
+            <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
+            <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
+            <% if current_user == @user %>
+            <p id="sightcast-cam-link"><%= link_to "Start SightCam", sightcast_path(sightcast) %></p>
+            <% end %>
+          <% end %>
 
         <% end %>
-        <h1 style="font-weight:lighter;">SightCasts Where SightCam</h1>
-        <% @hosted_sightcasts.each do |sightcast| %>
-          <p><strong>Title: </strong> <%= sightcast.title %></p>
-          <p><strong>Description: </strong> <%= sightcast.description %></p>
-          <p><strong>SightCaster: </strong> <%= sightcast.host.username %></p>
-          <p><strong>Scheduled At: </strong> <%= sightcast.scheduled_at.in_time_zone.strftime('%a %b %d, %Y %I:%M %p') %></p>
 
-        <% end %>
+
         <% if @user == current_user %>
           <%= link_to 'Edit', edit_user_path(@user), id: "sightcastbutton", class: "btn btn-primary" %>
         <% end %>
