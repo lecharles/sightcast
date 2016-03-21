@@ -28,10 +28,23 @@ body {
 
 }
 
-.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover{
-    background-color: pink;
-    color:#fff;
+.bootstrap-datetimepicker-widget:hover {
+  color: pink;
 }
+
+.datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .open > .dropdown-toggle.datepicker table tr td.active, .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+  background-color: pink;
+}
+
+
+.timepicker-picker .btn {
+  color: #FF0048;
+}
+
+.timepicker-picker .btn-primary {
+  background-color: white;
+}
+
 
 
 textarea {
