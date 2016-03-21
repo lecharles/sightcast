@@ -31,7 +31,7 @@
            <%= f.hidden_field :active %>
         <% end %>
            <div id="video-container"></div>
-           <% if @sightcast.host = current_user %>
+           <% if @sightcast.host == current_user %>
              <div><img id="vmjpeg_dest" /></div>
           <% else %>
               <div><img id="viewer_vmjpeg_dest" /></div>
