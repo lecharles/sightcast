@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-# Pusher for API secrets and other crazyness
-gem 'pusher'
+
 # User sessions sorcery
 gem 'sorcery'
 # Enhanced server logs
