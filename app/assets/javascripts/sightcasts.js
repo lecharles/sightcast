@@ -8,13 +8,14 @@ $(document).on('ready page:load', function() {
     //       alert('You pressed ' + (key - 48));
     //   }
     // });
-    // setTimeout(initRPi, 100);
-
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 //IF YOU ARE A HOST:
 
     $('#video-container').css('opacity', '0.0');
     if (CASTER) {
+      var mjpeg_img;
+      setTimeout(initRPi("host"), 100);
+
 
       var participants = [];
 
@@ -211,7 +212,7 @@ $(document).on('ready page:load', function() {
           $('#connection_status').html('Connection Status: Connected as SightCam.');
           $('#mobile-camera-button').attr("onclick", "location.href='sightcall://?mode=joininternal&appid=' + APP_ID + '&token=' + token + '&mpid=' + MPID + '&displayname=' + UID_USER + '&buttons=019&videoout=rear&videofull=out&videosmall=in'");
           $('#mobile-camera').css('display', 'block');
-          document.getElementById('#mobile-camera-id').click();
+          document.getElementById('#mobile-camera-button').click();
         });
 
         rtcc.on('cloud.loggedastheotheruser', function() {
@@ -234,6 +235,8 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
+      var mjpeg_img;
+      setTimeout(initRPi("viewer"), 100);
       $('#connection_status').html("Connecting...");
 
       rtcc = {},
@@ -297,16 +300,16 @@ $(document).on('ready page:load', function() {
       toggleViewer = function(message) {
         if (message === 'RPi') {
           $('#video-container').css('opacity', '0.0');
-          $('#vmjpeg_dest').css('display', 'block');
+          $('#viewer_vmjpeg_dest').css('display', 'block');
         }
         else if (message === 'SightCall') {
-          $('#vmjpeg_dest').css('display', 'none');
+          $('#viewer_vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '1.0');
 
         }
         else if (message === 'End Sightcast') {
           // alert('Sightcast ended by host!');
-          $('#vmjpeg_dest').css('display', 'none');
+          $('#viewer_vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
           $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended by host');
           $('#sightcastwaitdiv').css('display', 'block');

@@ -1,13 +1,17 @@
-var mjpeg_img;
+function initRPi(view) {
+  if (view === "host") {
+    mjpeg_img = document.getElementById("vmjpeg_dest");
+  }
+  else {
+    mjpeg_img = document.getElementById("viewer_vmjpeg_dest");
+  }
+  mjpeg_img.onload = reload_img;
+  mjpeg_img.onerror = error_img;
+  reload_img();
+}
 function reload_img () {
   mjpeg_img.src = "https://rpicast.ngrok.io/cam_pic.php?time=" + new Date().getTime();
 }
 function error_img () {
   setTimeout("mjpeg_img.src = 'https://rpicast.ngrok.io/cam_pic.php?time=' + new Date().getTime();", 100);
-}
-function initRPi() {
-  mjpeg_img = document.getElementById("vmjpeg_dest");
-  mjpeg_img.onload = reload_img;
-  mjpeg_img.onerror = error_img;
-  reload_img();
 }
