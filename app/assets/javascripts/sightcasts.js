@@ -13,7 +13,6 @@ $(document).on('ready page:load', function() {
 
     $('#video-container').css('opacity', '0.0');
     if (CASTER) {
-      var mjpeg_img;
       setTimeout(initRPi("host"), 100);
 
 
@@ -235,7 +234,6 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
-      var mjpeg_img;
       setTimeout(initRPi("viewer"), 100);
       $('#connection_status').html("Connecting...");
 
