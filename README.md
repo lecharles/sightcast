@@ -1,28 +1,17 @@
-== README
+**SightCast turns every day life moments into outstanding multi-perspective events.**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Leveraging IoT + SaaS: SightCast makes live video editing possible in the browser.
 
-Things you may want to cover:
+* Logged-in users can:
+  - create a SightCast,
+  - invite their desired number of SightCams (mobile cameras) to capture various POVs,
+  - while adding IoT fixed camera stream(s) on the mix.
 
-* Ruby version
+* Anyone online can view a SightCast.
 
-* System dependencies
+* The primary languages and frameworks used in production include Ruby on Rails, JavaScript, AJAX, Bootstrap and various gems.
 
-* Configuration
+**Try it out:**
+https://sightcast.herokuapp.com/
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+_For more information: please contact the team._
