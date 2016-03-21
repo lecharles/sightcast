@@ -8,12 +8,14 @@ $(document).on('ready page:load', function() {
     //       alert('You pressed ' + (key - 48));
     //   }
     // });
-    setTimeout(initRPi("host"), 100);
     if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
 //IF YOU ARE A HOST:
 
     $('#video-container').css('opacity', '0.0');
     if (CASTER) {
+      var mjpeg_img;
+      setTimeout(initRPi("host"), 100);
+
 
       var participants = [];
 
@@ -233,6 +235,7 @@ $(document).on('ready page:load', function() {
 //IF YOU ARE A VIEWER:
 
     else {
+      var mjpeg_img;
       setTimeout(initRPi("viewer"), 100);
       $('#connection_status').html("Connecting...");
 
