@@ -119,7 +119,7 @@ $(document).on('ready page:load', function() {
           $('#vmjpeg_dest').css('display', 'none');
           $('#video-container').css('opacity', '0.0');
           sightcastCall.sendInbandMessage("End Sightcast");
-          // alert('Sightcast ended!');
+          // alert('SightCast ended!');
         }
       },
 
@@ -138,7 +138,7 @@ $(document).on('ready page:load', function() {
         sightcastCall.hangup();
         $('#sightcast_active').val(false);
         $('#edit_sightcast_' + SC_ID).submit();
-        $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('Sightcast ended');
+        $('#sightcastwaitdiv > .panel-body > .col-md-8 > h1').html('SightCast ended');
         $('#sightcastwaitdiv').css('display', 'block');
       },
 
